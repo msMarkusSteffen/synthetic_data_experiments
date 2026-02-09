@@ -15,7 +15,7 @@ The two networks compete during training, improving both until the generator pro
 ## Project Structure
 
 ```
-├── ctgan_example.py              # Main: CTGAN implementation for penguins ⭐
+├── ctgan_example.py              # Main: CTGAN implementation for penguins ⭐ (Wasserstein metrics from https://forkxz.github.io/blog/2024/Wasserstein/)
 ├── gan_example.py                # Basic GAN implementation with Iris dataset
 ├── gan_flowers.ipynb             # Comprehensive PyTorch tutorial and GAN for Iris flowers
 ├── penguin_conditional_prep.py   # Data preparation for conditional GAN with penguins
@@ -27,7 +27,11 @@ The two networks compete during training, improving both until the generator pro
 ├── libraries/
 │   └── buildfhir.py             # FHIR-related utilities for health records
 └── Tests/
-    └── ctganlibtest.py          # Tests for CTGAN functionality
+│   └── ctganlibtest.py          # Tests for CTGAN functionality
+│   └── plots.py                 # script for plotting the performance of the model
+├── plots/
+│   └── plotxy.png               # place for plots 
+
 ```
 
 ## Getting Started
@@ -150,15 +154,15 @@ The generator takes a random noise vector as input (typically 128 dimensions) an
 
 ### Generator
 ```
-Noise Vector (128) → Linear(128→64) → ReLU → Linear(64→7) → Tanh
+Noise Vector  → Linear → BatchNorm1D → ReLU → Linear → BatchNorm1D → Linear → Sigmoid
 ```
 
 ### Discriminator
 ```
-Input Features (7) → Linear(7→64) → LeakyReLU → Linear(64→1) → Sigmoid
+Input Features (7) → Linear → LazyBatchNorm → LeakyReLU → Linear → Sigmoid
 ```
 
-**Note**: The tanh activation in the generator outputs ensures values are in [-1, 1], matching standardized data range.
+**Note**: The Sigmoid(and also possible/supposed softmax) activation in the generator outputs ensures values are in [0, 1], matching MinMax scaled data range.
 
 ## Hyperparameters
 
@@ -169,7 +173,7 @@ Key hyperparameters used in the examples:
 | Noise Dimension | 128 | Size of latent vector |
 | Hidden Dimension | 64 | Neurons in hidden layers |
 | Learning Rate | 0.001 | Adam optimizer |
-| Epochs | 2000 | Training iterations |
+| Epochs | 5000 | Training iterations |
 | Adam Beta 1, 2 | 0.5, 0.999 | Momentum parameters |
 
 ## Training Tips
@@ -210,6 +214,19 @@ The scatter plot shows that synthetic data (marked with ×) effectively matches 
 | ![corr map fake](plots/corr_map_fake.png) | ![Real vs Fake Penguin](plots/corr_map_real.png) |
 
 
+**Scree Plots**
+Also interesting will be a comparison between the two scree-plots, which does show how many prinicpal components contribute in which magnitude for explaining the dataset.
+
+![scree plot](plots/screeplot.png)
+
+as depicted in the graph the scree plots look very similar with just small differences.
+
+**Feauture Importance**
+
+![loadings](plots/loadings.png)
+
+as showed in the comparison for the loadings, there is a slightly difference in the feauture importance for the first principal component. This might be because either the training duration should be extended or the discriminator might not be strict enough. The second assumption could also explain the light missmatch in the comparison of the correlation matrices, because for the fake data some correlation values are very low.
+
 ## Project Status ✅
 
 ### Completed ✅
@@ -222,20 +239,20 @@ The scatter plot shows that synthetic data (marked with ×) effectively matches 
 - ✅ Model serialization (generator.pth)
 - ✅ Visual validation of synthetic data quality
 - ✅ Data quality evaluation metrics
+- ✅ PCA comparison of real vs synthetic distributions
 
 ### In Progress 🚀
-- 🔄 PCA comparison of real vs synthetic distributions
+- 🔄 search for a more complex but managable dataset
 - 🔄 Fine-tuning hyperparameters for better generation
 
 ### Future Work 🔮
+- [ ] CLEAN UP THE CODE !! 
+- [ ] Extend to medical health records 
 - [ ] Implement FHIR integration for medical records
 - [ ] Scale to larger datasets
 - [ ] Add differential privacy mechanisms
-- [ ] Implement evaluation dashboard
-- [ ] Add support for mixed data types (continuous + categorical)
-- [ ] Extend to medical health records (FHIR format)
 - [ ] Implement Wasserstein GAN (WGAN) for better training stability
-- [ ] Add evaluation metrics (Wasserstein distance, statistical tests)
+- [ ] Add evaluation metrics to default training metrics (Wasserstein distance, statistical tests)
 - [ ] Create synthetic health data with proper privacy constraints
 - [ ] Benchmark against CTGAN library implementations
 - [ ] Handle missing data and imbalanced classes

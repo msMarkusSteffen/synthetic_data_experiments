@@ -338,17 +338,16 @@ if __name__ == "__main__":
     #ctgan.export_generatormodel(filepath="generator.pth")
     ctgan.load_generatormodel("generator.pth")
     ctgan.generate(n_samples=256,export=True,real_fake_combined=True, filename="penguins_fake_real.csv")
-    
-    # TODO Batch Normalization für Generator einbauen analog Paper
-    # TODO Layer Normalization für Discriminator einbauen 
-    # TODO welcher Scaler für Preprocessing und welche Aktivierungsfunktion für Generator ?
+        
     # TODO Paper empfiehlt dringend Outlier vorher zu entfernen .... 
     # TODO Wasserstein Metrik zur Bewertung des Modells implementieren <-- Empfohlen aber wie ??
-    # TODO Paper empfiehlt Daten mit niedriger Prävaleszens zu entfernen (sehr seltene Pinguin Kombinationen)
+    # TODO Hinweis: Paper empfiehlt Daten mit niedriger Prävaleszens zu entfernen (sehr seltene Pinguin Kombinationen)
     #      sie können "irgendwie" im Postprocessing wieder hinzugefügt werden laut Paper?? 
     # NOTE Data Imputation bei diesem Datensatz nicht nötig, aber bei electronic Health record wichtig
-    # TODO Trainingsablauf noch einmal mit gan_flowers.ipynb vergleichen
-    # TODO Zusammensetzungen der Fake Daten überprüfen
-    # TODO CSV Export der generierten Daten implementieren
     # DONE Export Generator Model nach dem Training
     # DONE Training und Datapreparation entkoppeln (damit man auch mit snapshots der Modelle Daten erzeugen kann)
+    # DONE Batch Normalization für Generator einbauen analog Paper
+    # DONE Layer Normalization für Discriminator einbauen 
+    # DONE Zusammensetzungen der Fake Daten überprüfen
+    # DONE CSV Export der generierten Daten implementieren
+    # DONE welcher Scaler für Preprocessing und welche Aktivierungsfunktion für Generator ?

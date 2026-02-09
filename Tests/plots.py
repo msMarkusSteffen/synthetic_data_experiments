@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
 
 import os
 
@@ -33,14 +34,69 @@ def plot_corr_mat(dataframes, outputfile):
 df_fake = df[df['source'] == "fake"].select_dtypes(exclude=['object'])
 df_real = df[df['source'] == "real"].select_dtypes(exclude=['object'])
 
-plot_corr_mat(df_fake, "corr_map_fake.png")
-plot_corr_mat(df_real, "corr_map_real.png")
+#plot_corr_mat(df_fake, "corr_map_fake.png")
+#plot_corr_mat(df_real, "corr_map_real.png")
 
 # Plot Scree Plots
+components = 4
+outputfile="screeplot.png"
+scaler_fake = StandardScaler()
+scaled_fake = scaler_fake.fit_transform(df_fake)
+pca_fake = PCA(n_components=components)
+pca_fake_fit = pca_fake.fit_transform(scaled_fake)
+PC_fake_values = np.arange(pca_fake.n_components_) + 1
 
+scaler_real = StandardScaler()
+scaled_real = scaler_real.fit_transform(df_real)
+pca_real = PCA(n_components=components)
+pca_real_fit = pca_real.fit_transform(scaled_real)
+PC_real_values = np.arange(pca_real.n_components_) + 1
+
+plt.plot(PC_fake_values, pca_fake.explained_variance_ratio_, 'o-', linewidth=2, color='red', label="synthetic")
+plt.plot(PC_real_values, pca_real.explained_variance_ratio_, 'o-', linewidth=2, color='blue', label ="real")
+plt.title('Scree Plot')
+plt.xlabel('Principal Component')
+plt.ylabel('Variance Explained')
+plt.legend()
+plt.savefig(outputfile)
+plt.close()
+
+
+#scree_plot(df_fake, components=4, outputfile="fake_scree.png")
+#scree_plot(df_real, components=4, outputfile="real_scree.png")
 
 # Show Loadings
 
+# Ladewerte extrahieren
+loadings_real = pca_real.components_.T * np.sqrt(pca_real.explained_variance_)
+loadings_fake = pca_fake.components_.T * np.sqrt(pca_fake.explained_variance_)
+
+# DataFrames für Ladewerte erstellen
+loadings_real_df = pd.DataFrame(loadings_real, index=df_real.columns, columns=[f'PC{i+1}' for i in range(loadings_real.shape[1])])
+loadings_fake_df = pd.DataFrame(loadings_fake, index=df_fake.columns, columns=[f'PC{i+1}' for i in range(loadings_fake.shape[1])])
+
+# Zusammenführen der Daten für den Plot
+loadings_df = loadings_real_df[['PC1']].merge(loadings_fake_df[['PC1']], left_index=True, right_index=True, suffixes=('_real', '_fake'))
+
+# Barchart erstellen
+loadings_df.reset_index(inplace=True)
+loadings_df.rename(columns={'index': 'Features'}, inplace=True)
+
+# In langes Format umwandeln für Seaborn
+loadings_melted = loadings_df.melt(id_vars='Features', value_vars=['PC1_real', 'PC1_fake'], 
+                                     var_name='Dataset', value_name='Loading')
+
+# Plot mit Seaborn
+plt.figure(figsize=(12, 8))
+sns.barplot(x='Features', y='Loading', hue='Dataset', data=loadings_melted, palette='muted')
+plt.title('Feature Importance for the first principal component')
+plt.xlabel('Features')
+plt.ylabel('Loadings')
+plt.legend(title='dataset')
+#plt.xticks(rotation=90)  # Drehen der x-Achsen-Beschriftungen
+plt.savefig("loadings.png")
+plt.tight_layout()
+plt.close()
 
 # Pairplots
 

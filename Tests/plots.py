@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
-
+from sklearn.manifold import TSNE
 import os
 
 
@@ -98,8 +98,22 @@ plt.savefig("loadings.png")
 plt.tight_layout()
 plt.close()
 
-# Pairplots
+# t-SNE Plots
+sc_tse = StandardScaler()
+tsne = TSNE(n_components=2)
 
+x = df.drop(["species", "sex", "island", "source"],axis=1)
+y = df["source"]
+
+x_scaled = sc_tse.fit_transform(x)
+x_folded = tsne.fit_transform(x_scaled)
+print(x_folded)
+df_tsne = pd.DataFrame({'tsne_1': x_folded[:,0], 'tsne_2': x_folded[:,1], 'label': y})
+
+plt.figure(figsize=(12, 8))
+tse_plot = sns.scatterplot(data=df_tsne, x="tsne_1", y="tsne_2", hue=y)
+plt.savefig("tSNE.png")
+plt.close()
 
 # Trainloop Plots
 

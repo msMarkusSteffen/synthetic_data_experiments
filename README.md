@@ -227,6 +227,16 @@ as depicted in the graph the scree plots look very similar with just small diffe
 
 as showed in the comparison for the loadings, there is a slightly difference in the feauture importance for the first principal component. This might be because either the training duration should be extended or the discriminator might not be strict enough. The second assumption could also explain the light missmatch in the comparison of the correlation matrices, because for the fake data some correlation values are very low.
 
+**t-SNE Plot**
+
+![tsne](plots/tSNE.png)
+
+In this analysis, I utilized t-Distributed Stochastic Neighbor Embedding (t-SNE) to visualize the distribution of synthetic and real data. t-SNE is a powerful technique for dimensionality reduction that helps in visualizing high-dimensional datasets by mapping them to a lower-dimensional space.
+
+The results showed that the synthetic data blend relative seamlessly with the real data, indicating that the generative model effectively captures the underlying distribution and characteristics of the real-world dataset. This close mixing suggests that the synthetic samples are qualitatively similar to the actual data, making them suitable for various applications.
+
+### Synthetic medical Data 
+
 ## Project Status ✅
 
 ### Completed ✅

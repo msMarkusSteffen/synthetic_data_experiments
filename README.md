@@ -237,6 +237,8 @@ The results showed that the synthetic data blend relative seamlessly with the re
 
 ### Synthetic medical Data 
 
+
+
 ## Project Status ✅
 
 ### Completed ✅

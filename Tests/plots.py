@@ -8,7 +8,7 @@ from sklearn.manifold import TSNE
 import os
 
 
-df = pd.read_csv("./penguins_fake_real.CSV")
+df = pd.read_csv("../datasets/generated/penguins_fake_real.CSV")
 df.drop(["Unnamed: 0"], inplace=True, axis=1)
 print(df.head())
 
@@ -39,7 +39,6 @@ df_real = df[df['source'] == "real"].select_dtypes(exclude=['object'])
 
 # Plot Scree Plots
 components = 4
-outputfile="screeplot.png"
 scaler_fake = StandardScaler()
 scaled_fake = scaler_fake.fit_transform(df_fake)
 pca_fake = PCA(n_components=components)
@@ -58,7 +57,7 @@ plt.title('Scree Plot')
 plt.xlabel('Principal Component')
 plt.ylabel('Variance Explained')
 plt.legend()
-plt.savefig(outputfile)
+plt.savefig("plots/screeplot.png")
 plt.close()
 
 
@@ -94,7 +93,7 @@ plt.xlabel('Features')
 plt.ylabel('Loadings')
 plt.legend(title='dataset')
 #plt.xticks(rotation=90)  # Drehen der x-Achsen-Beschriftungen
-plt.savefig("loadings.png")
+plt.savefig("plots/loadings.png")
 plt.tight_layout()
 plt.close()
 
@@ -112,7 +111,7 @@ df_tsne = pd.DataFrame({'tsne_1': x_folded[:,0], 'tsne_2': x_folded[:,1], 'label
 
 plt.figure(figsize=(12, 8))
 tse_plot = sns.scatterplot(data=df_tsne, x="tsne_1", y="tsne_2", hue=y)
-plt.savefig("tSNE.png")
+plt.savefig("plots/tSNE.png")
 plt.close()
 
 # Trainloop Plots

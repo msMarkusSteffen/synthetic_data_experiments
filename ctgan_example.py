@@ -329,7 +329,7 @@ class CTGan():
 
 
 if __name__ == "__main__":
-    csvfile = os.path.join(os.getcwd(), "penguins_size.csv")
+    csvfile = os.path.join(os.getcwd(), "datasets/penguins_size.csv")
     ctgan = CTGan(dataset=csvfile,categorical_collumns=["species","island","sex"],epochs=5000)
     ctgan.run_dataprep()
     ctgan.init_models()

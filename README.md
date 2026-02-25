@@ -292,7 +292,8 @@ The results showed that the synthetic data blend relative seamlessly with the re
 5. **Phase 5** (planned) implement basic functionality for table diffusion data generation
 6. **Phase 6** (planned) comparison between the two methods
 7. **Phase 7** (planned) research and basic implementation of the most promising data generation method
-8. **Phase 8** (optional): Generate synthetic medical health records in FHIR format
+8. **Phase 8** (optional) Generate synthetic medical health records in FHIR format
+9. **Phase 9** (optional) implement time series forecasting methods from the https://open.hpi.de/courses/timeseries2025 course
 
 ---
 

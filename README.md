@@ -263,6 +263,7 @@ The results showed that the synthetic data blend relative seamlessly with the re
 
 ### Future Work 🔮
 - [ ] CLEAN UP THE CODE !! 
+- [ ] Update Readme (Project Strucutre explanation)
 - [ ] Extend to medical health records 
 - [ ] Implement FHIR integration for medical records
 - [ ] Scale to larger datasets
@@ -286,8 +287,12 @@ The results showed that the synthetic data blend relative seamlessly with the re
 
 1. **Phase 1** ✓: Understand GAN fundamentals (Iris dataset)
 2. **Phase 2** ✓ : Implement conditional GANs (Penguin dataset)
-3. **Phase 3** (in progress) : Try a generating synthetic data for a "real" and coplex dataset 
-3. **Phase 4** (Planned): Generate synthetic medical health records in FHIR format
+3. **Phase 3** (in progress) : make a YAML configurable CTGAN setup to work with any kind of datasets
+4. **Phase 4** (planned) Try a generating synthetic data for a "real" and complex dataset 
+5. **Phase 5** (planned) implement basic functionality for table diffusion data generation
+6. **Phase 6** (planned) comparison between the two methods
+7. **Phase 7** (planned) research and basic implementation of the most promising data generation method
+8. **Phase 8** (optional): Generate synthetic medical health records in FHIR format
 
 ---
 

@@ -11,8 +11,7 @@ class DatasetConfig:
 class GeneratorConfig:
     def __init__(self, config):
         self.noise_dim = config["noise_dim"]
-        self.hidden_dim = config["hidden_dim"]
-        self.layers = config["generator_layers"]
+        self.layers = config["layers"]
         self.activation = config["activation"]
 
     def set_outputfeautures(self, num_feautures):
@@ -20,8 +19,7 @@ class GeneratorConfig:
 
 class DiscriminatorConfig:
     def __init__(self, config):
-        self.hidden_dim = config["hidden_dim"]
-        self.layers = config["discriminator_layers"]
+        self.layers = config["layers"]
         self.activation = config["activation"]
 
 class TrainingConfig:

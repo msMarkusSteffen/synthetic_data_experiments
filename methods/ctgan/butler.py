@@ -36,6 +36,8 @@ class Butler():
     def __prepare_training(self):
         if self.status == Status.YAML:
             self.generator = Generator(self.config.generator)
+            for layer in self.generator.net:
+                print(layer)
             pass
             self.status = Status.READY
         else: 

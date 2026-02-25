@@ -1,42 +1,42 @@
 import torch.nn as nn
+import torch
 
 class Generator(nn.Module):
     def __init__(self, config):
         super(Generator, self).__init__()
-        self.l1 = nn.Linear(in_features=noise_dim, out_features=hidden_dim) 
-        self.bn1 = nn.BatchNorm1d(hidden_dim)
-        self.l2 = nn.Linear(in_features=hidden_dim, out_features=2*hidden_dim) 
-        self.bn2 = nn.BatchNorm1d(2*hidden_dim)
-        self.l3 = nn.Linear(in_features=2*hidden_dim, out_features=output_size) 
-        #self.relu = nn.LeakyReLU() 
-        self.relu = nn.ReLU()         
+        self.config = config
+        self.net = nn.Sequential()
 
-    def forward(self, x): 
-        x = self.l1(x) 
-        x = self.bn1(x)
-        x = self.relu(x)
-        x = self.l2(x)
-        x = self.bn2(x)
-        x = self.relu(x)
-        x = self.l3(x)   
-        x = torch.sigmoid(x)     
-        return x # NOTE Features wurden über MinMax Scaler normalisiert [0,1] <-- Sigmoid sorgt dafür das der Output auch zwischen 0 und 1 ist
-    
-    def generate_samples(self, n):
-        pass
+       # Durchlaufen der Layers, bis auf das letzte
+        for i in range(len(self.config.layers) - 1):
+            self.net.append(nn.Linear(self.config.layers[i], self.config.layers[i + 1]))
+            self.net.append(nn.BatchNorm1d(self.config.layers[i + 1]))
+            if self.config.activation == "leaky_relu":
+                self.net.append(nn.LeakyReLU())
+            elif self.config.activation == "relu":
+                self.net.append(nn.ReLU())
+
+        # Letztes Layer ohne BatchNorm und mit Sigmoid-Aktivierung
+        output_size = self.config.features
+        self.net.append(nn.Linear(self.config.generator_layers[-1], output_size))
+        self.net.append(nn.Sigmoid())  # Sigmoid-Aktivierung für das letzte Layer
+
+    def forward(self, x):     
+        return self.net(x)
 
 class Discriminator(nn.Module):
-    def __init__(self, input_size, hidden_size, num_classes= 1):
+    def __init__(self, config):
         super(Discriminator, self).__init__() 
-        self.l1 = nn.Linear(in_features=input_size, out_features=hidden_size) 
-        self.ln1 = nn.LazyBatchNorm1d(hidden_size)
-        self.relu = nn.LeakyReLU()
-        self.l2 = nn.Linear(in_features=hidden_size, out_features=num_classes) 
+        self.config = config
+        self.net = nn.Sequential()  
+
+        for i in range(len(self.config.layers) - 1):
+            self.net.append(nn.Linear(self.config.layers[i], self.config.layers[i + 1]))
+            self.net.append(nn.BatchNorm1d(self.config.layers[i + 1]))
+            if self.config.activation == "leaky_relu":
+                self.net.append(nn.LeakyReLU())
+            elif self.config.activation == "relu":
+                self.net.append(nn.ReLU())
     
     def forward(self, x): 
-        x = self.l1(x) 
-        x = self.ln1(x)
-        x = self.relu(x) 
-        x = self.l2(x) 
-        x = torch.sigmoid(x)
-        return x
+        return self.net(x)

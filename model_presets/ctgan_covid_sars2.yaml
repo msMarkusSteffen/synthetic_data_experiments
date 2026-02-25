@@ -3,18 +3,17 @@ dataset:
   path: "datasets/sars_cov2.csv"
   categorical_columns: ["variant", "country", "mutation_type"]
   numeric_columns: ["viral_load", "patient_age", "days_since_outbreak"]
+  value_filter : ["."] # Remove Rows containing this value(s)
   bootstrapmultiplier : 0 
   # 0 = deactivated (original dataset), 1 = same size as original but with weighted draw, 2 double size weighted, ...
 
 generator_architecture:
   noise_dim: 128
-  hidden_dim: 256
-  generator_layers: [256, 512, 256] 
+  layers: [256, 512, 256] 
   activation: "leaky_relu"
 
 discriminator_architecture:
-  hidden_dim: 256
-  discriminator_layers: [256, 512, 256] 
+  layers: [256, 512, 256] 
   activation: "leaky_relu"
 
 training:

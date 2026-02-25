@@ -1,9 +1,10 @@
-# Synthetic Data Generation with GANs and CTGANs
+# Synthetic Data Generation 
 
-This project explores the implementation of **Generative Adversarial Networks (GANs)** and **Conditional Table GANs (CTGANs)** to generate synthetic data. The ultimate goal is to generate synthetic medical health records, but we start with simpler datasets like Iris flowers and penguin measurements to understand the fundamentals.
+This project explores the implementation of different techniques like **Generative Adversarial Networks (GANs)** , **Conditional Table GANs (CTGANs)** and more, sto generate synthetic data. The ultimate goal is to generate synthetic medical health records, but we start with simpler datasets like Iris flowers and penguin measurements to understand the fundamentals.
 
 ## Project Overview
 
+### GAN/CTGAN
 Generative Adversarial Networks (GANs) are a powerful machine learning framework consisting of two neural networks:
 - **Generator**: Creates fake data from random noise
 - **Discriminator**: Learns to distinguish between real and fake data
@@ -11,6 +12,9 @@ Generative Adversarial Networks (GANs) are a powerful machine learning framework
 The two networks compete during training, improving both until the generator produces realistic synthetic data.
 
 **Conditional Table GANs (CTGANs)** extend this concept specifically for tabular data, allowing for better generation of structured datasets with mixed data types (numerical, categorical).
+
+### TableDiffusion
+**TBD**
 
 ## Project Structure
 
@@ -31,7 +35,7 @@ The two networks compete during training, improving both until the generator pro
 │   └── plots.py                 # script for plotting the performance of the model
 ├── plots/
 │   └── plotxy.png               # place for plots 
-
+ 
 ```
 
 ## Getting Started

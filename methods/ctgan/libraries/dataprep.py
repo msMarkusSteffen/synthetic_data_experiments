@@ -1,5 +1,6 @@
 class DataPrep():
-    def __init__(self, datafile, categorical_columns, noise_dim, value_filter=["."], ):
+    def __init__(self, config)#datafile, categorical_columns, noise_dim, value_filter=["."], ):
+        self,config = config
         self.categorical_columns = categorical_columns
         self.df = pd.read_csv(datafile)
         self.df.dropna(inplace=True)
@@ -41,7 +42,7 @@ class DataPrep():
     def gen_noise_tensor(self, batch_size):
         cat = np.vstack(random.choices(self.encoded_noisecondition_tensor , weights=self.df_count["probability"], k=batch_size))#[0]
         num = torch.rand(batch_size, self.noise_dim)
-        noise_tensor = torch.cat(tensors=(num,torch.from_numpy(cat)), dim=1)
+        noise_tensor = torch.cat(tensors=(num,torch.from_numpy(c0at)), dim=1)
         return noise_tensor, cat
         
     def rate_model(self, real_data, generated_data):

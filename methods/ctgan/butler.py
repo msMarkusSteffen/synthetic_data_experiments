@@ -1,7 +1,7 @@
 import os
 from libraries.config import CTGANConfig
 #from libraries.dataprep import DataPrep
-from libraries.modelsetup import Generator#, Discriminator
+from libraries.modelsetup import Generator, Discriminator
 
 from enum import Enum
 
@@ -36,9 +36,16 @@ class Butler():
     def __prepare_training(self):
         if self.status == Status.YAML:
             self.generator = Generator(self.config.generator)
+            print("Generator architectur")
             for layer in self.generator.net:
                 print(layer)
-            pass
+            
+            print("Discriminator architecture")
+            self.discriminator = Discriminator(self.config.discriminator)
+            for layer in self.discriminator.net:
+                print(layer)
+            
+            #self.data 
             self.status = Status.READY
         else: 
             raise # Fehler falls nicht im Yaml status

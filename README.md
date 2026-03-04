@@ -249,7 +249,6 @@ The results showed that the synthetic data blend relative seamlessly with the re
 - ✅ Basic GAN implementation with Iris flowers
 - ✅ PyTorch fundamentals and training pipeline
 - ✅ CTGAN implementation for tabular data
-- ✅ Wasserstein Distance metric for distribution comparison
 - ✅ Penguin dataset generation and preprocessing
 - ✅ Synthetic data generation and export
 - ✅ Model serialization (generator.pth)
@@ -263,6 +262,9 @@ The results showed that the synthetic data blend relative seamlessly with the re
 
 ### Future Work 🔮
 - [ ] CLEAN UP THE CODE !! 
+- [ ] make use of Wasserstein Distance metric for distribution comparison (or smirnoff?)
+- [ ] make use of Kullback-Leibler divergence for categorical features 
+- [ ] combine Ratings (W + KL) 
 - [ ] Update Readme (Project Strucutre explanation)
 - [ ] Extend to medical health records 
 - [ ] Implement FHIR integration for medical records

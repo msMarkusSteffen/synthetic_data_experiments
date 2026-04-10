@@ -1,12 +1,21 @@
+import os
 import torch 
 import torch.nn as nn
 import numpy as np
 import pandas as pd
 
+from torch.utils.data import DataLoader
 from sklearn.preprocessing import OneHotEncoder, MinMaxScaler
 from sklearn.compose import ColumnTransformer
 from sklearn.model_selection import train_test_split
 from sklearn.utils import resample
+
+# TODO DataPreparation vorbereiten.
+# TODO Sinosuidal Embedding einbauen für timestep Identifikation im NN
+# TODO WAS mach ich mit kategorischen Daten  ?? <-- One Hote und dann ??? irgendwelche flatteing Geschichten ?
+# TODO Training implementieren
+# TODO Privacy wie bewerten ??
+# TODO Data Generation Routine bauen
 
 
 class DataPrep():
@@ -49,12 +58,40 @@ class DataPrep():
         return X_train, X_test
 
 
+
+def sinosuidal_embedding(t, dimensions):
+    # this will generate a vector for every t which is unique for every t 
+    # the vector is used to give the neural network a glimpse hint which diffusion step is it in.
+    # https://neuraloperator.github.io/dev/auto_examples/layers/plot_sinusoidal_embeddings.html
+    # https://medium.com/@giovanitavares/sinusoidal-embeddings-how-transformers-interpret-tokens-positions-bd701babb508
+    # https://runebook.dev/en/docs/pytorch/generated/torch.nn.embedding  NOTE Alternative zu mathematischem Embedding 
+
+
+    pass
+
 # NOTE see https://gianluca.ai/table-diffusion/ for reference
 
 class Diffusor(nn.Module):
     def __init__(self, noise_dim, hidden_dim, output_size):
         super(Diffusor, self).__init__()
-        
+        self.l1 = nn.Linear(in_features=noise_dim, out_features=hidden_dim) 
+        self.bn1 = nn.BatchNorm1d(hidden_dim)
+        self.l2 = nn.Linear(in_features=hidden_dim, out_features=2*hidden_dim) 
+        self.bn2 = nn.BatchNorm1d(2*hidden_dim)
+        self.l3 = nn.Linear(in_features=2*hidden_dim, out_features=output_size) 
+        #self.relu = nn.LeakyReLU() 
+        self.relu = nn.ReLU()         
+
+    def forward(self, x): 
+        x = self.l1(x) 
+        x = self.bn1(x)
+        x = self.relu(x)
+        x = self.l2(x)
+        x = self.bn2(x)
+        x = self.relu(x)
+        x = self.l3(x)   
+        x = torch.sigmoid(x) 
+
 
 def build_noise_layers(shape, steps=1):
     noise_layers = []
@@ -71,7 +108,7 @@ X= torch.ones(8, requires_grad=True)
 steps = 3
 print(build_noise_layers(X.shape, steps))
 noise_layers = build_noise_layers(X.shape, steps)
-
+"""
 for layer in noise_layers:
     X = X+layer
 
@@ -81,5 +118,31 @@ for layer in noise_layers:
     X = X-layer
 
 print("denoisedX", X)
+"""
+
+emb = nn.Embedding(num_embeddings=30, embedding_dim=10)
+t = torch.tensor([1,2,3,4,5,6,7,8,9], dtype=torch.long)
+#print(emb(t))
+#print(t)
+
+csvfile = os.path.join(os.getcwd(), "datasets/penguins_size.csv")
+data = DataPrep(categorical_columns=["species","island","sex"], datafile=csvfile,noise_dim=128)
+X_train, X_test= data.generate_training_test_data(boootstrap_multiplier=10)
+
+# NOTE Training
+n_epochs = 1
+batch_size = 5
+noise_steps = 300
 
 
+train_dataloader = DataLoader(X_train, batch_size=batch_size, shuffle=True)
+test_dataloader = DataLoader(X_test, batch_size=batch_size, shuffle=True)
+
+print("whallahhrrrrhh" ,next(iter(train_dataloader)))
+
+
+for epoch in range(n_epochs):
+    for batch in train_dataloader:
+        print(batch)
+        for t in range(0,noise_steps):
+            

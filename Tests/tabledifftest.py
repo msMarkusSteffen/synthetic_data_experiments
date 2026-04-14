@@ -1,6 +1,7 @@
 import os
 import torch 
 import torch.nn as nn
+import torch.optim as optim
 import numpy as np
 import pandas as pd
 
@@ -13,6 +14,7 @@ from sklearn.utils import resample
 # TODO DataPreparation vorbereiten.
 # TODO Sinosuidal Embedding einbauen für timestep Identifikation im NN
 # TODO WAS mach ich mit kategorischen Daten  ?? <-- One Hote und dann ??? irgendwelche flatteing Geschichten ?
+# NOTE Logspace Encoding für OH 
 # TODO Training implementieren
 # TODO Privacy wie bewerten ??
 # TODO Data Generation Routine bauen
@@ -72,9 +74,9 @@ def sinosuidal_embedding(t, dimensions):
 # NOTE see https://gianluca.ai/table-diffusion/ for reference
 
 class Diffusor(nn.Module):
-    def __init__(self, noise_dim, hidden_dim, output_size):
+    def __init__(self, input_dim, hidden_dim, output_size):
         super(Diffusor, self).__init__()
-        self.l1 = nn.Linear(in_features=noise_dim, out_features=hidden_dim) 
+        self.l1 = nn.Linear(in_features=input_dim, out_features=hidden_dim) 
         self.bn1 = nn.BatchNorm1d(hidden_dim)
         self.l2 = nn.Linear(in_features=hidden_dim, out_features=2*hidden_dim) 
         self.bn2 = nn.BatchNorm1d(2*hidden_dim)
@@ -133,16 +135,32 @@ X_train, X_test= data.generate_training_test_data(boootstrap_multiplier=10)
 n_epochs = 1
 batch_size = 5
 noise_steps = 300
+learning_rate = 0.01
 
 
 train_dataloader = DataLoader(X_train, batch_size=batch_size, shuffle=True)
 test_dataloader = DataLoader(X_test, batch_size=batch_size, shuffle=True)
 
-print("whallahhrrrrhh" ,next(iter(train_dataloader)))
+#print("dataloader iter" ,next(iter(train_dataloader)))
 
+def calc_beta(t, steps):
+    beta_t = (1.0 - np.cos(np.pi*t/steps))/2.0 
+    return beta_t
+    
+
+diffmodel = Diffusor(input_dim=128, hidden_dim=64, output_size=12)
+criterion = nn.MSELoss()
+optimizer = optim.Adam(diffmodel.parameters(), lr=learning_rate)
 
 for epoch in range(n_epochs):
     for batch in train_dataloader:
-        print(batch)
+        #print(batch, batch.shape)
+        print("Kat", batch[:,:8])
+        print("Num", batch[:,8:])
+        break
         for t in range(0,noise_steps):
-            
+            beta_t = calc_beta(t, noise_steps)
+            noise = torch.randn_like(batch)*np.sqrt(beta_t)
+            noised_data = batch + noise 
+            predicted_noise = diffmodel(noised_data)
+

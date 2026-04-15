@@ -18,6 +18,8 @@ from sklearn.utils import resample
 # TODO Training implementieren
 # TODO Privacy wie bewerten ??
 # TODO Data Generation Routine bauen
+# TODO kein Softmax für Diffusion Modell <-- es soll logits ausspucken 
+# TODO Logits für Kategorische Daten wärend des Trainings für KL Divergenz (evtl auch für Rekonstruktion?)
 
 
 class DataPrep():
@@ -92,7 +94,7 @@ class Diffusor(nn.Module):
         x = self.bn2(x)
         x = self.relu(x)
         x = self.l3(x)   
-        x = torch.sigmoid(x) 
+        x = torch.softmax(x) 
 
 
 def build_noise_layers(shape, steps=1):
@@ -122,8 +124,8 @@ for layer in noise_layers:
 print("denoisedX", X)
 """
 
-emb = nn.Embedding(num_embeddings=30, embedding_dim=10)
-t = torch.tensor([1,2,3,4,5,6,7,8,9], dtype=torch.long)
+#emb = nn.Embedding(num_embeddings=30, embedding_dim=10)
+#t = torch.tensor([1,2,3,4,5,6,7,8,9], dtype=torch.long)
 #print(emb(t))
 #print(t)
 
@@ -148,19 +150,154 @@ def calc_beta(t, steps):
     return beta_t
     
 
+def sinosuidal_embedding(t, embedding_size):
+    embedding_vect = []
+    for i in range(0,embedding_size):
+        if i%2 == 0:
+            embedding_vect.append(np.sin(t/(1000.0*np.exp(2.0*i/embedding_size))))
+        else:
+            embedding_vect.append(np.cos(t/(1000.0*np.exp(2.0*i/embedding_size))))
+    return torch.Tensor(embedding_vect)
+
+
+def sinosuidal_embedding_torch(t, embedding_size):
+    """
+    t: Ein Tensor mit den Zeitschritten (Batch_Size,)
+    embedding_size: Die gewünschte Breite (z.B. 32)
+    """
+    # 1. Wir berechnen den "Divisor" Teil der Formel: 10000^(2i/D)
+    # Das machen wir nur für die Hälfte der Dimensionen
+    half_dim = embedding_size // 2
+    
+    # Wir nutzen log/exp für numerische Stabilität: 
+    # exp(log(10000) * i / half_dim) ist das gleiche wie 10000^(2i/D)
+    emb_base = np.log(10000) / (half_dim - 1)
+    # Das hier erzeugt die verschiedenen Frequenzen
+    div_term = torch.exp(torch.arange(half_dim) * -emb_base).to(t.device)
+    
+    # 2. t (Batch, 1) multipliziert mit div_term (Half_Dim) 
+    # ergibt eine Matrix (Batch, Half_Dim)
+    # t[:, None] macht aus [20] -> [20, 1]
+    args = t[:, None].float() * div_term[None, :]
+    
+    # 3. Jetzt Sinus und Cosinus berechnen und zusammenkleben
+    # Das ergibt (Batch, embedding_size)
+    embedding = torch.cat([torch.sin(args), torch.cos(args)], dim=-1)
+    
+    return embedding
+
+def get_sinusoidal_embeddings(t_batch, embedding_dim):
+    """
+    t_batch: Tensor der Form (batch_size,) mit Integern von 0 bis max_steps
+    embedding_dim: z.B. 32
+    """
+    device = t_batch.device
+    half_dim = embedding_dim // 2
+    
+    # 1. Erzeuge die exponentiell abfallenden Frequenzen
+    # Formel: 10000^(-2i/D)
+    emb_base = math.log(10000) / (half_dim - 1)
+    frequencies = torch.exp(torch.arange(half_dim, device=device) * -emb_base)
+    
+    # 2. t_batch (Batch, 1) * frequencies (1, half_dim) -> (Batch, half_dim)
+    args = t_batch[:, None].float() * frequencies[None, :]
+    
+    # 3. Kombiniere Sinus und Cosinus zu (Batch, embedding_dim)
+    embedding = torch.cat([torch.sin(args), torch.cos(args)], dim=-1)
+    
+    return embedding
+
+def get_sinusoidal_embeddings(t, embedding_dim):
+    """
+    t: Tensor der Form (batch_size,) - Die Zeitschritte für den Batch
+    embedding_dim: Wie breit soll der Zeit-Vektor sein? (z.B. 32)
+    """
+    # 1. Berechne den Nenner der Formel (die Frequenzen)
+    # Wir nehmen nur die Hälfte der Dimension, da wir sin und cos kombinieren
+    half_dim = embedding_dim // 2
+    
+    # Frequenzen berechnen: 10000^(-(0..2i)/D)
+    emb_base = np.log(10000) / (half_dim - 1)
+    frequencies = torch.exp(torch.arange(half_dim) * -emb_base).to(t.device)
+    
+    # 2. t mit Frequenzen multiplizieren
+    # t[:, None] macht aus (batch,) -> (batch, 1)
+    # frequencies[None, :] macht aus (half_dim,) -> (1, half_dim)
+    # Das Ergebnis ist (batch, half_dim)
+    args = t[:, None].float() * frequencies[None, :]
+    
+    # 3. Sinus und Cosinus berechnen und zusammenfügen
+    embedding = torch.cat([torch.sin(args), torch.cos(args)], dim=-1)
+    
+    return embedding
+    
+
 diffmodel = Diffusor(input_dim=128, hidden_dim=64, output_size=12)
-criterion = nn.MSELoss()
+mse_loss = nn.MSELoss()
+kl_loss = nn.KLDivLoss()
+
 optimizer = optim.Adam(diffmodel.parameters(), lr=learning_rate)
 
 for epoch in range(n_epochs):
-    for batch in train_dataloader:
+    for batch in train_dataloader:        
         #print(batch, batch.shape)
         print("Kat", batch[:,:8])
-        print("Num", batch[:,8:])
-        break
+        print("Num", batch[:,8:])        
         for t in range(0,noise_steps):
+            """ NOTE wie bei Gianluca verwenden wir hier mixed Type Denoiser
+            Es wird nicht klassisch wie bei StableDiffusion für jeden Schritt das Noise berechnet und dann abgezogen
+            Es wird einfach die entrauschten Daten berechnet <-- Vorteil man kann direkt den Loss für numerische (MSE)
+            und den Loss für kategorische Daten berechnen (KL Divergenz)
+            
+            NOTE normalerweise wird bei modernen Diffusion die Steps nicht sequentiell sondern zufällig gewählt,
+            innerhalb der Grenzen 0-diffusion steps"""
+            
             beta_t = calc_beta(t, noise_steps)
             noise = torch.randn_like(batch)*np.sqrt(beta_t)
             noised_data = batch + noise 
-            predicted_noise = diffmodel(noised_data)
+            denoised_data = diffmodel(noised_data, t)
 
+            # Slicing der Kategorien-Gruppen
+pred_species = prediction[:, 0:3] # Art
+pred_island  = prediction[:, 3:6] # Insel
+pred_sex     = prediction[:, 6:8] # Geschlecht
+
+# Einzelne KL-Verluste
+loss_species = F.kl_div(F.log_softmax(pred_species, dim=1), target[:, 0:3], reduction='batchmean')
+loss_island  = F.kl_div(F.log_softmax(pred_island, dim=1),  target[:, 3:6], reduction='batchmean')
+loss_sex     = F.kl_div(F.log_softmax(pred_sex, dim=1),     target[:, 6:8], reduction='batchmean')
+
+# Alles zusammen
+categorical_loss = (loss_species + loss_island + loss_sex) / 3
+total_loss = numeric_loss + categorical_loss
+            #total_loss = mse_loss + kl_loss 
+
+def sample(model, batch_size, steps, feature_dim):
+    model.eval()
+    with torch.no_grad():
+        # 1. Start mit reinem Rauschen
+        x = torch.randn(batch_size, feature_dim)
+        
+        for t in reversed(range(1, steps)):
+            # Zeit-Tensor für den aktuellen Schritt (alle im Batch haben gleiches t)
+            t_tensor = torch.full((batch_size,), t, dtype=torch.long)
+            t_emb = sinusoidal_embedding(t_tensor, embedding_size)
+            
+            # Modell sagt saubere Daten voraus
+            x_0_pred = model(torch.cat([x, t_emb], dim=1))
+            
+            # Clipping/Post-processing (Wichtig für Stabilität!)
+            # Da wir wissen, dass unsere Daten skaliert sind (0 bis 1)
+            x_0_pred = torch.clamp(x_0_pred, 0, 1)
+            
+            # Schritt zurück berechnen (Vereinfachte DDPM Logik)
+            # Wir mischen den vorhergesagten x_0 mit dem aktuellen x
+            alpha_t = get_alpha(t) # Aus deinem Noise-Schedule
+            x = (1 - alpha_t) * x_0_pred + alpha_t * x
+            
+            # Optional: Wieder ein ganz kleines bisschen Rauschen addieren 
+            # (Langevin Dynamics), um den Prozess lebendig zu halten
+            if t > 1:
+                x += 0.01 * torch.randn_like(x)
+                
+        return x

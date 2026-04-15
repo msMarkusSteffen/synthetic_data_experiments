@@ -11,6 +11,9 @@ from sklearn.compose import ColumnTransformer
 from sklearn.model_selection import train_test_split
 from sklearn.utils import resample
 
+# NOTE see https://gianluca.ai/table-diffusion/ for reference
+
+
 # TODO DataPreparation vorbereiten.
 # TODO Sinosuidal Embedding einbauen für timestep Identifikation im NN
 # TODO WAS mach ich mit kategorischen Daten  ?? <-- One Hote und dann ??? irgendwelche flatteing Geschichten ?
@@ -20,7 +23,6 @@ from sklearn.utils import resample
 # TODO Data Generation Routine bauen
 # TODO kein Softmax für Diffusion Modell <-- es soll logits ausspucken 
 # TODO Logits für Kategorische Daten wärend des Trainings für KL Divergenz (evtl auch für Rekonstruktion?)
-
 
 class DataPrep():
     def __init__(self, datafile, categorical_columns, noise_dim, value_filter=["."], ):
@@ -61,19 +63,15 @@ class DataPrep():
         X_train, X_test = train_test_split(X, test_size=test_size, random_state=random_state)
         return X_train, X_test
 
-
-
 def sinosuidal_embedding(t, dimensions):
     # this will generate a vector for every t which is unique for every t 
     # the vector is used to give the neural network a glimpse hint which diffusion step is it in.
     # https://neuraloperator.github.io/dev/auto_examples/layers/plot_sinusoidal_embeddings.html
     # https://medium.com/@giovanitavares/sinusoidal-embeddings-how-transformers-interpret-tokens-positions-bd701babb508
     # https://runebook.dev/en/docs/pytorch/generated/torch.nn.embedding  NOTE Alternative zu mathematischem Embedding 
-
-
     pass
 
-# NOTE see https://gianluca.ai/table-diffusion/ for reference
+
 
 class Diffusor(nn.Module):
     def __init__(self, input_dim, hidden_dim, output_size):
@@ -257,20 +255,23 @@ for epoch in range(n_epochs):
             noised_data = batch + noise 
             denoised_data = diffmodel(noised_data, t)
 
+            denoised_num = denoised_data[:,8:]
+            numeric_loss = mse_loss(denoised_num, batch[:,8:])
+
             # Slicing der Kategorien-Gruppen
-pred_species = prediction[:, 0:3] # Art
-pred_island  = prediction[:, 3:6] # Insel
-pred_sex     = prediction[:, 6:8] # Geschlecht
+            pred_species = denoised_data[:, 0:3] # Art
+            pred_island  = denoised_data[:, 3:6] # Insel
+            pred_sex     = denoised_data[:, 6:8] # Geschlecht
 
-# Einzelne KL-Verluste
-loss_species = F.kl_div(F.log_softmax(pred_species, dim=1), target[:, 0:3], reduction='batchmean')
-loss_island  = F.kl_div(F.log_softmax(pred_island, dim=1),  target[:, 3:6], reduction='batchmean')
-loss_sex     = F.kl_div(F.log_softmax(pred_sex, dim=1),     target[:, 6:8], reduction='batchmean')
+            # Einzelne KL-Verluste
+            loss_species = F.kl_div(F.log_softmax(pred_species, dim=1), target[:, 0:3], reduction='batchmean')
+            loss_island  = F.kl_div(F.log_softmax(pred_island, dim=1),  target[:, 3:6], reduction='batchmean')
+            loss_sex     = F.kl_div(F.log_softmax(pred_sex, dim=1),     target[:, 6:8], reduction='batchmean')
 
-# Alles zusammen
-categorical_loss = (loss_species + loss_island + loss_sex) / 3
-total_loss = numeric_loss + categorical_loss
-            #total_loss = mse_loss + kl_loss 
+            # Alles zusammen
+            categorical_loss = (loss_species + loss_island + loss_sex) / 3
+            total_loss = numeric_loss + categorical_loss
+            
 
 def sample(model, batch_size, steps, feature_dim):
     model.eval()

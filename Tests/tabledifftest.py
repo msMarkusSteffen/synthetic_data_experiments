@@ -136,7 +136,7 @@ n_epochs = 1
 batch_size = 5
 noise_steps = 300
 learning_rate = 0.01
-
+embedding_size = 64 # NOTE das Embedding führe ich hier per concatenan an jede Zeile des Mini Batches an 
 
 train_dataloader = DataLoader(X_train, batch_size=batch_size, shuffle=True)
 test_dataloader = DataLoader(X_test, batch_size=batch_size, shuffle=True)
@@ -146,89 +146,38 @@ test_dataloader = DataLoader(X_test, batch_size=batch_size, shuffle=True)
 def calc_beta(t, steps):
     beta_t = (1.0 - np.cos(np.pi*t/steps))/2.0 
     return beta_t
-    
 
-def sinosuidal_embedding(t, embedding_size):
-    embedding_vect = []
-    for i in range(0,embedding_size):
-        if i%2 == 0:
-            embedding_vect.append(np.sin(t/(1000.0*np.exp(2.0*i/embedding_size))))
-        else:
-            embedding_vect.append(np.cos(t/(1000.0*np.exp(2.0*i/embedding_size))))
-    return torch.Tensor(embedding_vect)
-
-
-def sinosuidal_embedding_torch(t, embedding_size):
+def add_time_embeddings(noised_batch, t, embedding_dim=64):
     """
-    t: Ein Tensor mit den Zeitschritten (Batch_Size,)
-    embedding_size: Die gewünschte Breite (z.B. 32)
+    Inputs:
+    - noised_batch: Dein Tensor [20, 13]
+    - t: Der aktuelle Zeit-Schritt (Integer, z.B. 150)
+    - embedding_dim: Wie "breit" der Zeit-Vektor sein soll (muss gerade Zahl sein)
     """
-    # 1. Wir berechnen den "Divisor" Teil der Formel: 10000^(2i/D)
-    # Das machen wir nur für die Hälfte der Dimensionen
-    half_dim = embedding_size // 2
     
-    # Wir nutzen log/exp für numerische Stabilität: 
-    # exp(log(10000) * i / half_dim) ist das gleiche wie 10000^(2i/D)
-    emb_base = np.log(10000) / (half_dim - 1)
-    # Das hier erzeugt die verschiedenen Frequenzen
-    div_term = torch.exp(torch.arange(half_dim) * -emb_base).to(t.device)
-    
-    # 2. t (Batch, 1) multipliziert mit div_term (Half_Dim) 
-    # ergibt eine Matrix (Batch, Half_Dim)
-    # t[:, None] macht aus [20] -> [20, 1]
-    args = t[:, None].float() * div_term[None, :]
-    
-    # 3. Jetzt Sinus und Cosinus berechnen und zusammenkleben
-    # Das ergibt (Batch, embedding_size)
-    embedding = torch.cat([torch.sin(args), torch.cos(args)], dim=-1)
-    
-    return embedding
-
-def get_sinusoidal_embeddings(t_batch, embedding_dim):
-    """
-    t_batch: Tensor der Form (batch_size,) mit Integern von 0 bis max_steps
-    embedding_dim: z.B. 32
-    """
-    device = t_batch.device
+    # 1. Den Sinusoidal-Vektor für einen einzelnen Zeitschritt berechnen
+    # (Das ist die mathematische Standard-Formel)
+    device = noised_batch.device
     half_dim = embedding_dim // 2
+    emb_scale = np.log(10000) / (half_dim - 1)
+    emb_scale = torch.exp(torch.arange(half_dim, device=device) * -emb_scale)
     
-    # 1. Erzeuge die exponentiell abfallenden Frequenzen
-    # Formel: 10000^(-2i/D)
-    emb_base = math.log(10000) / (half_dim - 1)
-    frequencies = torch.exp(torch.arange(half_dim, device=device) * -emb_base)
-    
-    # 2. t_batch (Batch, 1) * frequencies (1, half_dim) -> (Batch, half_dim)
-    args = t_batch[:, None].float() * frequencies[None, :]
-    
-    # 3. Kombiniere Sinus und Cosinus zu (Batch, embedding_dim)
-    embedding = torch.cat([torch.sin(args), torch.cos(args)], dim=-1)
-    
-    return embedding
+    # t wird mit den verschiedenen Frequenzen multipliziert
+    emb = torch.tensor([t], device=device).float() * emb_scale.unsqueeze(0)
+    # Sinus und Cosinus mischen für den "Barcode"-Effekt
+    emb = torch.cat([torch.sin(emb), torch.cos(emb)], dim=-1) # Resultat: [1, 64]
 
-def get_sinusoidal_embeddings(t, embedding_dim):
-    """
-    t: Tensor der Form (batch_size,) - Die Zeitschritte für den Batch
-    embedding_dim: Wie breit soll der Zeit-Vektor sein? (z.B. 32)
-    """
-    # 1. Berechne den Nenner der Formel (die Frequenzen)
-    # Wir nehmen nur die Hälfte der Dimension, da wir sin und cos kombinieren
-    half_dim = embedding_dim // 2
+    # 2. Den Vektor "untereinander" kopieren (Expand auf Batch-Größe)
+    # .expand liest die Shape von noised_batch ab
+    batch_size = noised_batch.shape[0]
+    t_emb_expanded = emb.expand(batch_size, -1) # Resultat: [20, 64]
+
+    # 3. Hinten an den Mini-Batch ankleben
+    # dim=1 bedeutet "Spalten hinzufügen"
+    final_input = torch.cat([noised_batch, t_emb_expanded], dim=1) # Resultat: [20, 77]
     
-    # Frequenzen berechnen: 10000^(-(0..2i)/D)
-    emb_base = np.log(10000) / (half_dim - 1)
-    frequencies = torch.exp(torch.arange(half_dim) * -emb_base).to(t.device)
-    
-    # 2. t mit Frequenzen multiplizieren
-    # t[:, None] macht aus (batch,) -> (batch, 1)
-    # frequencies[None, :] macht aus (half_dim,) -> (1, half_dim)
-    # Das Ergebnis ist (batch, half_dim)
-    args = t[:, None].float() * frequencies[None, :]
-    
-    # 3. Sinus und Cosinus berechnen und zusammenfügen
-    embedding = torch.cat([torch.sin(args), torch.cos(args)], dim=-1)
-    
-    return embedding
-    
+    return final_input
+
 
 diffmodel = Diffusor(input_dim=128, hidden_dim=64, output_size=12)
 mse_loss = nn.MSELoss()
@@ -253,7 +202,8 @@ for epoch in range(n_epochs):
             beta_t = calc_beta(t, noise_steps)
             noise = torch.randn_like(batch)*np.sqrt(beta_t)
             noised_data = batch + noise 
-            denoised_data = diffmodel(noised_data, t)
+            noised_data_with_embeddings = add_time_embeddings(noised_batch=noised_data,t=t, embedding_dim=embedding_size) # DONE es ist eleganter den Tensor (d.h. alle sinusoidal vektoren n x untereinander) durch eine fkt generieren zu lassen
+            denoised_data = diffmodel(noised_data_with_embeddings)
 
             denoised_num = denoised_data[:,8:]
             numeric_loss = mse_loss(denoised_num, batch[:,8:])

@@ -7,7 +7,7 @@
                      % die W\"orter werden anhand der neue Rechtschreibung 
 		     % automatisch getrennt.  
 \usepackage{a4wide}            
-\title{Exploration of various synthetic data generation techniques}
+\title{Synthetic Data generation techniques}
 %\author{Ihr Name  \\
 	%Ihr Unternehmen / Universit\"at  \\
 	%Teststra\ss e -99 \\
@@ -35,21 +35,49 @@ so geht \ldots
 \end{abstract}
 
 \section{Einf\"uhrung}
+% Was sind synthetische Daten ?
 Ziel der Arbeit ist es m\"oglichsten vielen oder wenn m\"oglichen es allen 
 zu erm\"oglichen, Dokumente mit \LaTeX{} zu erstellen!
 
+\subsection{Why}
+% Wozu braucht man synthetische Daten
+- Beantragungsverfahren dauer lange und Anträge können abgelehnt werden
+- Rapid Prototyping (Testen eines Dashboards oder Pipeline)
+- Regulatorische Compliance -> Teilen von Daten
+% siehe duck.ai am Laptop
 
+\subsection{Challenges}
+%Herausforderungen beim erstellen synthetischer Daten
+- Qualität vs Privacy
+- wiss. Veröffentlichung (qualität vs genug privacy)
+- Tailoring (jedes Modell trainiert genau eine Aufgabe)
+- Wie misst man die Qualität (welche Metriken)
+- Welche Methodik für welchen Art an Daten
 
-\section{Modellkonzeption}
+\section{How a CTGAN works}
 Ziel der Arbeit ist es m\"oglichsten vielen oder wenn m\"oglichen es allen 
 zu erm\"oglichen, Dokumente mit \LaTeX{} zu erstellen!
 
-\section{Ergebnisse}
+\subsection{Aufbau}
+\subsection{Schwierigkeiten}
+\subsection{Evaluierung}
+
+\section{Introduction to table diffusion}
+\subsection{Aufbau}
+\subsection{Schwierigkeiten}
+\subsection{Evaluierung}
+
+\section{Comparison}
 
 \section{Diskussion}
 
 \section{Ausblick}
+- TVAE
+- LLM
+- TAbddpm
+- SimbaML (simulation based machine learning <-- ml augemented SIR equation fit)
 
+\section{Quellen}
 
 \paragraph{Modellkonzeption}
 Zu Beginn fangen wir mit einem kleinen Beispiel f\"ur die article Klasse an,

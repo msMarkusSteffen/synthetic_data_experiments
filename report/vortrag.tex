@@ -1,0 +1,260 @@
+\documentclass[
+	11pt, % Tamanho padrão da fonte
+	% t, % Alinhar verticalmente ao topo
+	% aspectratio=169, % Definir proporção 16:9
+]{beamer}
+
+% Caminho para imagens
+\graphicspath{{img/}}
+
+% Pacotes adicionais
+\usepackage[alf]{abntex2cite} % Citações ABNT
+\usepackage{booktabs} % Linhas de tabela aprimoradas
+\usepackage{palatino} % Fonte Palatino
+\usepackage[default]{opensans} % Fonte Open Sans
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage[ngerman]{babel}
+%----------------------------------------------------------------------------------------
+%	SELEÇÃO DE LAYOUT E CORES
+%----------------------------------------------------------------------------------------
+
+\usetheme{Boadilla} % Tema de layout
+
+% Definição de cores personalizadas
+\definecolor{primaryColor}{RGB}{20,45,105} % Cor primária
+\definecolor{secondaryColor}{RGB}{0,100,160} % Cor secundária
+
+% Aplicação das cores no tema
+\setbeamercolor{structure}{fg=primaryColor}
+\setbeamercolor{palette primary}{bg=primaryColor, fg=white}
+\setbeamercolor{palette secondary}{bg=secondaryColor, fg=white}
+\setbeamercolor{title}{bg=primaryColor, fg=white} % Cor do título principal
+
+% Cores no cabeçalho
+\setbeamercolor{headline}{bg=secondaryColor, fg=white}
+\setbeamercolor{section in head/foot}{bg=primaryColor, fg=white}
+\setbeamercolor{subsection in head/foot}{bg=secondaryColor, fg=white}
+
+% Configurações de cores para o rodapé
+\setbeamercolor{author in head/foot}{bg=primaryColor, fg=white} % Nome
+\setbeamercolor{title in head/foot}{bg=secondaryColor, fg=white} % Título
+\setbeamercolor{date in head/foot}{bg=primaryColor, fg=white} % Ano
+\setbeamercolor{page number in head/foot}{bg=primaryColor, fg=white} % Página
+
+% Temas internos e externos
+\useinnertheme{circles} % Tema interno
+\useoutertheme{miniframes} % Tema externo
+\setbeamertemplate{navigation symbols}{} % Remove símbolos de navegação
+
+%----------------------------------------------------------------------------------------
+%	INFORMAÇÕES DA APRESENTAÇÃO
+%----------------------------------------------------------------------------------------
+
+\title[Synthetische Daten]{Vom Datensatz zur Simulation: Wie synthetische Daten entstehen}
+\author[Markus Steffen]{Markus Steffen} 
+%\institute[IME-USP]{Instituto de Matemática e Estatística \\ (IME-USP)} 
+\date[30.06.2026]{30.06.2026} 
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	Titelseite
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+    %\begin{figure}
+    %    \includegraphics[width=0.45\linewidth]{img/logo_IME.png}
+    %\end{figure}
+    \titlepage
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	Agenda
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+    \frametitle{Agenda}
+    \tableofcontents
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+\section{Einführung}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+    \frametitle{Was sind synthetische Daten}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Einsatzzwecke für synthetische Daten, oder : wozu braucht man das?}
+    \begin{itemize}
+        \item Einheitliche Definitionen, Formate und Schnittstellen
+        \item Beispiele:        
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Herausforderungen}
+    \begin{itemize}
+        \item Unterschiedliche Implementierungen selbst bei Standards
+        \item Rechtlich / Datenschutz (DSGVO)
+        \item Technische Herausforderungen:
+        \begin{itemize}
+            \item Machine Learning: Modelle brechen bei Formatänderungen
+            \item Anonymisierung: Uneinheitliche Datumsformate erschweren Patient Journeys
+        \end{itemize}
+        \item Ressourcen: Implementierung, Schulung, Kosten
+        \item Akzeptanz \& Change Management – Widerstand in Kliniken/Behörden, da neue Standards oft Umstellungen im Alltag bedeuten
+    \end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+\section{CTGAN}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+    \frametitle{Was meint ihr?}
+    \begin{columns}[T] % T = top aligned
+        \column{0.6\textwidth}
+           \begin{center}
+                \includegraphics[width=0.5\linewidth]{img/this_person_doesntexist.png}\\
+                {\scriptsize Abb. 2 ist diese Person real?}
+            \end{center}
+
+        \column{0.4\textwidth}
+            \begin{center}
+                \includegraphics[width=0.5\linewidth]{img/qr_personnotexist.png}\\
+                {\scriptsize Abb. 2 https://thispersondoesnotexist.com}
+            \end{center}
+    \end{columns}
+        \
+\end{frame}
+
+\begin{frame}
+    \frametitle{Mini Ausflug Perzeptron}
+        \
+\end{frame}
+
+\begin{frame}
+    \frametitle{Wie funktioniert ein CTGAN}
+        \
+\end{frame}
+
+\begin{frame}
+    \frametitle{Come with me if you want to live}
+        \
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+        \
+\end{frame}
+
+\section{Beispiel Table Diffusion}
+
+%----------------------------------------------------------------------------------------
+%\section{Probleme \& Herausforderungen}
+%----------------------------------------------------------------------------------------
+
+
+\begin{frame}
+    \frametitle{Veranschaulichung der Herausforderungen}
+
+    \begin{columns}[T, totalwidth=\textwidth]
+        %----------------------------------
+        \column{0.46\textwidth}\tiny
+        \textbf{1️⃣ Tabelle: Messwerte unterschiedlicher Quellen}
+        \vspace{0.3em}
+        \begin{tabular}{lccccc}
+            \toprule
+            Quelle & M1 & M2 & M3 & M4 & Target \\
+            \midrule
+            Krankenhaus A & 120 & 7.5 & 80 & 1.2 & 100 \\
+            Krankenhaus B & 12 & 7500 & 0.08 & 1200 & 100 \\
+            Labor C & 119 & 7.4 & 78 & 1.1 & 100 \\
+            \bottomrule
+        \end{tabular}
+        
+        \vspace{1em}
+        \textbf{2️⃣ HL7v2 vs FHIR}
+          \begin{center}
+            \includegraphics[width=0.7\linewidth]{img/fhir_network.png}\\
+            {\scriptsize Abb. 2 FHIR Network }
+        \end{center}
+        %\vspace{0.1em}
+       
+
+        %----------------------------------
+        \column{0.46\textwidth}\tiny
+        \textbf{3️⃣ FHIR als Netzwerk}
+        \vspace{0.3em}
+         \begin{center}
+            \includegraphics[width=0.75\linewidth]{img/hl7v2.png}\\[0.5em]
+            \includegraphics[width=0.75\linewidth]{img/fhir.png} \\
+            {\scriptsize Abb. 3 HL7v2 vs FHIR}
+        \end{center}
+    \end{columns}
+
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+\section{Ausblick und Diskussion}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+    \frametitle{Andere Möglichkeiten zur synth. Datenerzeugung}
+    \begin{itemize}
+        \item SimbaML - simulation based machine Learning
+        \item TVAE
+        \item LLM
+        \item "Ohne Standards bleiben Daten Inseln – mit Standards werden sie ein Netzwerk.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Fazit}
+    \begin{itemize}
+        \item Standards = Grundlage für Vergleichbarkeit, Integrierbarkeit, Qualität und schnelle Entscheidungen
+        \item Komplexität der Anonymisierung sinkt erheblich bei einheitlichen Datenstandards
+        \item Umsetzung braucht Zeit, Koordination und Ressourcen
+        \item "Ohne Standards bleiben Daten Inseln – mit Standards werden sie ein Netzwerk.
+    \end{itemize}
+\end{frame}
+
+
+%----------------------------------------------------------------------------------------
+\section{Quellen}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+    \frametitle{Quellen}
+\begin{itemize}\tiny
+    \item HL7 International (o.D.). \textit{Patient – FHIR v6.0.0-ballot3}. Verfügbar unter: \url{https://build.fhir.org/patient.html} (Zugegriffen: 8. September 2025).
+    
+    \item HL7 Deutschland (o.D.). \textit{HL7 v2.x Nachrichten}. Verfügbar unter: \url{https://hl7.de/themen/hl7-v2-x-nachrichten/} (Zugegriffen: 8. September 2025).
+    
+    \item ResearchGate (o.D.). \textit{FHIR Resources Schema: It represents the FHIR resources and corresponding properties}. Verfügbar unter: \url{https://www.researchgate.net/figure/FHIR-Resources-Schema-It-represents-the-FHIR-resources-and-corresponding-properties-to_fig2_372962413} (Zugegriffen: 9. September 2025).
+    
+    \item Hufstedler, H. u.a. (2024). „Navigating data standards in public health: A brief report from a data-standards meeting“. \textit{Journal of Global Health}, 14, S. 03024. Verfügbar unter: \url{https://doi.org/10.7189/jogh.14.03024}.
+    
+    \item Robert Koch-Institut [RKI] (2025). \textit{Public Health – mehr Gesundheit für alle}. Verfügbar unter: \nolinkurl{https://www.rki.de/DE/Themen/Gesundheit-und-Gesellschaft/Public-Health/public-health.html} (Zugegriffen: 8. September 2025).
+    
+    \item Wikipedia (2025). \textit{Public Health}. Verfügbar unter: \url{https://de.wikipedia.org/w/index.php?title=Public_Health&oldid=258201254} (Zugegriffen: 8. September 2025).
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+%	SLIDE DE ENCERRAMENTO
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+    \begin{center}
+        {\Huge Vielen Dank für Eure Aufmerksamkeit!}
+    \end{center}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

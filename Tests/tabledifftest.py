@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 
 from torch.utils.data import DataLoader
+from torch.functional import 
 from sklearn.preprocessing import OneHotEncoder, MinMaxScaler
 from sklearn.compose import ColumnTransformer
 from sklearn.model_selection import train_test_split
@@ -63,15 +64,6 @@ class DataPrep():
         X_train, X_test = train_test_split(X, test_size=test_size, random_state=random_state)
         return X_train, X_test
 
-def sinosuidal_embedding(t, dimensions):
-    # this will generate a vector for every t which is unique for every t 
-    # the vector is used to give the neural network a glimpse hint which diffusion step is it in.
-    # https://neuraloperator.github.io/dev/auto_examples/layers/plot_sinusoidal_embeddings.html
-    # https://medium.com/@giovanitavares/sinusoidal-embeddings-how-transformers-interpret-tokens-positions-bd701babb508
-    # https://runebook.dev/en/docs/pytorch/generated/torch.nn.embedding  NOTE Alternative zu mathematischem Embedding 
-    pass
-
-
 
 class Diffusor(nn.Module):
     def __init__(self, input_dim, hidden_dim, output_size):
@@ -92,7 +84,7 @@ class Diffusor(nn.Module):
         x = self.bn2(x)
         x = self.relu(x)
         x = self.l3(x)   
-        x = torch.softmax(x) 
+        #x = torch.softmax(x) # NOTE keine Aktivierungsfunktion im Output Layer ! keine Normalisierung am Ende, only plain logits
 
 
 def build_noise_layers(shape, steps=1):
@@ -148,6 +140,11 @@ def calc_beta(t, steps):
     return beta_t
 
 def add_time_embeddings(noised_batch, t, embedding_dim=64):
+        # this will generate a vector for every t which is unique for every t 
+    # the vector is used to give the neural network a glimpse hint which diffusion step is it in.
+    # https://neuraloperator.github.io/dev/auto_examples/layers/plot_sinusoidal_embeddings.html
+    # https://medium.com/@giovanitavares/sinusoidal-embeddings-how-transformers-interpret-tokens-positions-bd701babb508
+    # https://runebook.dev/en/docs/pytorch/generated/torch.nn.embedding  NOTE Alternative zu mathematischem Embedding 
     """
     Inputs:
     - noised_batch: Dein Tensor [20, 13]
@@ -182,6 +179,7 @@ def add_time_embeddings(noised_batch, t, embedding_dim=64):
 diffmodel = Diffusor(input_dim=128, hidden_dim=64, output_size=12)
 mse_loss = nn.MSELoss()
 kl_loss = nn.KLDivLoss()
+soft_max = nn.Softmax() # https://dev.to/sabha_naaz_b5fb8be540fc0f/understanding-softmax-and-cross-entropy-in-neural-networks-daa NOTE Softmax and Cross Entropy article
 
 optimizer = optim.Adam(diffmodel.parameters(), lr=learning_rate)
 
@@ -214,13 +212,13 @@ for epoch in range(n_epochs):
             pred_sex     = denoised_data[:, 6:8] # Geschlecht
 
             # Einzelne KL-Verluste
-            loss_species = F.kl_div(F.log_softmax(pred_species, dim=1), target[:, 0:3], reduction='batchmean')
-            loss_island  = F.kl_div(F.log_softmax(pred_island, dim=1),  target[:, 3:6], reduction='batchmean')
-            loss_sex     = F.kl_div(F.log_softmax(pred_sex, dim=1),     target[:, 6:8], reduction='batchmean')
+            loss_species = kl_loss(soft_max(pred_species, dim=1), batch[:, 0:3], reduction='batchmean') # TODO NOTE eventually nn.KL_Divloss uses log softmax and not regular softmax 
+            loss_island  = kl_loss(soft_max(pred_island, dim=1),  batch[:, 3:6], reduction='batchmean')
+            loss_sex     = kl_loss(soft_max(pred_sex, dim=1),     batch[:, 6:8], reduction='batchmean')
 
             # Alles zusammen
             categorical_loss = (loss_species + loss_island + loss_sex) / 3
-            total_loss = numeric_loss + categorical_loss
+            total_loss = numeric_loss + categorical_loss # TODO NOTE eventually scale categorical Loss to be competitive to numeric loss ?? 
             
 
 def sample(model, batch_size, steps, feature_dim):
@@ -232,7 +230,7 @@ def sample(model, batch_size, steps, feature_dim):
         for t in reversed(range(1, steps)):
             # Zeit-Tensor für den aktuellen Schritt (alle im Batch haben gleiches t)
             t_tensor = torch.full((batch_size,), t, dtype=torch.long)
-            t_emb = sinusoidal_embedding(t_tensor, embedding_size)
+            t_emb = add_time_embeddings(t_tensor, embedding_size)
             
             # Modell sagt saubere Daten voraus
             x_0_pred = model(torch.cat([x, t_emb], dim=1))

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.31)  15 JUN 2026 16:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.31)  19 JUN 2026 13:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -666,8 +666,7 @@ LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count348
 \l__pdf_internal_box=\box76
-)
-No file vortrag.aux.
+) (./vortrag.aux)
 \openout1 = `vortrag.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
@@ -688,6 +687,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
 LaTeX Font Info:    ... okay on input line 61.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
 LaTeX Font Info:    ... okay on input line 61.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -742,6 +742,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 61.
+ (./vortrag.out) (./vortrag.out)
 \@outlinefile=\write5
 \openout5 = `vortrag.out'.
 
@@ -815,54 +816,51 @@ LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
 (Font)              scaled to size 4.0pt on input line 72.
  [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_n3lhbv.enc}
 
-]
-No file vortrag.toc.
-[2
-
-] [3
+] (./vortrag.toc) [2
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 98.
+LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 103.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 103.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 98.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 103.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 98.
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 103.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 98.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 103.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 98.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 103.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <6> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 98.
- [4
-
-]
-LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 113.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 103.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 113.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 103.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <7> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 113.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 103.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <5> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 113.
- [5
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 103.
+ [3
+
+] [4
+
+] [5
 
 ]
-<img/this_person_doesntexist.png, id=179, 1373.13pt x 1370.11874pt>
+<img/this_person_doesntexist.png, id=238, 1373.13pt x 1370.11874pt>
 File: img/this_person_doesntexist.png Graphic file (type png)
 <use img/this_person_doesntexist.png>
-Package pdftex.def Info: img/this_person_doesntexist.png  used on input line 134.
+Package pdftex.def Info: img/this_person_doesntexist.png  used on input line 152.
 (pdftex.def)             Requested size: 102.68962pt x 102.46178pt.
-<img/qr_personnotexist.png, id=181, 297.11pt x 297.11pt>
+<img/qr_personnotexist.png, id=240, 297.11pt x 297.11pt>
 File: img/qr_personnotexist.png Graphic file (type png)
 <use img/qr_personnotexist.png>
-Package pdftex.def Info: img/qr_personnotexist.png  used on input line 134.
+Package pdftex.def Info: img/qr_personnotexist.png  used on input line 152.
 (pdftex.def)             Requested size: 68.45801pt x 68.45625pt.
  [6
 
@@ -874,163 +872,41 @@ Package pdftex.def Info: img/qr_personnotexist.png  used on input line 134.
 
 ] [10
 
-]
-LaTeX Font Info:    Font shape `OT1/opensans-TLF/b/n' will be
-(Font)              scaled to size 6.0pt on input line 201.
+] [11
 
-
-/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex:201: LaTeX Error: Unicode character ️ (U+FE0F)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.201 \end{frame}
-                 
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex:201: LaTeX Error: Unicode character ⃣ (U+20E3)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.201 \end{frame}
-                 
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-Overfull \hbox (24.40848pt too wide) in paragraph at lines 201--201
-[]  
- []
-
-
-/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex:201: LaTeX Error: Unicode character ️ (U+FE0F)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.201 \end{frame}
-                 
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex:201: LaTeX Error: Unicode character ⃣ (U+20E3)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.201 \end{frame}
-                 
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-LaTeX Warning: File `img/fhir_network.png' not found on input line 201.
-
-
-/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex:201: Package pdftex.def Error: File `img/fhir_network.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.201 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 201.
-(/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-
-/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex:201: LaTeX Error: Unicode character ️ (U+FE0F)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.201 \end{frame}
-                 
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex:201: LaTeX Error: Unicode character ⃣ (U+20E3)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.201 \end{frame}
-                 
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-LaTeX Warning: File `img/hl7v2.png' not found on input line 201.
-
-
-/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex:201: Package pdftex.def Error: File `img/hl7v2.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.201 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `img/fhir.png' not found on input line 201.
-
-
-/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex:201: Package pdftex.def Error: File `img/fhir.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.201 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \vbox (61.23767pt too high) detected at line 201
- []
-
-[11
-
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}] [12
+] [12
 
 ] [13
 
 ]
+LaTeX Font Info:    Font shape `OT1/opensans-TLF/b/n' will be
+(Font)              scaled to size 6.0pt on input line 233.
+
+Overfull \hbox (24.40848pt too wide) in paragraph at lines 233--233
+[]  
+ []
+
+[14
+
+] [15
+
+] [16
+
+] [17
+
+] [18
+
+]
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/it' will be
-(Font)              scaled to size 6.0pt on input line 247.
+(Font)              scaled to size 6.0pt on input line 289.
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 5.0pt on input line 247.
- [14
+(Font)              scaled to size 5.0pt on input line 289.
+ [19
 
 {/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_iz27ck.enc}]
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 256.
- [15
+(Font)              scaled to size 24.88pt on input line 298.
+ [20
 
 ]
 \tf@nav=\write6
@@ -1043,28 +919,22 @@ LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
 \openout8 = `vortrag.snm'.
 
  (./vortrag.aux)
-
-Package rerunfilecheck Warning: File `vortrag.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `vortrag.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  C6287D03CDE39C301008B8270FE2C407;575.
+Package rerunfilecheck Info: File `vortrag.out' has not changed.
+(rerunfilecheck)             Checksum: 5E2E11BD7CD1D2253F6D20836FAFDA53;547.
  ) 
 Here is how much of TeX's memory you used:
- 25850 strings out of 476025
- 509420 string characters out of 5790017
- 1872388 words of memory out of 5000000
- 45681 multiletter control sequences out of 15000+600000
- 533442 words of font info for 94 fonts, out of 8000000 for 9000
+ 25766 strings out of 476025
+ 507749 string characters out of 5790017
+ 1874388 words of memory out of 5000000
+ 45604 multiletter control sequences out of 15000+600000
+ 532927 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,19n,122p,436b,817s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Bold.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Italic.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Regular.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on vortrag.pdf (15 pages, 3506555 bytes).
+ 128i,19n,122p,572b,818s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Bold.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Italic.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Regular.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
+Output written on vortrag.pdf (20 pages, 3506358 bytes).
 PDF statistics:
- 471 PDF objects out of 1000 (max. 8388607)
- 402 compressed objects within 5 object streams
- 36 named destinations out of 1000 (max. 500000)
- 89 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 718 PDF objects out of 1000 (max. 8388607)
+ 639 compressed objects within 7 object streams
+ 46 named destinations out of 1000 (max. 500000)
+ 129 words of extra memory for PDF output out of 10000 (max. 10000000)
 

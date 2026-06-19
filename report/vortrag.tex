@@ -86,33 +86,51 @@
 
 \begin{frame}
     \frametitle{Was sind synthetische Daten}
+    \begin{beamercolorbox}{beamer color}
+    \small Ein synthetischer Datensatz besitzt die gleichen mathematischen Eigenschaften wie die realen Daten, die er ersetzt, enthält jedoch keine der ursprünglichen Informationen. Er wird erzeugt, indem man echte Daten nimmt, ein generatives Machine-Learning-Modell darauf trainiert und daraus einen neuen Datensatz generiert. Das Ergebnis spiegelt die allgemeinen Muster des Originals wider, liefert aber genug ‚Rauschen‘, um die echten Daten genügend zu maskieren. [MIT-Sloan23]  % Paper ?    
+    \end{beamercolorbox}
+    \medskip
+    \begin{itemize}        
+        \item 4 Grundpfeiler % Ressource 
+        \begin{itemize}
+            \item Fidelity
+            \item Utility
+            \item Privacy
+            \item Reproducebility
+        \end{itemize}
+    \end{itemize}
     
 \end{frame}
 
 \begin{frame}
     \frametitle{Einsatzzwecke für synthetische Daten, oder : wozu braucht man das?}
     \begin{itemize}
-        \item Einheitliche Definitionen, Formate und Schnittstellen
-        \item Beispiele:        
+        \item Datenschutz und Anonymsierung
+        \item Datenverfügbarkeit
+        \item Rapid Prototyping 
+        \item Kostenreduktion %Vermeidung teurer Datenerhebung (aufwändige Sensoraufnahmen, manuelle Annotation)    
+        \item Data Augementation    
     \end{itemize}
 \end{frame}
 
 \begin{frame}
     \frametitle{Herausforderungen}
     \begin{itemize}
-        \item Unterschiedliche Implementierungen selbst bei Standards
-        \item Rechtlich / Datenschutz (DSGVO)
-        \item Technische Herausforderungen:
+        \item Datenqualität
+        \item Trade-Off Qualität vs Privacy
+        \item Bewertung
         \begin{itemize}
-            \item Machine Learning: Modelle brechen bei Formatänderungen
-            \item Anonymisierung: Uneinheitliche Datumsformate erschweren Patient Journeys
+            \item Wie Ergebnisse bewerten ? - keine einheitlicher Standard für Metrik (Vergleichbarkeit)
+            \item Wie verschiedene Daten vergleichen % Modell immer zugeschnitten, Teilen von Daten schwierig
+            \item Wie verschiedene Methodiken vergleichen ? % Hyperparametertuning, computational Time
+            \item Wie Anonymität einschätzen ? %epsilon Delta 
         \end{itemize}
-        \item Ressourcen: Implementierung, Schulung, Kosten
-        \item Akzeptanz \& Change Management – Widerstand in Kliniken/Behörden, da neue Standards oft Umstellungen im Alltag bedeuten
+        \item sauberes Anforderungsmanagement % Welchen Anforderungen muss der synth Datensatz standhalten, z.B. Pipeline -> Dashboard, Fachliche Anforderungen auf Dashboard ?
+        \item Technische Umsetzung 
     \end{itemize}
 \end{frame}
 %----------------------------------------------------------------------------------------
-\section{CTGAN}
+\section{GAN/CTGAN}
 %----------------------------------------------------------------------------------------
 
 \begin{frame}
@@ -134,7 +152,22 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Mini Ausflug Perzeptron}
+    \frametitle{GAN - generative adversarial network}
+        \
+\end{frame}
+
+\begin{frame}
+    \frametitle{Wie funktioniert ein CTGAN}
+        \
+\end{frame}
+
+\begin{frame}
+    \frametitle{Wie funktioniert ein CTGAN}
+        \
+\end{frame}
+
+\begin{frame}
+    \frametitle{Wie funktioniert ein CTGAN}
         \
 \end{frame}
 
@@ -153,7 +186,7 @@
         \
 \end{frame}
 
-\section{Beispiel Table Diffusion}
+\section{Table Diffusion}
 
 %----------------------------------------------------------------------------------------
 %\section{Probleme \& Herausforderungen}
@@ -166,7 +199,7 @@
     \begin{columns}[T, totalwidth=\textwidth]
         %----------------------------------
         \column{0.46\textwidth}\tiny
-        \textbf{1️⃣ Tabelle: Messwerte unterschiedlicher Quellen}
+        \textbf{Tabelle: Messwerte unterschiedlicher Quellen}
         \vspace{0.3em}
         \begin{tabular}{lccccc}
             \toprule
@@ -179,25 +212,34 @@
         \end{tabular}
         
         \vspace{1em}
-        \textbf{2️⃣ HL7v2 vs FHIR}
+        \textbf{HL7v2 vs FHIR}
           \begin{center}
-            \includegraphics[width=0.7\linewidth]{img/fhir_network.png}\\
-            {\scriptsize Abb. 2 FHIR Network }
+           % \includegraphics[width=0.7\linewidth]{img/fhir_network.png}\\
+           % {\scriptsize Abb. 2 FHIR Network }
         \end{center}
         %\vspace{0.1em}
        
 
         %----------------------------------
         \column{0.46\textwidth}\tiny
-        \textbf{3️⃣ FHIR als Netzwerk}
+        \textbf{FHIR als Netzwerk}
         \vspace{0.3em}
-         \begin{center}
-            \includegraphics[width=0.75\linewidth]{img/hl7v2.png}\\[0.5em]
-            \includegraphics[width=0.75\linewidth]{img/fhir.png} \\
-            {\scriptsize Abb. 3 HL7v2 vs FHIR}
+        \begin{center}
+           % \includegraphics[width=0.75\linewidth]{img/hl7v2.png}\\[0.5em]
+           % \includegraphics[width=0.75\linewidth]{img/fhir.png} \\
+           % {\scriptsize Abb. 3 HL7v2 vs FHIR}
         \end{center}
     \end{columns}
+\end{frame}
 
+\begin{frame}
+    \frametitle{Wie funktioniert ein CTGAN}
+        \
+\end{frame}
+
+\begin{frame}
+    \frametitle{Wie funktioniert ein CTGAN}
+        \
 \end{frame}
 
 %----------------------------------------------------------------------------------------

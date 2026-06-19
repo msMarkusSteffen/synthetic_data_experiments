@@ -1554,6 +1554,16 @@ INPUT ./img/qr_personnotexist.png
 INPUT img/qr_personnotexist.png
 INPUT ./img/qr_personnotexist.png
 INPUT ./img/qr_personnotexist.png
+INPUT ./img/gan_architecture.png
+INPUT ./img/gan_architecture.png
+INPUT img/gan_architecture.png
+INPUT ./img/gan_architecture.png
+INPUT ./img/gan_architecture.png
+INPUT ./img/synthetic_penguins.png
+INPUT ./img/synthetic_penguins.png
+INPUT img/synthetic_penguins.png
+INPUT ./img/synthetic_penguins.png
+INPUT ./img/synthetic_penguins.png
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Bold-OT1-TLF.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/ascender/opensans/OpenSans-Bold-OT1-TLF.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Bold-OT1-TLF--base.tfm

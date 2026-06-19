@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.31)  19 JUN 2026 13:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.31)  19 JUN 2026 17:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -864,13 +864,30 @@ Package pdftex.def Info: img/qr_personnotexist.png  used on input line 152.
 (pdftex.def)             Requested size: 68.45801pt x 68.45625pt.
  [6
 
- <./img/this_person_doesntexist.png> <./img/qr_personnotexist.png>] [7
+ <./img/this_person_doesntexist.png> <./img/qr_personnotexist.png>]
+<img/gan_architecture.png, id=271, 1306.8825pt x 552.0625pt>
+File: img/gan_architecture.png Graphic file (type png)
+<use img/gan_architecture.png>
+Package pdftex.def Info: img/gan_architecture.png  used on input line 189.
+(pdftex.def)             Requested size: 239.60567pt x 101.21176pt.
 
-] [8
+Overfull \hbox (12.30365pt too wide) in paragraph at lines 189--189
+ [] 
+ []
 
-] [9
+[7
 
-] [10
+ <./img/gan_architecture.png>] [8
+
+]
+<img/synthetic_penguins.png, id=331, 1413.28pt x 770.88pt>
+File: img/synthetic_penguins.png Graphic file (type png)
+<use img/synthetic_penguins.png>
+Package pdftex.def Info: img/synthetic_penguins.png  used on input line 202.
+(pdftex.def)             Requested size: 273.83728pt x 149.36234pt.
+ [9
+
+ <./img/synthetic_penguins.png>] [10
 
 ] [11
 
@@ -880,9 +897,9 @@ Package pdftex.def Info: img/qr_personnotexist.png  used on input line 152.
 
 ]
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/b/n' will be
-(Font)              scaled to size 6.0pt on input line 233.
+(Font)              scaled to size 6.0pt on input line 270.
 
-Overfull \hbox (24.40848pt too wide) in paragraph at lines 233--233
+Overfull \hbox (24.40848pt too wide) in paragraph at lines 270--270
 []  
  []
 
@@ -898,14 +915,14 @@ Overfull \hbox (24.40848pt too wide) in paragraph at lines 233--233
 
 ]
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/it' will be
-(Font)              scaled to size 6.0pt on input line 289.
+(Font)              scaled to size 6.0pt on input line 326.
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 5.0pt on input line 289.
+(Font)              scaled to size 5.0pt on input line 326.
  [19
 
 {/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_iz27ck.enc}]
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 298.
+(Font)              scaled to size 24.88pt on input line 335.
  [20
 
 ]
@@ -923,18 +940,18 @@ Package rerunfilecheck Info: File `vortrag.out' has not changed.
 (rerunfilecheck)             Checksum: 5E2E11BD7CD1D2253F6D20836FAFDA53;547.
  ) 
 Here is how much of TeX's memory you used:
- 25766 strings out of 476025
- 507749 string characters out of 5790017
+ 25780 strings out of 476025
+ 508153 string characters out of 5790017
  1874388 words of memory out of 5000000
- 45604 multiletter control sequences out of 15000+600000
+ 45616 multiletter control sequences out of 15000+600000
  532927 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,19n,122p,572b,818s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Bold.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Italic.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Regular.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
-Output written on vortrag.pdf (20 pages, 3506358 bytes).
+Output written on vortrag.pdf (20 pages, 6502238 bytes).
 PDF statistics:
- 718 PDF objects out of 1000 (max. 8388607)
+ 721 PDF objects out of 1000 (max. 8388607)
  639 compressed objects within 7 object streams
  46 named destinations out of 1000 (max. 500000)
- 129 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 139 words of extra memory for PDF output out of 10000 (max. 10000000)
 

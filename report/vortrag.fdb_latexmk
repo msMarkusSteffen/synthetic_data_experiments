@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1781870283 "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" "vortrag.pdf" "vortrag" 1781870285 0
-  "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" 1781870283 11565 0f28c828f31a9c1fea9643521771041e ""
+["pdflatex"] 1781882979 "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" "vortrag.pdf" "vortrag" 1781882982 0
+  "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" 1781882979 13106 6aad78a52f081c6627e26a97c3a0f2d1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_iz27ck.enc" 1561498186 2880 c07f4a1ce14a88d4ebe18f1c7b4592c1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_n3lhbv.enc" 1561498186 2876 59df564f2929ccd7d2b24aa7d14cad04 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -234,13 +234,15 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1690791807 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1690791739 7883453 4e1c09470f4e6bee9ada6ce18663f760 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
+  "img/gan_architecture.png" 1781880381 675498 53dd98dc8b8aaad72cfce2455e77d1a2 ""
   "img/qr_personnotexist.png" 1781532799 7104 e34c927c7f5c41a9681e6f9bb0f7a5bf ""
+  "img/synthetic_penguins.png" 1781881133 1928441 407c6291a061d38f6dbd4dd9717ae366 ""
   "img/this_person_doesntexist.png" 1781532804 2084883 6c7520e06c202a632483c9e1c4c177fa ""
-  "vortrag.aux" 1781870285 4961 a1c500503aafc0763a3d8b9c3bfaa7b1 "pdflatex"
-  "vortrag.nav" 1781870285 2833 5bb63a5f09560038596ecc12517fbc97 "pdflatex"
-  "vortrag.out" 1781870285 547 5e2e11bd7cd1d2253f6d20836fafda53 "pdflatex"
-  "vortrag.tex" 1781870283 11565 0f28c828f31a9c1fea9643521771041e ""
-  "vortrag.toc" 1781870285 278 c581e3661f6c47c2615f20d2f16f7996 "pdflatex"
+  "vortrag.aux" 1781882982 4961 a1c500503aafc0763a3d8b9c3bfaa7b1 "pdflatex"
+  "vortrag.nav" 1781882982 2833 5bb63a5f09560038596ecc12517fbc97 "pdflatex"
+  "vortrag.out" 1781882982 547 5e2e11bd7cd1d2253f6d20836fafda53 "pdflatex"
+  "vortrag.tex" 1781882979 13106 6aad78a52f081c6627e26a97c3a0f2d1 ""
+  "vortrag.toc" 1781882982 278 c581e3661f6c47c2615f20d2f16f7996 "pdflatex"
   (generated)
   "vortrag.aux"
   "vortrag.log"

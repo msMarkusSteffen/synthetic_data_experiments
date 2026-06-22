@@ -1,20 +1,26 @@
 \documentclass[
 	11pt, % Tamanho padrão da fonte
 	% t, % Alinhar verticalmente ao topo
-	% aspectratio=169, % Definir proporção 16:9
+	% aspectratio=169, % Definir proporção 16:9    
 ]{beamer}
+
+\usepackage[style=authoryear, backend=biber]{biblatex} % URL zu lang für Präsi
+\addbibresource{SynthetischeDaten.bib}
 
 % Caminho para imagens
 \graphicspath{{img/}}
 
 % Pacotes adicionais
-\usepackage[alf]{abntex2cite} % Citações ABNT
+%\usepackage[alf]{abntex2cite} % Citações ABNT
 \usepackage{booktabs} % Linhas de tabela aprimoradas
 \usepackage{palatino} % Fonte Palatino
 \usepackage[default]{opensans} % Fonte Open Sans
 \usepackage{hyperref}
+\usepackage{xurl} % url in Quelle sonst zu groß
 \usepackage{caption}
 \usepackage[ngerman]{babel}
+
+
 %----------------------------------------------------------------------------------------
 %	SELEÇÃO DE LAYOUT E CORES
 %----------------------------------------------------------------------------------------
@@ -46,6 +52,8 @@
 \useinnertheme{circles} % Tema interno
 \useoutertheme{miniframes} % Tema externo
 \setbeamertemplate{navigation symbols}{} % Remove símbolos de navegação
+\setbeamertemplate{caption}[numbered] % Nummerierungen bei figure Abbildungen
+\setbeamerfont{caption}{size=\scriptsize}
 
 %----------------------------------------------------------------------------------------
 %	INFORMAÇÕES DA APRESENTAÇÃO
@@ -87,7 +95,7 @@
 \begin{frame}
     \frametitle{Was sind synthetische Daten}
     \begin{beamercolorbox}{beamer color}
-    \small Ein synthetischer Datensatz besitzt die gleichen mathematischen Eigenschaften wie die realen Daten, die er ersetzt, enthält jedoch keine der ursprünglichen Informationen. Er wird erzeugt, indem man echte Daten nimmt, ein generatives Machine-Learning-Modell darauf trainiert und daraus einen neuen Datensatz generiert. Das Ergebnis spiegelt die allgemeinen Muster des Originals wider, liefert aber genug ‚Rauschen‘, um die echten Daten genügend zu maskieren. [MIT-Sloan23]  % Paper ?    
+    \small \textit{Ein synthetischer Datensatz besitzt die gleichen mathematischen Eigenschaften wie die realen Daten, die er ersetzt, enthält jedoch keine der ursprünglichen Informationen. Er wird erzeugt, indem man echte Daten nimmt, ein generatives Machine-Learning-Modell darauf trainiert und daraus einen neuen Datensatz generiert. Das Ergebnis spiegelt die allgemeinen Muster des Originals wider, liefert aber genug ‚Rauschen‘, um die echten Daten genügend zu maskieren.} frei \parencite{mit_sloan_what_2023}    
     \end{beamercolorbox}
     \medskip
     \begin{itemize}        
@@ -129,34 +137,55 @@
         \item Technische Umsetzung 
     \end{itemize}
 \end{frame}
+
+\begin{frame}
+    \frametitle{Ansätze}
+    \begin{itemize}
+        \item Bewertung
+        \begin{itemize}
+            \item MAE2 (numerisch)
+            \item Wasserstein-Distanz (numerisch, earth movers distance)
+            \item Kullback Leibler Divergenz (kategorisch)
+            \item Graphisch (Korrelationen, t-SNE, ...)
+        \end{itemize}
+        \item Privacy
+        \begin{itemize}
+            \item epsilon-delta Privacy
+            \item attack szenarios
+        \end{itemize}
+    \end{itemize}
+\end{frame}
 %----------------------------------------------------------------------------------------
 \section{GAN/CTGAN}
 %----------------------------------------------------------------------------------------
 
 \begin{frame}
     \frametitle{Was meint ihr?}
-    \begin{columns}[T] % T = top aligned
+    \begin{columns}[b] % T = top aligned, b = bottom
         \column{0.6\textwidth}
-           \begin{center}
+            \begin{figure}
+                \centering           
                 \includegraphics[width=0.5\linewidth]{img/this_person_doesntexist.png}\\
-                {\scriptsize Abb. 2 ist diese Person real?}
-            \end{center}
+                \caption{ist diese Person real?}
+            \end{figure}
 
         \column{0.4\textwidth}
-            \begin{center}
+            \begin{figure}
+                \centering
                 \includegraphics[width=0.5\linewidth]{img/qr_personnotexist.png}\\
-                {\scriptsize Abb. 2 https://thispersondoesnotexist.com}
-            \end{center}
+                \caption{Gerne ausprobieren :)}
+            \end{figure}
     \end{columns}
         \
 \end{frame}
 
 \begin{frame}
     \frametitle{GAN - generative adversarial network}
-        \begin{center}
+         \begin{figure}
+                \centering
                 \includegraphics[width=0.7\linewidth]{img/gan_architecture.png}\\
-                {\scriptsize Abb. 2 Generating Synthetic Electronic Health Record Data Using Generative Adversarial Networks: Tutorial}
-            \end{center}
+                \caption{Aufbau GAN \parencite{yan_generating_2024}}
+            \end{figure}
         \begin{columns}[T] % T = top aligned
         \column{0.48\textwidth}
            \begin{center}
@@ -189,7 +218,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Wie funktioniert ein CTGAN (conditional tabular GAN)}
+    \frametitle{CTGAN - conditional tabular GAN}
         \
 \end{frame}
 
@@ -202,18 +231,79 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Ergebnisse}
-        \
+    \frametitle{Training}
+        \begin{columns}[T] % T = top aligned
+        \column{0.48\textwidth}
+           \begin{center}
+                \tiny
+                \begin{itemize}
+                    \item Preprocessng
+                    \item Training
+                \end{itemize}
+            \end{center}
+
+        \column{0.48\textwidth}
+            \begin{center}
+                 \includegraphics[width=0.7\linewidth]{img/Gen_lossvsdisc_loss.png}\\
+                {\scriptsize Abb. 2 Generator vs Discriminator Loss}
+            \end{center}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
     \frametitle{Ergebnisse}
-        \
+       \begin{columns}[b]
+        \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.5\linewidth]{img/corr_map_real.png}
+                \caption{Korrelation Real}
+            \end{figure}
+            
+        \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.5\linewidth]{img/corr_map_fake.png}
+                \caption{Korrelation Fake}
+            \end{figure}
+    \end{columns}
+
+    \vspace{0.2cm}
+
+    \begin{columns}[b]
+        \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.5\linewidth]{img/screeplot.png}
+                \caption{Screeplot}
+            \end{figure}
+            
+        \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.65\linewidth]{img/loadings.png}
+                \caption{Loadings}
+            \end{figure}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Wie funktioniert ein CTGAN}
-        \
+    \frametitle{Ergebnisse}
+    \begin{columns}[b] % T = top aligned
+        \column{0.49\textwidth}
+           \begin{figure}
+            \centering
+            \includegraphics[width=0.7\linewidth]{img/fake_penguin_data.png}
+            \caption{Generator vs Discriminator Loss}
+        \end{figure}
+
+        \column{0.48\textwidth}
+            \begin{figure}
+            \centering
+            \includegraphics[width=0.9\linewidth]{img/tSNE.png}
+            \caption{t-SNE Visualisierung}
+        \end{figure}
+    \end{columns}
 \end{frame}
 
 
@@ -231,7 +321,7 @@
 
 
 \begin{frame}
-    \frametitle{Veranschaulichung der Herausforderungen}
+    \frametitle{Funktionsprinzip Table Diffusion}
 
     \begin{columns}[T, totalwidth=\textwidth]
         %----------------------------------
@@ -309,21 +399,11 @@
 %----------------------------------------------------------------------------------------
 
 \begin{frame}
-    \frametitle{Quellen}
-\begin{itemize}\tiny
-    \item HL7 International (o.D.). \textit{Patient – FHIR v6.0.0-ballot3}. Verfügbar unter: \url{https://build.fhir.org/patient.html} (Zugegriffen: 8. September 2025).
-    
-    \item HL7 Deutschland (o.D.). \textit{HL7 v2.x Nachrichten}. Verfügbar unter: \url{https://hl7.de/themen/hl7-v2-x-nachrichten/} (Zugegriffen: 8. September 2025).
-    
-    \item ResearchGate (o.D.). \textit{FHIR Resources Schema: It represents the FHIR resources and corresponding properties}. Verfügbar unter: \url{https://www.researchgate.net/figure/FHIR-Resources-Schema-It-represents-the-FHIR-resources-and-corresponding-properties-to_fig2_372962413} (Zugegriffen: 9. September 2025).
-    
-    \item Hufstedler, H. u.a. (2024). „Navigating data standards in public health: A brief report from a data-standards meeting“. \textit{Journal of Global Health}, 14, S. 03024. Verfügbar unter: \url{https://doi.org/10.7189/jogh.14.03024}.
-    
-    \item Robert Koch-Institut [RKI] (2025). \textit{Public Health – mehr Gesundheit für alle}. Verfügbar unter: \nolinkurl{https://www.rki.de/DE/Themen/Gesundheit-und-Gesellschaft/Public-Health/public-health.html} (Zugegriffen: 8. September 2025).
-    
-    \item Wikipedia (2025). \textit{Public Health}. Verfügbar unter: \url{https://de.wikipedia.org/w/index.php?title=Public_Health&oldid=258201254} (Zugegriffen: 8. September 2025).
-\end{itemize}
+    \frametitle{Quellen}   
+    \renewcommand{\bibfont}{\footnotesize} % Literaturverzeichnis etwas kleiner machen
+    \printbibliography
 \end{frame}
+
 %----------------------------------------------------------------------------------------
 %	SLIDE DE ENCERRAMENTO
 %----------------------------------------------------------------------------------------

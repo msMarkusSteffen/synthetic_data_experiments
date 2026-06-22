@@ -1,0 +1,134 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{mit_sloan_what_2023}{online}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=64c6ea413351fff01e2b1e0fc4f348c1}{%
+           family={{MIT Sloan}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{64c6ea413351fff01e2b1e0fc4f348c1}
+      \strng{fullhash}{64c6ea413351fff01e2b1e0fc4f348c1}
+      \strng{bibnamehash}{64c6ea413351fff01e2b1e0fc4f348c1}
+      \strng{authorbibnamehash}{64c6ea413351fff01e2b1e0fc4f348c1}
+      \strng{authornamehash}{64c6ea413351fff01e2b1e0fc4f348c1}
+      \strng{authorfullhash}{64c6ea413351fff01e2b1e0fc4f348c1}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Synthetic data offers the opportunity to test new ideas and develop new products without putting personal or health data at risk.}
+      \field{day}{23}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{shorttitle}{What is synthetic data — and how can it help you competitively?}
+      \field{title}{What is synthetic data — and how can it help you competitively?}
+      \field{urlday}{19}
+      \field{urlmonth}{6}
+      \field{urlyear}{2026}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:/Users/msteffen/Zotero/storage/44WECW4P/what-synthetic-data-and-how-can-it-help-you-competitively.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://mitsloan.mit.edu/ideas-made-to-matter/what-synthetic-data-and-how-can-it-help-you-competitively
+      \endverb
+      \verb{url}
+      \verb https://mitsloan.mit.edu/ideas-made-to-matter/what-synthetic-data-and-how-can-it-help-you-competitively
+      \endverb
+    \endentry
+    \entry{yan_generating_2024}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=dd86d7f81d56d20f3d9dede8b9e8b586}{%
+           family={Yan},
+           familyi={Y\bibinitperiod},
+           given={Chao},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bda4ad6c93e081a2054ec6ade7229a19}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Ziqi},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8c99098c7c31b385bac052e91fad815b}{%
+           family={Nyemba},
+           familyi={N\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e320d7f164b1f4225e1cdf3ff02cf4b4}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Zhuohang},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{592634ad4677ed3ba249dedfc1f168ab}
+      \strng{fullhash}{fccc8a598e632de6fe9f944ec91efd85}
+      \strng{bibnamehash}{592634ad4677ed3ba249dedfc1f168ab}
+      \strng{authorbibnamehash}{592634ad4677ed3ba249dedfc1f168ab}
+      \strng{authornamehash}{592634ad4677ed3ba249dedfc1f168ab}
+      \strng{authorfullhash}{fccc8a598e632de6fe9f944ec91efd85}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Synthetic electronic health record ({EHR}) data generation has been increasingly recognized as an important solution to expand the accessibility and maximize the value of private health data on a large scale. Recent advances in machine learning have facilitated more accurate modeling for complex and high-dimensional data, thereby greatly enhancing the data quality of synthetic {EHR} data. Among various approaches, generative adversarial networks ({GANs}) have become the main technical path in the literature due to their ability to capture the statistical characteristics of real data. However, there is a scarcity of detailed guidance within the domain regarding the development procedures of synthetic {EHR} data. The objective of this tutorial is to present a transparent and reproducible process for generating structured synthetic {EHR} data using a publicly accessible {EHR} data set as an example. We cover the topics of {GAN} architecture, {EHR} data types and representation, data preprocessing, {GAN} training, synthetic data generation and postprocessing, and data quality evaluation. We conclude this tutorial by discussing multiple important issues and future opportunities in this domain. The source code of the entire process has been made publicly available.}
+      \field{day}{22}
+      \field{issn}{2817-1705}
+      \field{journaltitle}{{JMIR} {AI}}
+      \field{month}{4}
+      \field{shortjournal}{{JMIR} {AI}}
+      \field{shorttitle}{Generating Synthetic Electronic Health Record Data Using Generative Adversarial Networks}
+      \field{title}{Generating Synthetic Electronic Health Record Data Using Generative Adversarial Networks: Tutorial}
+      \field{urlday}{4}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{volume}{3}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{e52615}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.2196/52615
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/Users/msteffen/Zotero/storage/PR55Z5WD/Yan et al. - 2024 - Generating Synthetic Electronic Health Record Data Using Generative Adversarial Networks Tutorial.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://pmc.ncbi.nlm.nih.gov/articles/PMC11074891/
+      \endverb
+      \verb{url}
+      \verb https://pmc.ncbi.nlm.nih.gov/articles/PMC11074891/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

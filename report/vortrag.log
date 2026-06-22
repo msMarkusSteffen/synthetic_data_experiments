@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.31)  19 JUN 2026 17:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.31)  22 JUN 2026 16:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -537,60 +537,251 @@ Package: amsthm 2020/05/29 v2.20.6
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerbasethemes.sty)) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerthemedefault.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamercolorthemedefault.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty
 \beamer@dima=\dimen292
 \beamer@dimb=\dimen293
-) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty))) (/usr/local/texlive/2023/texmf-dist/tex/latex/abntex2/abntex2cite.sty
-Package: abntex2cite 2018/11/24 v-1.9.7 abnTeX2
- (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty))) (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2023/03/05 v3.19 programmable bibliographies (PK/MW)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count334
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
-) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count334
-\calc@Bcount=\count335
-\calc@Adimen=\dimen294
-\calc@Bdimen=\dimen295
-\calc@Askip=\skip65
-\calc@Bskip=\skip66
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count336
-\calc@Cskip=\skip67
-) (/usr/local/texlive/2023/texmf-dist/tex/latex/abntex2/abntex2abrev.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/setspace/setspace.sty
-Package: setspace 2022/12/04 v6.7b set line spacing
 )
-\bibindent=\skip68
-\minimumbiblabelwidth=\skip69
-\ABCIauxlen=\skip70
-\c@ABCIaux=\count337
-\c@ABCImax=\count338
- (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifpdf.sty
-Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
-) (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifxetex.sty
-Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-) (/usr/local/texlive/2023/texmf-dist/tex/latex/relsize/relsize.sty
-Package: relsize 2013/03/29 ver 4.1
+\c@tabx@nest=\count335
+\c@listtotal=\count336
+\c@listcount=\count337
+\c@liststart=\count338
+\c@liststop=\count339
+\c@citecount=\count340
+\c@citetotal=\count341
+\c@multicitecount=\count342
+\c@multicitetotal=\count343
+\c@instcount=\count344
+\c@maxnames=\count345
+\c@minnames=\count346
+\c@maxitems=\count347
+\c@minitems=\count348
+\c@citecounter=\count349
+\c@maxcitecounter=\count350
+\c@savedcitecounter=\count351
+\c@uniquelist=\count352
+\c@uniquename=\count353
+\c@refsection=\count354
+\c@refsegment=\count355
+\c@maxextratitle=\count356
+\c@maxextratitleyear=\count357
+\c@maxextraname=\count358
+\c@maxextradate=\count359
+\c@maxextraalpha=\count360
+\c@abbrvpenalty=\count361
+\c@highnamepenalty=\count362
+\c@lownamepenalty=\count363
+\c@maxparens=\count364
+\c@parenlevel=\count365
+\blx@tempcnta=\count366
+\blx@tempcntb=\count367
+\blx@tempcntc=\count368
+\c@blx@maxsection=\count369
+\blx@maxsegment@0=\count370
+\blx@notetype=\count371
+\blx@parenlevel@text=\count372
+\blx@parenlevel@foot=\count373
+\blx@sectionciteorder@0=\count374
+\blx@sectionciteorderinternal@0=\count375
+\blx@entrysetcounter=\count376
+\blx@biblioinstance=\count377
+\labelnumberwidth=\skip65
+\labelalphawidth=\skip66
+\biblabelsep=\skip67
+\bibitemsep=\skip68
+\bibnamesep=\skip69
+\bibinitsep=\skip70
+\bibparsep=\skip71
+\bibhang=\skip72
+\blx@bcfin=\read3
+\blx@bcfout=\write5
+\blx@langwohyphens=\language87
+\c@mincomprange=\count378
+\c@maxcomprange=\count379
+\c@mincompwidth=\count380
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2023/03/05 v3.19 biblatex localization (PK/MW)
 )
-\biblabelsep=\skip71
-LaTeX Info: Redefining \newblock on input line 591.
-LaTeX Info: Redefining \cite on input line 618.
-\ABCItoken=\toks45
-) (/usr/local/texlive/2023/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'authoryear.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count381
+\c@savedafterword=\count382
+\c@annotator=\count383
+\c@savedannotator=\count384
+\c@author=\count385
+\c@savedauthor=\count386
+\c@bookauthor=\count387
+\c@savedbookauthor=\count388
+\c@commentator=\count389
+\c@savedcommentator=\count390
+\c@editor=\count391
+\c@savededitor=\count392
+\c@editora=\count393
+\c@savededitora=\count394
+\c@editorb=\count395
+\c@savededitorb=\count396
+\c@editorc=\count397
+\c@savededitorc=\count398
+\c@foreword=\count399
+\c@savedforeword=\count400
+\c@holder=\count401
+\c@savedholder=\count402
+\c@introduction=\count403
+\c@savedintroduction=\count404
+\c@namea=\count405
+\c@savednamea=\count406
+\c@nameb=\count407
+\c@savednameb=\count408
+\c@namec=\count409
+\c@savednamec=\count410
+\c@translator=\count411
+\c@savedtranslator=\count412
+\c@shortauthor=\count413
+\c@savedshortauthor=\count414
+\c@shorteditor=\count415
+\c@savedshorteditor=\count416
+\c@labelname=\count417
+\c@savedlabelname=\count418
+\c@institution=\count419
+\c@savedinstitution=\count420
+\c@lista=\count421
+\c@savedlista=\count422
+\c@listb=\count423
+\c@savedlistb=\count424
+\c@listc=\count425
+\c@savedlistc=\count426
+\c@listd=\count427
+\c@savedlistd=\count428
+\c@liste=\count429
+\c@savedliste=\count430
+\c@listf=\count431
+\c@savedlistf=\count432
+\c@location=\count433
+\c@savedlocation=\count434
+\c@organization=\count435
+\c@savedorganization=\count436
+\c@origlocation=\count437
+\c@savedoriglocation=\count438
+\c@origpublisher=\count439
+\c@savedorigpublisher=\count440
+\c@publisher=\count441
+\c@savedpublisher=\count442
+\c@language=\count443
+\c@savedlanguage=\count444
+\c@origlanguage=\count445
+\c@savedoriglanguage=\count446
+\c@pageref=\count447
+\c@savedpageref=\count448
+\shorthandwidth=\skip73
+\shortjournalwidth=\skip74
+\shortserieswidth=\skip75
+\shorttitlewidth=\skip76
+\shortauthorwidth=\skip77
+\shorteditorwidth=\skip78
+\locallabelnumberwidth=\skip79
+\locallabelalphawidth=\skip80
+\localshorthandwidth=\skip81
+\localshortjournalwidth=\skip82
+\localshortserieswidth=\skip83
+\localshorttitlewidth=\skip84
+\localshortauthorwidth=\skip85
+\localshorteditorwidth=\skip86
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2023/03/05 v3.19 biblatex compatibility (PK/MW)
+\c@textcitecount=\count449
+\c@textcitetotal=\count450
+\c@textcitemaxnames=\count451
+\c@biburlbigbreakpenalty=\count452
+\c@biburlbreakpenalty=\count453
+\c@biburlnumpenalty=\count454
+\c@biburlucpenalty=\count455
+\c@biburllcpenalty=\count456
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count457
+)
+Package biblatex Info: Trying to load bibliography style 'authoryear'...
+Package biblatex Info: ... file 'authoryear.bbx' found.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/bbx/authoryear.bbx
+File: authoryear.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2023/03/05 v3.19 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count458
+\c@bbx:relatedtotal=\count459
+))
+Package biblatex Info: Trying to load citation style 'authoryear'...
+Package biblatex Info: ... file 'authoryear.cbx' found.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/cbx/authoryear.cbx
+File: authoryear.cbx 2023/03/05 v3.19 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2023-02-22 L3 programming layer (loader) 
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count460
+\l__pdf_internal_box=\box76
+))
+Package biblatex Info: ... and expl3
+(biblatex)             2023-02-22 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2023-02-02 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen296
-\lightrulewidth=\dimen297
-\cmidrulewidth=\dimen298
-\belowrulesep=\dimen299
-\belowbottomsep=\dimen300
-\aboverulesep=\dimen301
-\abovetopsep=\dimen302
-\cmidrulesep=\dimen303
-\cmidrulekern=\dimen304
-\defaultaddspace=\dimen305
-\@cmidla=\count339
-\@cmidlb=\count340
-\@aboverulesep=\dimen306
-\@belowrulesep=\dimen307
-\@thisruleclass=\count341
-\@lastruleclass=\count342
-\@thisrulewidth=\dimen308
+\heavyrulewidth=\dimen294
+\lightrulewidth=\dimen295
+\cmidrulewidth=\dimen296
+\belowrulesep=\dimen297
+\belowbottomsep=\dimen298
+\aboverulesep=\dimen299
+\abovetopsep=\dimen300
+\cmidrulesep=\dimen301
+\cmidrulekern=\dimen302
+\defaultaddspace=\dimen303
+\@cmidla=\count461
+\@cmidlb=\count462
+\@aboverulesep=\dimen304
+\@belowrulesep=\dimen305
+\@thisruleclass=\count463
+\@lastruleclass=\count464
+\@thisrulewidth=\dimen306
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/palatino.sty
 Package: palatino 2020/03/25 PSNFSS-v9.3 (SPQR) 
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/opensans/opensans.sty
@@ -609,44 +800,50 @@ LaTeX Info: Redefining \textssc on input line 48.
 LaTeX Info: Redefining \textulc on input line 49.
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+) (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
  (/usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks46
-\XKV@tempa@toks=\toks47
+\XKV@toks=\toks45
+\XKV@tempa@toks=\toks46
 )
-\XKV@depth=\count343
+\XKV@depth=\count465
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))) (/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption.sty
+))) (/usr/local/texlive/2023/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2022/01/09 v 0.10 modify URL breaks
+
+xurl: Set penalties for biblatex
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/03/12 v3.6j Customizing captions (AR)
  (/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
-\caption@tempdima=\dimen309
-\captionmargin=\dimen310
-\caption@leftmargin=\dimen311
-\caption@rightmargin=\dimen312
-\caption@width=\dimen313
-\caption@indent=\dimen314
-\caption@parindent=\dimen315
-\caption@hangindent=\dimen316
+\caption@tempdima=\dimen307
+\captionmargin=\dimen308
+\caption@leftmargin=\dimen309
+\caption@rightmargin=\dimen310
+\caption@width=\dimen311
+\caption@indent=\dimen312
+\caption@parindent=\dimen313
+\caption@hangindent=\dimen314
 Package caption Info: beamer document class detected.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption-beamer.sto
 File: caption-beamer.sto 2022/01/06 v2.0c Adaption of the caption package to the beamer document classes (AR)
 ))
-\c@caption@flags=\count344
-\c@continuedfloat=\count345
+\c@caption@flags=\count466
+\c@continuedfloat=\count467
 Package caption Info: hyperref package is loaded.
 Package caption Info: Hyperref support is turned off
 (caption)             because hyperref has stopped early.
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2023/02/13 3.86 The Babel package
-\babel@savecnt=\count346
-\U@D=\dimen317
-\l@unhyphenated=\language87
+\babel@savecnt=\count468
+\U@D=\dimen315
+\l@unhyphenated=\language88
  (/usr/local/texlive/2023/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@readstream=\read3
+\bbl@readstream=\read4
 LaTeX Info: Redefining \textlatin on input line 4088.
-\bbl@dirlevel=\count347
+\bbl@dirlevel=\count469
  (/usr/local/texlive/2023/texmf-dist/tex/generic/babel-german/ngerman.ldf
 Language: ngerman 2021/02/27 v2.13 German support for babel (post-1996 orthography)
  (/usr/local/texlive/2023/texmf-dist/tex/generic/babel-german/ngermanb.ldf
@@ -656,37 +853,39 @@ Package babel Info: Making " an active character on input line 122.
 Package babel Info: Importing font and identification data for ngerman
 (babel)             from babel-de.ini. Reported on input line 11.
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerthemeBoadilla.sty (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamercolorthemerose.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamercolorthemedolphin.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty)) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerinnerthemecircles.sty) (/usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerouterthememiniframes.sty)
-LaTeX Font Info:    Trying to load font information for OT1+opensans-TLF on input line 61.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/opensans/OT1opensans-TLF.fd
+
+Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
+(biblatex)                Loading 'csquotes' recommended.
+
+\@quotelevel=\count470
+\@quotereset=\count471
+LaTeX Font Info:    Trying to load font information for OT1+opensans-TLF on input line 69.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/opensans/OT1opensans-TLF.fd
 File: OT1opensans-TLF.fd 2019/06/24 Font definitions for OT1/opensans-TLF.
 )
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 61.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count348
-\l__pdf_internal_box=\box76
-) (./vortrag.aux)
+(Font)              scaled to size 10.95pt on input line 69.
+ (./vortrag.aux)
 \openout1 = `vortrag.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -724,70 +923,70 @@ LaTeX Font Info:    ... okay on input line 61.
 
 (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count349
-\scratchdimen=\dimen318
+\scratchcounter=\count472
+\scratchdimen=\dimen316
 \scratchbox=\box77
-\nofMPsegments=\count350
-\nofMParguments=\count351
-\everyMPshowfont=\toks48
-\MPscratchCnt=\count352
-\MPscratchDim=\dimen319
-\MPnumerator=\count353
-\makeMPintoPDFobject=\count354
-\everyMPtoPDFconversion=\toks49
+\nofMPsegments=\count473
+\nofMParguments=\count474
+\everyMPshowfont=\toks47
+\MPscratchCnt=\count475
+\MPscratchDim=\dimen317
+\MPnumerator=\count476
+\makeMPintoPDFobject=\count477
+\everyMPtoPDFconversion=\toks48
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 61.
+Package hyperref Info: Link coloring OFF on input line 69.
  (./vortrag.out) (./vortrag.out)
-\@outlinefile=\write5
-\openout5 = `vortrag.out'.
+\@outlinefile=\write6
+\openout6 = `vortrag.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 61.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 69.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 61.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 69.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/ppl/m/n on input line 61.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 61.
+(Font)                  OT1/cmss/m/n --> OT1/ppl/m/n on input line 69.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 69.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/phv/b/n on input line 61.
+(Font)                  OT1/cmr/bx/n --> OT1/phv/b/n on input line 69.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/phv/b/n on input line 61.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 61.
+(Font)                  OT1/cmr/bx/n --> OT1/phv/b/n on input line 69.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 69.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/phv/m/n on input line 61.
+(Font)                  OT1/cmss/m/n --> OT1/phv/m/n on input line 69.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/phv/m/n on input line 61.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 61.
+(Font)                  OT1/cmss/bx/n --> OT1/phv/m/n on input line 69.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 69.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/phv/m/it on input line 61.
+(Font)                  OT1/cmr/m/it --> OT1/phv/m/it on input line 69.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/phv/m/it on input line 61.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 61.
+(Font)                  OT1/cmr/bx/it --> OT1/phv/m/it on input line 69.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 69.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/pcr/m/n on input line 61.
+(Font)                  OT1/cmtt/m/n --> OT1/pcr/m/n on input line 69.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/pcr/m/n on input line 61.
+(Font)                  OT1/cmtt/m/n --> OT1/pcr/m/n on input line 69.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/phv/m/n --> OT1/phv/b/n on input line 61.
+(Font)                  OT1/phv/m/n --> OT1/phv/b/n on input line 69.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/phv/m/it --> OT1/phv/b/it on input line 61.
+(Font)                  OT1/phv/m/it --> OT1/phv/b/it on input line 69.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/ppl/b/n on input line 61.
+(Font)                  OT1/cmss/b/n --> OT1/ppl/b/n on input line 69.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/phv/b/n --> OT1/phv/b/n on input line 61.
+(Font)                  OT1/phv/b/n --> OT1/phv/b/n on input line 69.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/phv/m/n --> OT1/phv/b/n on input line 61.
+(Font)                  OT1/phv/m/n --> OT1/phv/b/n on input line 69.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/phv/m/it --> OT1/phv/b/it on input line 61.
+(Font)                  OT1/phv/m/it --> OT1/phv/b/it on input line 69.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/pcr/m/n --> OT1/pcr/b/n on input line 61.
+(Font)                  OT1/pcr/m/n --> OT1/pcr/b/n on input line 69.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
@@ -801,111 +1000,179 @@ Dictionary: translator-numbers-dictionary, Language: English
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-\c@mv@tabular=\count355
-\c@mv@boldtabular=\count356
+Package biblatex Info: Trying to load language 'ngerman'...
+Package biblatex Info: ... file 'ngerman.lbx' found.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/ngerman.lbx
+File: ngerman.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/german.lbx
+File: german.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'german'...
+Package biblatex Info: ... file 'german.lbx' found.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/german.lbx
+File: german.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
+))
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout5 = `vortrag.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'vortrag.bbl' found.
+ (./vortrag.bbl)
+Package biblatex Info: Reference section=0 on input line 69.
+Package biblatex Info: Reference segment=0 on input line 69.
+\c@mv@tabular=\count478
+\c@mv@boldtabular=\count479
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  (./vortrag.nav)
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 61.
+(Font)              scaled to size 6.0pt on input line 69.
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 72.
+(Font)              scaled to size 14.4pt on input line 80.
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 72.
+(Font)              scaled to size 8.0pt on input line 80.
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 4.0pt on input line 72.
+(Font)              scaled to size 4.0pt on input line 80.
  [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_n3lhbv.enc}
 
 ] (./vortrag.toc) [2
 
 ]
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 103.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 103.
+(Font)              scaled to size 10.0pt on input line 111.
+LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/it' will be
+(Font)              scaled to size 10.0pt on input line 111.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 111.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 103.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 111.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 103.
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 111.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 103.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 111.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 103.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 111.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <6> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 103.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 111.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 103.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 111.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <7> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 103.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 111.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <5> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 103.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 111.
  [3
 
-] [4
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_iz27ck.enc}] [4
 
 ] [5
 
+] [6
+
 ]
-<img/this_person_doesntexist.png, id=238, 1373.13pt x 1370.11874pt>
+<img/this_person_doesntexist.png, id=282, 1373.13pt x 1370.11874pt>
 File: img/this_person_doesntexist.png Graphic file (type png)
 <use img/this_person_doesntexist.png>
-Package pdftex.def Info: img/this_person_doesntexist.png  used on input line 152.
+Package pdftex.def Info: img/this_person_doesntexist.png  used on input line 180.
 (pdftex.def)             Requested size: 102.68962pt x 102.46178pt.
-<img/qr_personnotexist.png, id=240, 297.11pt x 297.11pt>
+<img/qr_personnotexist.png, id=284, 297.11pt x 297.11pt>
 File: img/qr_personnotexist.png Graphic file (type png)
 <use img/qr_personnotexist.png>
-Package pdftex.def Info: img/qr_personnotexist.png  used on input line 152.
+Package pdftex.def Info: img/qr_personnotexist.png  used on input line 180.
 (pdftex.def)             Requested size: 68.45801pt x 68.45625pt.
- [6
+ [7
 
  <./img/this_person_doesntexist.png> <./img/qr_personnotexist.png>]
-<img/gan_architecture.png, id=271, 1306.8825pt x 552.0625pt>
+<img/gan_architecture.png, id=317, 1306.8825pt x 552.0625pt>
 File: img/gan_architecture.png Graphic file (type png)
 <use img/gan_architecture.png>
-Package pdftex.def Info: img/gan_architecture.png  used on input line 189.
+Package pdftex.def Info: img/gan_architecture.png  used on input line 218.
 (pdftex.def)             Requested size: 239.60567pt x 101.21176pt.
 
-Overfull \hbox (12.30365pt too wide) in paragraph at lines 189--189
+Overfull \hbox (12.30365pt too wide) in paragraph at lines 218--218
  [] 
  []
 
-[7
+[8
 
- <./img/gan_architecture.png>] [8
+ <./img/gan_architecture.png>] [9
 
 ]
-<img/synthetic_penguins.png, id=331, 1413.28pt x 770.88pt>
+<img/synthetic_penguins.png, id=380, 1413.28pt x 770.88pt>
 File: img/synthetic_penguins.png Graphic file (type png)
 <use img/synthetic_penguins.png>
-Package pdftex.def Info: img/synthetic_penguins.png  used on input line 202.
+Package pdftex.def Info: img/synthetic_penguins.png  used on input line 231.
 (pdftex.def)             Requested size: 273.83728pt x 149.36234pt.
- [9
+ [10
 
- <./img/synthetic_penguins.png>] [10
+ <./img/synthetic_penguins.png>]
+<img/Gen_lossvsdisc_loss.png, id=411, 462.528pt x 346.896pt>
+File: img/Gen_lossvsdisc_loss.png Graphic file (type png)
+<use img/Gen_lossvsdisc_loss.png>
+Package pdftex.def Info: img/Gen_lossvsdisc_loss.png  used on input line 251.
+(pdftex.def)             Requested size: 115.00969pt x 86.25269pt.
+ [11
 
-] [11
+ <./img/Gen_lossvsdisc_loss.png>]
+<img/corr_map_real.png, id=443, 794.97pt x 650.43pt>
+File: img/corr_map_real.png Graphic file (type png)
+<use img/corr_map_real.png>
+Package pdftex.def Info: img/corr_map_real.png  used on input line 288.
+(pdftex.def)             Requested size: 82.15013pt x 67.2104pt.
+<img/corr_map_fake.png, id=444, 794.97pt x 650.43pt>
+File: img/corr_map_fake.png Graphic file (type png)
+<use img/corr_map_fake.png>
+Package pdftex.def Info: img/corr_map_fake.png  used on input line 288.
+(pdftex.def)             Requested size: 82.15013pt x 67.2104pt.
+<img/screeplot.png, id=445, 462.528pt x 346.896pt>
+File: img/screeplot.png Graphic file (type png)
+<use img/screeplot.png>
+Package pdftex.def Info: img/screeplot.png  used on input line 288.
+(pdftex.def)             Requested size: 82.15013pt x 61.61284pt.
+<img/loadings.png, id=446, 867.24pt x 578.16pt>
+File: img/loadings.png Graphic file (type png)
+<use img/loadings.png>
+Package pdftex.def Info: img/loadings.png  used on input line 288.
+(pdftex.def)             Requested size: 106.79417pt x 71.19353pt.
 
-] [12
+Overfull \vbox (2.88391pt too high) detected at line 288
+ []
 
-] [13
+[12
+
+ <./img/corr_map_real.png> <./img/corr_map_fake.png> <./img/screeplot.png> <./img/loadings.png>]
+<img/fake_penguin_data.png, id=480, 413.3844pt x 312.9291pt>
+File: img/fake_penguin_data.png Graphic file (type png)
+<use img/fake_penguin_data.png>
+Package pdftex.def Info: img/fake_penguin_data.png  used on input line 307.
+(pdftex.def)             Requested size: 117.40808pt x 88.87534pt.
+<img/tSNE.png, id=481, 867.24pt x 578.16pt>
+File: img/tSNE.png Graphic file (type png)
+<use img/tSNE.png>
+Package pdftex.def Info: img/tSNE.png  used on input line 307.
+(pdftex.def)             Requested size: 147.86923pt x 98.57703pt.
+ [13
+
+ <./img/fake_penguin_data.png> <./img/tSNE.png>] [14
 
 ]
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/b/n' will be
-(Font)              scaled to size 6.0pt on input line 270.
+(Font)              scaled to size 6.0pt on input line 360.
 
-Overfull \hbox (24.40848pt too wide) in paragraph at lines 270--270
+Overfull \hbox (24.40848pt too wide) in paragraph at lines 360--360
 []  
  []
 
-[14
-
-] [15
+[15
 
 ] [16
 
@@ -913,45 +1180,56 @@ Overfull \hbox (24.40848pt too wide) in paragraph at lines 270--270
 
 ] [18
 
-]
-LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/it' will be
-(Font)              scaled to size 6.0pt on input line 326.
-LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 5.0pt on input line 326.
- [19
+] [19
 
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_iz27ck.enc}]
+]
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 335.
+(Font)              scaled to size 9.0pt on input line 405.
+LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/it' will be
+(Font)              scaled to size 9.0pt on input line 405.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 405.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 405.
  [20
 
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc} </usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
+LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
+(Font)              scaled to size 24.88pt on input line 415.
+ [21
+
 ]
-\tf@nav=\write6
-\openout6 = `vortrag.nav'.
+\tf@nav=\write7
+\openout7 = `vortrag.nav'.
 
-\tf@toc=\write7
-\openout7 = `vortrag.toc'.
+\tf@toc=\write8
+\openout8 = `vortrag.toc'.
 
-\tf@snm=\write8
-\openout8 = `vortrag.snm'.
+\tf@snm=\write9
+\openout9 = `vortrag.snm'.
 
  (./vortrag.aux)
 Package rerunfilecheck Info: File `vortrag.out' has not changed.
-(rerunfilecheck)             Checksum: 5E2E11BD7CD1D2253F6D20836FAFDA53;547.
+(rerunfilecheck)             Checksum: 7D702D84FEB3DC3BBD5833C889671A54;635.
+Package logreq Info: Writing requests to 'vortrag.run.xml'.
+\openout1 = `vortrag.run.xml'.
+
  ) 
 Here is how much of TeX's memory you used:
- 25780 strings out of 476025
- 508153 string characters out of 5790017
- 1874388 words of memory out of 5000000
- 45616 multiletter control sequences out of 15000+600000
- 532927 words of font info for 92 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 128i,19n,122p,572b,818s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Bold.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Italic.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Regular.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
-Output written on vortrag.pdf (20 pages, 6502238 bytes).
+ 32538 strings out of 476025
+ 647735 string characters out of 5790017
+ 1875388 words of memory out of 5000000
+ 52306 multiletter control sequences out of 15000+600000
+ 537232 words of font info for 105 fonts, out of 8000000 for 9000
+ 1143 hyphenation exceptions out of 8191
+ 128i,19n,122p,1445b,2457s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Bold.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Italic.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Regular.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on vortrag.pdf (21 pages, 6782540 bytes).
 PDF statistics:
- 721 PDF objects out of 1000 (max. 8388607)
- 639 compressed objects within 7 object streams
- 46 named destinations out of 1000 (max. 500000)
- 139 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 808 PDF objects out of 1000 (max. 8388607)
+ 703 compressed objects within 8 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 182 words of extra memory for PDF output out of 10000 (max. 10000000)
 

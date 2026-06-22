@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber vortrag"] 1782148965 "vortrag.bcf" "vortrag.bbl" "vortrag" 1782149427 0
+["biber vortrag"] 1782150859 "vortrag.bcf" "vortrag.bbl" "vortrag" 1782151186 0
   "./SynthetischeDaten.bib" 1782137510 21272 24846d333cd9c724dc7b0a65f741219b ""
-  "vortrag.bcf" 1782149427 107984 08c8bc73f9dbf69e862e0aecd2993bd6 "pdflatex"
+  "vortrag.bcf" 1782151186 107984 08c8bc73f9dbf69e862e0aecd2993bd6 "pdflatex"
   (generated)
   "vortrag.bbl"
   "vortrag.blg"
   (rewritten before read)
-["pdflatex"] 1782149424 "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" "vortrag.pdf" "vortrag" 1782149427 0
-  "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" 1782149424 14984 273ca10409c5d1c6d327ceb6e36e45b6 ""
+["pdflatex"] 1782151182 "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" "vortrag.pdf" "vortrag" 1782151186 0
+  "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" 1782151182 15699 ac5dd2a8fb00e5f07894b32222284939 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_iz27ck.enc" 1561498186 2880 c07f4a1ce14a88d4ebe18f1c7b4592c1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_n3lhbv.enc" 1561498186 2876 59df564f2929ccd7d2b24aa7d14cad04 ""
@@ -273,13 +273,13 @@
   "img/synthetic_penguins.png" 1781881133 1928441 407c6291a061d38f6dbd4dd9717ae366 ""
   "img/tSNE.png" 1782128232 97413 8f8e97fc2035b11abe2e29aa756d1a32 ""
   "img/this_person_doesntexist.png" 1781532804 2084883 6c7520e06c202a632483c9e1c4c177fa ""
-  "vortrag.aux" 1782149427 5827 e2e1d08d48b06ba9938ecad19afbf642 "pdflatex"
-  "vortrag.bbl" 1782148967 6440 aeab04dc0722e57b0d224c4f9580080e "biber vortrag"
-  "vortrag.nav" 1782149427 3080 c9f255a015a005437616d6f2668c44ce "pdflatex"
-  "vortrag.out" 1782149427 635 7d702d84feb3dc3bbd5833c889671a54 "pdflatex"
-  "vortrag.run.xml" 1782149427 2369 b8832056db155fd7d0fbf719ddab743c "pdflatex"
-  "vortrag.tex" 1782149424 14984 273ca10409c5d1c6d327ceb6e36e45b6 ""
-  "vortrag.toc" 1782149427 278 dcc9f3ae5eef4ffe146ece0b05928f13 "pdflatex"
+  "vortrag.aux" 1782151186 5827 e2e1d08d48b06ba9938ecad19afbf642 "pdflatex"
+  "vortrag.bbl" 1782150862 6440 aeab04dc0722e57b0d224c4f9580080e "biber vortrag"
+  "vortrag.nav" 1782151186 3080 c9f255a015a005437616d6f2668c44ce "pdflatex"
+  "vortrag.out" 1782151186 635 7d702d84feb3dc3bbd5833c889671a54 "pdflatex"
+  "vortrag.run.xml" 1782151186 2369 b8832056db155fd7d0fbf719ddab743c "pdflatex"
+  "vortrag.tex" 1782151182 15699 ac5dd2a8fb00e5f07894b32222284939 ""
+  "vortrag.toc" 1782151186 278 dcc9f3ae5eef4ffe146ece0b05928f13 "pdflatex"
   (generated)
   "vortrag.aux"
   "vortrag.bcf"

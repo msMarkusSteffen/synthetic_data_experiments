@@ -378,12 +378,29 @@
 %----------------------------------------------------------------------------------------
 
 \begin{frame}
-    \frametitle{Andere Möglichkeiten zur synth. Datenerzeugung}
+    \frametitle{Rück und Ausblick}
     \begin{itemize}
-        \item SimbaML - simulation based machine Learning
-        \item TVAE
-        \item LLM
-        \item "Ohne Standards bleiben Daten Inseln – mit Standards werden sie ein Netzwerk.
+        \item Rückblick
+        \begin{itemize}
+            \item spannendes Paper gefunden
+            \item Recherche (Papers, Vortrag von Julian,..)
+            \item erste Gehversuche mit CTGAN und TableDiffusion
+            \item internes RKI Seminar synthetische Daten Jean-Baptiste
+            \item 15.06.2026 initiales Treffen MFI $\leftarrow \rightarrow$ ZKI, Interesse an Zusammenarbeit vorhanden
+        \end{itemize}
+        \item weitere Methodiken
+        \begin{itemize}
+            \item TVAE
+            \item LLM (z.b. via langchain)
+            \item TabDDM
+            \item SimbaML - simulation based machine Learning
+        \end{itemize}   
+        \item offene Themen
+        \begin{itemize}
+            \item Real Welt UseCase ?
+            \item Privacy Thematiken (epsilon-delta)
+            \item Vergleich der Methodiken
+        \end{itemize}        
     \end{itemize}
 \end{frame}
 
@@ -395,7 +412,7 @@
         \item Use Case sollte klar definiert werden
         \item Viele Wege (Methodiken) führen nach Rom (zum Ergebnis)
         \item CTGAN: funktioniert wie zwei Gegenspieler, wobei Generator aus Rauschen Fake Daten erzeugt und versucht Diskriminator auszutricksen
-        \item Table Diffusion: neuronales Netz lernt wie Daten verrauscht werden 
+        \item Table Diffusion: neuronales Netz lernt wie Daten verrauscht werden und kann aus Rauschen synthetische Daten rekreiern.
     \end{itemize}
 \end{frame}
 

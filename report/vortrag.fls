@@ -1608,6 +1608,11 @@ INPUT ./img/gan_architecture.png
 INPUT img/gan_architecture.png
 INPUT ./img/gan_architecture.png
 INPUT ./img/gan_architecture.png
+INPUT ./img/ctgan_layout.drawio.png
+INPUT ./img/ctgan_layout.drawio.png
+INPUT img/ctgan_layout.drawio.png
+INPUT ./img/ctgan_layout.drawio.png
+INPUT ./img/ctgan_layout.drawio.png
 INPUT ./img/synthetic_penguins.png
 INPUT ./img/synthetic_penguins.png
 INPUT img/synthetic_penguins.png

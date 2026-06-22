@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber vortrag"] 1782138331 "vortrag.bcf" "vortrag.bbl" "vortrag" 1782138343 0
+["biber vortrag"] 1782148965 "vortrag.bcf" "vortrag.bbl" "vortrag" 1782149427 0
   "./SynthetischeDaten.bib" 1782137510 21272 24846d333cd9c724dc7b0a65f741219b ""
-  "vortrag.bcf" 1782138342 107984 08c8bc73f9dbf69e862e0aecd2993bd6 "pdflatex"
+  "vortrag.bcf" 1782149427 107984 08c8bc73f9dbf69e862e0aecd2993bd6 "pdflatex"
   (generated)
   "vortrag.bbl"
   "vortrag.blg"
   (rewritten before read)
-["pdflatex"] 1782138339 "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" "vortrag.pdf" "vortrag" 1782138343 0
-  "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" 1782138328 14670 4020e91ec69f3349dfa9a18baf23e77b ""
+["pdflatex"] 1782149424 "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" "vortrag.pdf" "vortrag" 1782149427 0
+  "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" 1782149424 14984 273ca10409c5d1c6d327ceb6e36e45b6 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_iz27ck.enc" 1561498186 2880 c07f4a1ce14a88d4ebe18f1c7b4592c1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_n3lhbv.enc" 1561498186 2876 59df564f2929ccd7d2b24aa7d14cad04 ""
@@ -264,6 +264,7 @@
   "img/Gen_lossvsdisc_loss.png" 1782128232 40049 7e3e9e46d5d1ef25e733835c179b3837 ""
   "img/corr_map_fake.png" 1782128232 26789 e71826277c8b11e4106366b34af95f9f ""
   "img/corr_map_real.png" 1782128232 26806 f147ef9986c06cb7c4e8835ecf612de7 ""
+  "img/ctgan_layout.drawio.png" 1782148886 242037 00b924e18e183e3391f280e7d7318dc7 ""
   "img/fake_penguin_data.png" 1782128232 91072 8b41740545290e2376e0b94287431a08 ""
   "img/gan_architecture.png" 1781880381 675498 53dd98dc8b8aaad72cfce2455e77d1a2 ""
   "img/loadings.png" 1782128232 27285 cba71d2e48e2a2660953ee073432aba2 ""
@@ -272,13 +273,13 @@
   "img/synthetic_penguins.png" 1781881133 1928441 407c6291a061d38f6dbd4dd9717ae366 ""
   "img/tSNE.png" 1782128232 97413 8f8e97fc2035b11abe2e29aa756d1a32 ""
   "img/this_person_doesntexist.png" 1781532804 2084883 6c7520e06c202a632483c9e1c4c177fa ""
-  "vortrag.aux" 1782138342 5827 e2e1d08d48b06ba9938ecad19afbf642 "pdflatex"
-  "vortrag.bbl" 1782138333 6440 aeab04dc0722e57b0d224c4f9580080e "biber vortrag"
-  "vortrag.nav" 1782138342 3080 c9f255a015a005437616d6f2668c44ce "pdflatex"
-  "vortrag.out" 1782138342 635 7d702d84feb3dc3bbd5833c889671a54 "pdflatex"
-  "vortrag.run.xml" 1782138342 2369 b8832056db155fd7d0fbf719ddab743c "pdflatex"
-  "vortrag.tex" 1782138328 14670 4020e91ec69f3349dfa9a18baf23e77b ""
-  "vortrag.toc" 1782138342 278 dcc9f3ae5eef4ffe146ece0b05928f13 "pdflatex"
+  "vortrag.aux" 1782149427 5827 e2e1d08d48b06ba9938ecad19afbf642 "pdflatex"
+  "vortrag.bbl" 1782148967 6440 aeab04dc0722e57b0d224c4f9580080e "biber vortrag"
+  "vortrag.nav" 1782149427 3080 c9f255a015a005437616d6f2668c44ce "pdflatex"
+  "vortrag.out" 1782149427 635 7d702d84feb3dc3bbd5833c889671a54 "pdflatex"
+  "vortrag.run.xml" 1782149427 2369 b8832056db155fd7d0fbf719ddab743c "pdflatex"
+  "vortrag.tex" 1782149424 14984 273ca10409c5d1c6d327ceb6e36e45b6 ""
+  "vortrag.toc" 1782149427 278 dcc9f3ae5eef4ffe146ece0b05928f13 "pdflatex"
   (generated)
   "vortrag.aux"
   "vortrag.bcf"

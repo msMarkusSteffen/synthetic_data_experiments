@@ -219,7 +219,11 @@
 
 \begin{frame}
     \frametitle{CTGAN - conditional tabular GAN}
-        \
+        \begin{figure}
+                \centering
+                \includegraphics[width=0.95\linewidth]{img/ctgan_layout.drawio.png}\\
+                \caption{Aufbau CTGAN}
+            \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -384,12 +388,14 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Fazit}
+    \frametitle{Zusammenfassung}
     \begin{itemize}
-        \item Standards = Grundlage für Vergleichbarkeit, Integrierbarkeit, Qualität und schnelle Entscheidungen
-        \item Komplexität der Anonymisierung sinkt erheblich bei einheitlichen Datenstandards
-        \item Umsetzung braucht Zeit, Koordination und Ressourcen
-        \item "Ohne Standards bleiben Daten Inseln – mit Standards werden sie ein Netzwerk.
+        \item Synthetische Daten Mimiken reale Daten
+        \item Es gibt keine einheitlich akzeptierte Metrik (Bewertungskriterien)
+        \item Use Case sollte klar definiert werden
+        \item Viele Wege (Methodiken) führen nach Rom (zum Ergebnis)
+        \item CTGAN: funktioniert wie zwei Gegenspieler, wobei Generator aus Rauschen Fake Daten erzeugt und versucht Diskriminator auszutricksen
+        \item Table Diffusion: neuronales Netz lernt wie Daten verrauscht werden 
     \end{itemize}
 \end{frame}
 

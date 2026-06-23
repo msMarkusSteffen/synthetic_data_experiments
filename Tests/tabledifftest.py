@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 
 from torch.utils.data import DataLoader
-from torch.functional import 
+from torch.nn.functional import log_softmax
 from sklearn.preprocessing import OneHotEncoder, MinMaxScaler
 from sklearn.compose import ColumnTransformer
 from sklearn.model_selection import train_test_split
@@ -16,14 +16,27 @@ from sklearn.utils import resample
 
 
 # TODO DataPreparation vorbereiten.
-# TODO Sinosuidal Embedding einbauen für timestep Identifikation im NN
+# DONE Sinosuidal Embedding einbauen für timestep Identifikation im NN
 # TODO WAS mach ich mit kategorischen Daten  ?? <-- One Hote und dann ??? irgendwelche flatteing Geschichten ?
 # NOTE Logspace Encoding für OH 
 # TODO Training implementieren
 # TODO Privacy wie bewerten ??
 # TODO Data Generation Routine bauen
-# TODO kein Softmax für Diffusion Modell <-- es soll logits ausspucken 
+# DONE kein Softmax für Diffusion Modell <-- es soll logits ausspucken 
 # TODO Logits für Kategorische Daten wärend des Trainings für KL Divergenz (evtl auch für Rekonstruktion?)
+# NOTE besser LayerNorm anstatt BatchNorm self.ln = nn.LayerNorm(64) <-- normalisierung über einzelne Zeilen, nicht Batch
+
+# Automatischer Hardware-Switch
+if torch.backends.mps.is_available():
+    device = torch.device("mps")
+    print("Apple Silicon GPU/Neural Engine (MPS)")
+elif torch.cuda.is_available():
+    device = torch.device("cuda")
+    print("Nutze NVIDIA GPU (CUDA)")
+else:
+    device = torch.device("cpu")
+    print("Standard-CPU")
+
 
 class DataPrep():
     def __init__(self, datafile, categorical_columns, noise_dim, value_filter=["."], ):
@@ -84,8 +97,13 @@ class Diffusor(nn.Module):
         x = self.bn2(x)
         x = self.relu(x)
         x = self.l3(x)   
+        return x
         #x = torch.softmax(x) # NOTE keine Aktivierungsfunktion im Output Layer ! keine Normalisierung am Ende, only plain logits
 
+
+class TableDiff():
+    def __init__(self):
+        pass
 
 def build_noise_layers(shape, steps=1):
     noise_layers = []
@@ -98,6 +116,7 @@ def build_noise_layers(shape, steps=1):
         noise_layer = torch.randn(shape) *np.sqrt(beta_s) # NOTE randn for normal distribution
         noise_layers.append(noise_layer)
     return noise_layers 
+
 X= torch.ones(8, requires_grad=True)
 steps = 3
 print(build_noise_layers(X.shape, steps))
@@ -123,14 +142,18 @@ csvfile = os.path.join(os.getcwd(), "datasets/penguins_size.csv")
 data = DataPrep(categorical_columns=["species","island","sex"], datafile=csvfile,noise_dim=128)
 X_train, X_test= data.generate_training_test_data(boootstrap_multiplier=10)
 
+print(X_test)
+
 # NOTE Training
-n_epochs = 1
-batch_size = 5
+n_epochs = 100
+batch_size = 32
 noise_steps = 300
 learning_rate = 0.01
 embedding_size = 64 # NOTE das Embedding führe ich hier per concatenan an jede Zeile des Mini Batches an 
 
-train_dataloader = DataLoader(X_train, batch_size=batch_size, shuffle=True)
+train_dataloader = DataLoader(X_train, batch_size=batch_size, shuffle=True, drop_last=True) 
+# Droplast falls nur noch eine oder zwei Zeilen übrig bleiben und keinen vollen Batch mehr ergeben
+# Alternativ ohne Drop Last und kein BatchNorm, sondern LayerNorm <-- hier wird eh zeilenweise gearbeitet 
 test_dataloader = DataLoader(X_test, batch_size=batch_size, shuffle=True)
 
 #print("dataloader iter" ,next(iter(train_dataloader)))
@@ -138,6 +161,16 @@ test_dataloader = DataLoader(X_test, batch_size=batch_size, shuffle=True)
 def calc_beta(t, steps):
     beta_t = (1.0 - np.cos(np.pi*t/steps))/2.0 
     return beta_t
+
+def calc_alpha():
+    pass
+
+def show_progress(epoch,t, numeric_loss, categoric_loss):
+        #if t % 100 == 0:
+        if epoch % 10 == 0:
+            print(f'Epoch [{epoch+1}/{n_epochs}], ', 
+                    f'numeric Loss: {numeric_loss.item():.3f}, '
+                    f'kl Loss: {categoric_loss.item():.3f}')
 
 def add_time_embeddings(noised_batch, t, embedding_dim=64):
         # this will generate a vector for every t which is unique for every t 
@@ -176,19 +209,27 @@ def add_time_embeddings(noised_batch, t, embedding_dim=64):
     return final_input
 
 
-diffmodel = Diffusor(input_dim=128, hidden_dim=64, output_size=12)
-mse_loss = nn.MSELoss()
-kl_loss = nn.KLDivLoss()
-soft_max = nn.Softmax() # https://dev.to/sabha_naaz_b5fb8be540fc0f/understanding-softmax-and-cross-entropy-in-neural-networks-daa NOTE Softmax and Cross Entropy article
+learning_rate = 0.01
+betas = (0.5, 0.999)
 
-optimizer = optim.Adam(diffmodel.parameters(), lr=learning_rate)
+diffmodel = Diffusor(input_dim=76, hidden_dim=64, output_size=12)
+diffmodel.to(device=device)
+
+optimizer = optim.Adam(diffmodel.parameters(), lr=learning_rate, betas=betas)
+mse_loss = nn.MSELoss()
+kl_loss = nn.KLDivLoss(reduction='batchmean')
+# soft_max = nn.Softmax() # https://dev.to/sabha_naaz_b5fb8be540fc0f/understanding-softmax-and-cross-entropy-in-neural-networks-daa NOTE Softmax and Cross Entropy article
+# log_softmax = log_softmax()
+
+print("start training")
 
 for epoch in range(n_epochs):
-    for batch in train_dataloader:        
+    for batch in train_dataloader:     
+        batch = batch.float().to(device) # daten im dataloader sind double   
         #print(batch, batch.shape)
-        print("Kat", batch[:,:8])
-        print("Num", batch[:,8:])        
-        for t in range(0,noise_steps):
+        #print("Kat", batch[:,:8])
+        #print("Num", batch[:,8:])        
+        for t in range(1,noise_steps): # Beta wird für t=0 auch null -> gesamtes Rauschen = 0
             """ NOTE wie bei Gianluca verwenden wir hier mixed Type Denoiser
             Es wird nicht klassisch wie bei StableDiffusion für jeden Schritt das Noise berechnet und dann abgezogen
             Es wird einfach die entrauschten Daten berechnet <-- Vorteil man kann direkt den Loss für numerische (MSE)
@@ -197,12 +238,16 @@ for epoch in range(n_epochs):
             NOTE normalerweise wird bei modernen Diffusion die Steps nicht sequentiell sondern zufällig gewählt,
             innerhalb der Grenzen 0-diffusion steps"""
             
+            optimizer.zero_grad() 
+
             beta_t = calc_beta(t, noise_steps)
             noise = torch.randn_like(batch)*np.sqrt(beta_t)
+            
             noised_data = batch + noise 
             noised_data_with_embeddings = add_time_embeddings(noised_batch=noised_data,t=t, embedding_dim=embedding_size) # DONE es ist eleganter den Tensor (d.h. alle sinusoidal vektoren n x untereinander) durch eine fkt generieren zu lassen
+            
             denoised_data = diffmodel(noised_data_with_embeddings)
-
+            
             denoised_num = denoised_data[:,8:]
             numeric_loss = mse_loss(denoised_num, batch[:,8:])
 
@@ -212,41 +257,97 @@ for epoch in range(n_epochs):
             pred_sex     = denoised_data[:, 6:8] # Geschlecht
 
             # Einzelne KL-Verluste
-            loss_species = kl_loss(soft_max(pred_species, dim=1), batch[:, 0:3], reduction='batchmean') # TODO NOTE eventually nn.KL_Divloss uses log softmax and not regular softmax 
-            loss_island  = kl_loss(soft_max(pred_island, dim=1),  batch[:, 3:6], reduction='batchmean')
-            loss_sex     = kl_loss(soft_max(pred_sex, dim=1),     batch[:, 6:8], reduction='batchmean')
+            loss_species = kl_loss(log_softmax(pred_species, dim=1), batch[:, 0:3]) # TODO NOTE eventually nn.KL_Divloss uses log softmax and not regular softmax 
+            loss_island  = kl_loss(log_softmax(pred_island, dim=1),  batch[:, 3:6])
+            loss_sex     = kl_loss(log_softmax(pred_sex, dim=1),     batch[:, 6:8])
 
             # Alles zusammen
             categorical_loss = (loss_species + loss_island + loss_sex) / 3
             total_loss = numeric_loss + categorical_loss # TODO NOTE eventually scale categorical Loss to be competitive to numeric loss ?? 
-            
 
-def sample(model, batch_size, steps, feature_dim):
+            total_loss.backward()
+            optimizer.step()
+            show_progress(epoch,t, numeric_loss, categorical_loss)
+
+def sample(model, dataprep_obj, batch_size, steps, embedding_size=64, export=False, filename="tablediff_export.csv", real_fake_combined=False):
     model.eval()
+    
+    # Bestimme die Feature-Dimensionen dynamisch aus dem DataPrep-Objekt
+    # input_dim des Modells (76) abzüglich embedding_size (64) = 12 Features
+    feature_dim = dataprep_obj.total_features 
+    
     with torch.no_grad():
-        # 1. Start mit reinem Rauschen
+        # 1. Start mit reinem Rauschen (Standard-Normalverteilung)
         x = torch.randn(batch_size, feature_dim)
         
+        # 2. Rückwärtsprozess (Denoising Loop)
         for t in reversed(range(1, steps)):
-            # Zeit-Tensor für den aktuellen Schritt (alle im Batch haben gleiches t)
-            t_tensor = torch.full((batch_size,), t, dtype=torch.long)
-            t_emb = add_time_embeddings(t_tensor, embedding_size)
+            # Zeit-Embedding anhängen (Nutzt deine vorhandene add_time_embeddings Funktion)
+            x_with_emb = add_time_embeddings(noised_batch=x, t=t, embedding_dim=embedding_size)
             
-            # Modell sagt saubere Daten voraus
-            x_0_pred = model(torch.cat([x, t_emb], dim=1))
+            # Modell sagt die bereinigten Daten (x_0) voraus
+            x_0_pred = model(x_with_emb)
             
-            # Clipping/Post-processing (Wichtig für Stabilität!)
-            # Da wir wissen, dass unsere Daten skaliert sind (0 bis 1)
+            # Clipping für numerische Stabilität (da MinMaxScaler auf [0, 1] skaliert)
             x_0_pred = torch.clamp(x_0_pred, 0, 1)
             
-            # Schritt zurück berechnen (Vereinfachte DDPM Logik)
-            # Wir mischen den vorhergesagten x_0 mit dem aktuellen x
-            alpha_t = get_alpha(t) # Aus deinem Noise-Schedule
-            x = (1 - alpha_t) * x_0_pred + alpha_t * x
+            # Gewichtung basierend auf deinem Beta-Schedule (DDPM-Stil für Direkt-Denoiser)
+            beta_t = calc_beta(t, steps)
             
-            # Optional: Wieder ein ganz kleines bisschen Rauschen addieren 
-            # (Langevin Dynamics), um den Prozess lebendig zu halten
+            # Je kleiner t wird, desto mehr vertrauen wir der x_0 Vorhersage
+            x = (1.0 - beta_t) * x_0_pred + beta_t * x
+            
+            # Optional: Minimales Rauschen hinzufügen, außer im letzten Schritt (Langevin Dynamics)
             if t > 1:
                 x += 0.01 * torch.randn_like(x)
                 
-        return x
+    # 3. Postprocessing & Inverse Transformation
+    # Splitten der generierten Daten in Kategorisch (erste 8 Spalten) und Numerisch (Rest)
+    fake_data_cat = x[:, 0:8].cpu().numpy()
+    fake_data_num = x[:, 8:].cpu().numpy()
+    
+    # Zugriff auf die Transformer aus der ColumnTransformer-Instanz
+    oh = dataprep_obj.collumn_trans.named_transformers_['cat']
+    scaler = dataprep_obj.collumn_trans.named_transformers_['remainder']
+    
+    # Rücktransformation in echte Werte
+    inverse_cat = oh.inverse_transform(fake_data_cat)
+    inverse_num = scaler.inverse_transform(fake_data_num)
+    
+    # Erstelle DataFrames
+    categorical_columns = dataprep_obj.categorical_columns
+    df_cat = pd.DataFrame(data=inverse_cat, columns=categorical_columns)
+    
+    # Bestimme die Namen der numerischen Spalten
+    num_cols = [col for col in dataprep_obj.df.columns if col not in categorical_columns]
+    df_num = pd.DataFrame(data=inverse_num, columns=num_cols)
+    
+    # Zusammenfügen
+    if not real_fake_combined:
+        df = pd.concat([df_cat, df_num], axis=1)
+    else:
+        df_real = dataprep_obj.df.sample(n=batch_size, random_state=42).reset_index(drop=True)
+        df_real["source"] = "real"
+        df_fake = pd.concat([df_cat, df_num], axis=1)   
+        df_fake["source"] = "fake"  
+        df = pd.concat([df_real, df_fake], axis=0).reset_index(drop=True)   
+        
+    if export:        
+        df.to_csv(filename, index=False)
+        print(f"Daten erfolgreich in {filename} gespeichert!")
+    else:
+        print("\n--- Generierte Sample-Daten (Head) ---")
+        print(df.head())
+        
+    return df
+
+# Aufruf der Methode nach dem Training:
+sampled_df = sample(
+    model=diffmodel, 
+    dataprep_obj=data, 
+    batch_size=200, 
+    steps=noise_steps, 
+    embedding_size=embedding_size,
+    real_fake_combined=True,
+    export=True
+)

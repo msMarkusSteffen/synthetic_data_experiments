@@ -229,10 +229,11 @@
 
 \begin{frame}
     \frametitle{Come with me if you want to live}
-        \begin{center}
+        \begin{figure}
+                \centering
                 \includegraphics[width=0.8\linewidth]{img/synthetic_penguins.png}\\
-                {\scriptsize Abb. 2 Generating Synthetic Electronic Health Record Data Using Generative Adversarial Networks: Tutorial}
-            \end{center}
+                \caption{Synthetische Pinguine ?}
+            \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -296,11 +297,11 @@
     \frametitle{Ergebnisse}
     \begin{columns}[b] % T = top aligned
         \column{0.49\textwidth}
-           \begin{figure}
-            \centering
-            \includegraphics[width=0.7\linewidth]{img/fake_penguin_data.png}
-            \caption{Generator vs Discriminator Loss}
-        \end{figure}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.7\linewidth]{img/fake_penguin_data.png}
+                \caption{Generator vs Discriminator Loss}
+            \end{figure}
 
         \column{0.48\textwidth}
             \begin{figure}
@@ -327,50 +328,41 @@
 
 \begin{frame}
     \frametitle{Funktionsprinzip Table Diffusion}
-
-    \begin{columns}[T, totalwidth=\textwidth]
-        %----------------------------------
-        \column{0.46\textwidth}\tiny
-        \textbf{Tabelle: Messwerte unterschiedlicher Quellen}
-        \vspace{0.3em}
-        \begin{tabular}{lccccc}
-            \toprule
-            Quelle & M1 & M2 & M3 & M4 & Target \\
-            \midrule
-            Krankenhaus A & 120 & 7.5 & 80 & 1.2 & 100 \\
-            Krankenhaus B & 12 & 7500 & 0.08 & 1200 & 100 \\
-            Labor C & 119 & 7.4 & 78 & 1.1 & 100 \\
-            \bottomrule
-        \end{tabular}
-        
-        \vspace{1em}
-        \textbf{HL7v2 vs FHIR}
-          \begin{center}
-           % \includegraphics[width=0.7\linewidth]{img/fhir_network.png}\\
-           % {\scriptsize Abb. 2 FHIR Network }
-        \end{center}
-        %\vspace{0.1em}
-       
-
-        %----------------------------------
-        \column{0.46\textwidth}\tiny
-        \textbf{FHIR als Netzwerk}
-        \vspace{0.3em}
-        \begin{center}
-           % \includegraphics[width=0.75\linewidth]{img/hl7v2.png}\\[0.5em]
-           % \includegraphics[width=0.75\linewidth]{img/fhir.png} \\
-           % {\scriptsize Abb. 3 HL7v2 vs FHIR}
-        \end{center}
-    \end{columns}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\linewidth]{img/diffusion.png}
+        \caption{Diffusion Prozess \parencite{truda_generating_2023}}
+    \end{figure}   
 \end{frame}
 
 \begin{frame}
-    \frametitle{Wie funktioniert ein CTGAN}
+    \frametitle{Training und Erzeugung}
+        \begin{itemize}
+            \item Training
+            \begin{itemize}
+                \item Startpunkt vorprozessierte reale Daten (analog CTGAN)
+                \item Verrauschung durch Noise Sheduler 
+                \item Sinosuidales Embedding (quasi t dem Netz mitgeben)
+                \item Netz lernt Realdaten für Schritt t aus Rauschen zu denoisen
+                \item Metrik : Kullback-Leibler Divergenz + 
+                \item Essenz der Informationen im Rauschen enthalten
+            \end{itemize}
+            \item Generierung
+            \begin{itemize}
+                \item Erzeugung latenter Tensor (selbe Größe wie vorprozessiertes Datenset)
+                \item Revers Prozess durch Abschalen der Rauschschichten
+                \item Umkehrung der Preprocessng Schritte (scaling, one-hot encoding)
+            \end{itemize}
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Verrauschung und Embedding}
         \
 \end{frame}
 
 \begin{frame}
-    \frametitle{Wie funktioniert ein CTGAN}
+    \frametitle{Ergebnisse}
         \
 \end{frame}
 

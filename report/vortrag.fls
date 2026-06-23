@@ -1653,9 +1653,11 @@ INPUT ./img/tSNE.png
 INPUT img/tSNE.png
 INPUT ./img/tSNE.png
 INPUT ./img/tSNE.png
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Bold-OT1-TLF.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/ascender/opensans/OpenSans-Bold-OT1-TLF.vf
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Bold-OT1-TLF--base.tfm
+INPUT ./img/diffusion.png
+INPUT ./img/diffusion.png
+INPUT img/diffusion.png
+INPUT ./img/diffusion.png
+INPUT ./img/diffusion.png
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Italic-OT1-TLF.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pcr.fd
@@ -1678,7 +1680,6 @@ INPUT ./vortrag.out
 INPUT ./vortrag.out
 INPUT vortrag.run.xml
 OUTPUT vortrag.run.xml
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Bold.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Italic.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Regular.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb

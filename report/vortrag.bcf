@@ -2365,6 +2365,8 @@
     <bcf:citekey order="1" intorder="1">mit_sloan_what_2023</bcf:citekey>
     <bcf:citekey order="2" intorder="1">yan_generating_2024</bcf:citekey>
     <bcf:citekey order="3" intorder="1">yan_generating_2024</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">truda_generating_2023</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">truda_generating_2023</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

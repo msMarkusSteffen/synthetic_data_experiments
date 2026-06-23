@@ -59,6 +59,59 @@
       \verb https://mitsloan.mit.edu/ideas-made-to-matter/what-synthetic-data-and-how-can-it-help-you-competitively
       \endverb
     \endentry
+    \entry{truda_generating_2023}{misc}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9def951d63dfb4c6428b271178f0f89a}{%
+           family={Truda},
+           familyi={T\bibinitperiod},
+           given={Gianluca},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {arXiv}%
+      }
+      \strng{namehash}{9def951d63dfb4c6428b271178f0f89a}
+      \strng{fullhash}{9def951d63dfb4c6428b271178f0f89a}
+      \strng{bibnamehash}{9def951d63dfb4c6428b271178f0f89a}
+      \strng{authorbibnamehash}{9def951d63dfb4c6428b271178f0f89a}
+      \strng{authornamehash}{9def951d63dfb4c6428b271178f0f89a}
+      \strng{authorfullhash}{9def951d63dfb4c6428b271178f0f89a}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Machine Learning ({ML}) is accelerating progress across fields and industries, but relies on accessible and high-quality training data. Some of the most important datasets are found in biomedical and financial domains in the form of spreadsheets and relational databases. But this tabular data is often sensitive in nature. Synthetic data generation offers the potential to unlock sensitive data, but generative models tend to memorise and regurgitate training data, which undermines the privacy goal. To remedy this, researchers have incorporated the mathematical framework of Differential Privacy ({DP}) into the training process of deep neural networks. But this creates a trade-off between the quality and privacy of the resulting data. Generative Adversarial Networks ({GANs}) are the dominant paradigm for synthesising tabular data under {DP}, but suffer from unstable adversarial training and mode collapse, which are exacerbated by the privacy constraints and challenging tabular data modality. This work optimises the quality-privacy trade-off of generative models, producing higher quality tabular datasets with the same privacy guarantees. We implement novel end-to-end models that leverage attention mechanisms to learn reversible tabular representations. We also introduce {TableDiffusion}, the first differentially-private diffusion model for tabular data synthesis. Our experiments show that {TableDiffusion} produces higher-fidelity synthetic datasets, avoids the mode collapse problem, and achieves state-of-the-art performance on privatised tabular data synthesis. By implementing {TableDiffusion} to predict the added noise, we enabled it to bypass the challenges of reconstructing mixed-type tabular data. Overall, the diffusion paradigm proves vastly more data and privacy efficient than the adversarial paradigm, due to augmented re-use of each data batch and a smoother iterative training process.}
+      \field{day}{28}
+      \field{eprinttype}{arxiv}
+      \field{month}{8}
+      \field{number}{{arXiv}:2308.14784}
+      \field{title}{Generating tabular datasets under differential privacy}
+      \field{urlday}{4}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2308.14784
+      \endverb
+      \verb{eprint}
+      \verb 2308.14784 [cs]
+      \endverb
+      \verb{file}
+      \verb Preprint PDF:/Users/msteffen/Zotero/storage/B7DK37ZS/Truda - 2023 - Generating tabular datasets under differential privacy.pdf:application/pdf;Snapshot:/Users/msteffen/Zotero/storage/WE5PFYYX/2308.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2308.14784
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2308.14784
+      \endverb
+      \keyw{Computer Science - Artificial Intelligence,Computer Science - Machine Learning,Computer Science - Cryptography and Security,Computer Science - Databases}
+    \endentry
     \entry{yan_generating_2024}{article}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=dd86d7f81d56d20f3d9dede8b9e8b586}{%

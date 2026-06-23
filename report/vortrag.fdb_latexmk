@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber vortrag"] 1782150859 "vortrag.bcf" "vortrag.bbl" "vortrag" 1782151186 0
+["biber vortrag"] 1782150859 "vortrag.bcf" "vortrag.bbl" "vortrag" 1782202034 0
   "./SynthetischeDaten.bib" 1782137510 21272 24846d333cd9c724dc7b0a65f741219b ""
-  "vortrag.bcf" 1782151186 107984 08c8bc73f9dbf69e862e0aecd2993bd6 "pdflatex"
+  "vortrag.bcf" 1782202034 107984 08c8bc73f9dbf69e862e0aecd2993bd6 "pdflatex"
   (generated)
   "vortrag.bbl"
   "vortrag.blg"
   (rewritten before read)
-["pdflatex"] 1782151182 "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" "vortrag.pdf" "vortrag" 1782151186 0
-  "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" 1782151182 15699 ac5dd2a8fb00e5f07894b32222284939 ""
+["pdflatex"] 1782202031 "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" "vortrag.pdf" "vortrag" 1782202034 0
+  "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" 1782202030 15797 a418f7bc5cb5f07537652878cb094ed6 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_iz27ck.enc" 1561498186 2880 c07f4a1ce14a88d4ebe18f1c7b4592c1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_n3lhbv.enc" 1561498186 2876 59df564f2929ccd7d2b24aa7d14cad04 ""
@@ -24,7 +24,6 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/ascender/opensans/OpenSans-Regular-OT1-TLF.tfm" 1560634369 1308 47832fc607b4f77cdf7fc8ab15255305 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
-  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm" 1246382020 996 a18840b13b499c08ac2de96a99eda4bc ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1246382020 928 2dc8d444221b7a635bb58038579b861a ""
@@ -35,15 +34,12 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm" 1136768653 1520 eccf95517727cb11801f4f1aee3a21b4 ""
-  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm" 1136768653 1524 d89e2d087a9828407a196f428428ef4a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1136768653 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1136768653 1316 b636689f1933f24d1294acdf6041daaa ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmss8.tfm" 1136768653 1296 d77f431d10d47c8ea2cc18cf45346274 ""
-  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmss9.tfm" 1136768653 1320 49357c421c0d469f88b867dd0c3d10e8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
-  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm" 1136768653 1116 25a7bf822c58caf309a702ef79f4afbb ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Bold.pfb" 1561498186 105654 40eb631c967694632bf8681b75fd745b ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Italic.pfb" 1561498186 105699 fc0365f5957b8f18396fd3fdbf18b8c3 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Regular.pfb" 1561498186 100962 9a830a6477c526fbf4a9696e1678f3f0 ""
@@ -273,13 +269,13 @@
   "img/synthetic_penguins.png" 1781881133 1928441 407c6291a061d38f6dbd4dd9717ae366 ""
   "img/tSNE.png" 1782128232 97413 8f8e97fc2035b11abe2e29aa756d1a32 ""
   "img/this_person_doesntexist.png" 1781532804 2084883 6c7520e06c202a632483c9e1c4c177fa ""
-  "vortrag.aux" 1782151186 5827 e2e1d08d48b06ba9938ecad19afbf642 "pdflatex"
+  "vortrag.aux" 1782202034 5827 e2e1d08d48b06ba9938ecad19afbf642 "pdflatex"
   "vortrag.bbl" 1782150862 6440 aeab04dc0722e57b0d224c4f9580080e "biber vortrag"
-  "vortrag.nav" 1782151186 3080 c9f255a015a005437616d6f2668c44ce "pdflatex"
-  "vortrag.out" 1782151186 635 7d702d84feb3dc3bbd5833c889671a54 "pdflatex"
-  "vortrag.run.xml" 1782151186 2369 b8832056db155fd7d0fbf719ddab743c "pdflatex"
-  "vortrag.tex" 1782151182 15699 ac5dd2a8fb00e5f07894b32222284939 ""
-  "vortrag.toc" 1782151186 278 dcc9f3ae5eef4ffe146ece0b05928f13 "pdflatex"
+  "vortrag.nav" 1782202034 3080 c9f255a015a005437616d6f2668c44ce "pdflatex"
+  "vortrag.out" 1782202034 635 7d702d84feb3dc3bbd5833c889671a54 "pdflatex"
+  "vortrag.run.xml" 1782202034 2369 b8832056db155fd7d0fbf719ddab743c "pdflatex"
+  "vortrag.tex" 1782202030 15797 a418f7bc5cb5f07537652878cb094ed6 ""
+  "vortrag.toc" 1782202034 278 dcc9f3ae5eef4ffe146ece0b05928f13 "pdflatex"
   (generated)
   "vortrag.aux"
   "vortrag.bcf"

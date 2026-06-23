@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.31)  22 JUN 2026 19:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.31)  23 JUN 2026 10:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -859,33 +859,33 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count470
 \@quotereset=\count471
-LaTeX Font Info:    Trying to load font information for OT1+opensans-TLF on input line 69.
+LaTeX Font Info:    Trying to load font information for OT1+opensans-TLF on input line 70.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/opensans/OT1opensans-TLF.fd
 File: OT1opensans-TLF.fd 2019/06/24 Font definitions for OT1/opensans-TLF.
 )
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 69.
+(Font)              scaled to size 10.95pt on input line 70.
  (./vortrag.aux)
 \openout1 = `vortrag.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -940,53 +940,53 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 69.
+Package hyperref Info: Link coloring OFF on input line 70.
  (./vortrag.out) (./vortrag.out)
 \@outlinefile=\write6
 \openout6 = `vortrag.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 69.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 70.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 69.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 70.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/ppl/m/n on input line 69.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 69.
+(Font)                  OT1/cmss/m/n --> OT1/ppl/m/n on input line 70.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/phv/b/n on input line 69.
+(Font)                  OT1/cmr/bx/n --> OT1/phv/b/n on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/phv/b/n on input line 69.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 69.
+(Font)                  OT1/cmr/bx/n --> OT1/phv/b/n on input line 70.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/phv/m/n on input line 69.
+(Font)                  OT1/cmss/m/n --> OT1/phv/m/n on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/phv/m/n on input line 69.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 69.
+(Font)                  OT1/cmss/bx/n --> OT1/phv/m/n on input line 70.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/phv/m/it on input line 69.
+(Font)                  OT1/cmr/m/it --> OT1/phv/m/it on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/phv/m/it on input line 69.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 69.
+(Font)                  OT1/cmr/bx/it --> OT1/phv/m/it on input line 70.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/pcr/m/n on input line 69.
+(Font)                  OT1/cmtt/m/n --> OT1/pcr/m/n on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/pcr/m/n on input line 69.
+(Font)                  OT1/cmtt/m/n --> OT1/pcr/m/n on input line 70.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/phv/m/n --> OT1/phv/b/n on input line 69.
+(Font)                  OT1/phv/m/n --> OT1/phv/b/n on input line 70.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/phv/m/it --> OT1/phv/b/it on input line 69.
+(Font)                  OT1/phv/m/it --> OT1/phv/b/it on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/ppl/b/n on input line 69.
+(Font)                  OT1/cmss/b/n --> OT1/ppl/b/n on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/phv/b/n --> OT1/phv/b/n on input line 69.
+(Font)                  OT1/phv/b/n --> OT1/phv/b/n on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/phv/m/n --> OT1/phv/b/n on input line 69.
+(Font)                  OT1/phv/m/n --> OT1/phv/b/n on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/phv/m/it --> OT1/phv/b/it on input line 69.
+(Font)                  OT1/phv/m/it --> OT1/phv/b/it on input line 70.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/pcr/m/n --> OT1/pcr/b/n on input line 69.
+(Font)                  OT1/pcr/m/n --> OT1/pcr/b/n on input line 70.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
@@ -1022,54 +1022,54 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'vortrag.bbl' found.
  (./vortrag.bbl)
-Package biblatex Info: Reference section=0 on input line 69.
-Package biblatex Info: Reference segment=0 on input line 69.
+Package biblatex Info: Reference section=0 on input line 70.
+Package biblatex Info: Reference segment=0 on input line 70.
 \c@mv@tabular=\count478
 \c@mv@boldtabular=\count479
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  (./vortrag.nav)
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 69.
+(Font)              scaled to size 6.0pt on input line 70.
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 80.
+(Font)              scaled to size 14.4pt on input line 81.
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 80.
+(Font)              scaled to size 8.0pt on input line 81.
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 4.0pt on input line 80.
+(Font)              scaled to size 4.0pt on input line 81.
  [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_n3lhbv.enc}
 
 ] (./vortrag.toc) [2
 
 ]
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 111.
+(Font)              scaled to size 10.0pt on input line 112.
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 111.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 111.
+(Font)              scaled to size 10.0pt on input line 112.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 112.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 111.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 112.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OT1+phv on input line 111.
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 112.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 111.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 112.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 111.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 112.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <6> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 111.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 112.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 111.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 112.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <7> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 111.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 112.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <5> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 111.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 112.
  [3
 
 {/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_iz27ck.enc}] [4
@@ -1082,12 +1082,12 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <5> not available
 <img/this_person_doesntexist.png, id=282, 1373.13pt x 1370.11874pt>
 File: img/this_person_doesntexist.png Graphic file (type png)
 <use img/this_person_doesntexist.png>
-Package pdftex.def Info: img/this_person_doesntexist.png  used on input line 180.
+Package pdftex.def Info: img/this_person_doesntexist.png  used on input line 181.
 (pdftex.def)             Requested size: 102.68962pt x 102.46178pt.
 <img/qr_personnotexist.png, id=284, 297.11pt x 297.11pt>
 File: img/qr_personnotexist.png Graphic file (type png)
 <use img/qr_personnotexist.png>
-Package pdftex.def Info: img/qr_personnotexist.png  used on input line 180.
+Package pdftex.def Info: img/qr_personnotexist.png  used on input line 181.
 (pdftex.def)             Requested size: 68.45801pt x 68.45625pt.
  [7
 
@@ -1095,10 +1095,10 @@ Package pdftex.def Info: img/qr_personnotexist.png  used on input line 180.
 <img/gan_architecture.png, id=317, 1306.8825pt x 552.0625pt>
 File: img/gan_architecture.png Graphic file (type png)
 <use img/gan_architecture.png>
-Package pdftex.def Info: img/gan_architecture.png  used on input line 218.
+Package pdftex.def Info: img/gan_architecture.png  used on input line 219.
 (pdftex.def)             Requested size: 239.60567pt x 101.21176pt.
 
-Overfull \hbox (12.30365pt too wide) in paragraph at lines 218--218
+Overfull \hbox (12.30365pt too wide) in paragraph at lines 219--219
  [] 
  []
 
@@ -1108,7 +1108,7 @@ Overfull \hbox (12.30365pt too wide) in paragraph at lines 218--218
 <img/ctgan_layout.drawio.png, id=351, 2321.67375pt x 780.9175pt>
 File: img/ctgan_layout.drawio.png Graphic file (type png)
 <use img/ctgan_layout.drawio.png>
-Package pdftex.def Info: img/ctgan_layout.drawio.png  used on input line 227.
+Package pdftex.def Info: img/ctgan_layout.drawio.png  used on input line 228.
 (pdftex.def)             Requested size: 325.17949pt x 109.37537pt.
  [9
 
@@ -1116,7 +1116,7 @@ Package pdftex.def Info: img/ctgan_layout.drawio.png  used on input line 227.
 <img/synthetic_penguins.png, id=382, 1413.28pt x 770.88pt>
 File: img/synthetic_penguins.png Graphic file (type png)
 <use img/synthetic_penguins.png>
-Package pdftex.def Info: img/synthetic_penguins.png  used on input line 235.
+Package pdftex.def Info: img/synthetic_penguins.png  used on input line 236.
 (pdftex.def)             Requested size: 273.83728pt x 149.36234pt.
  [10
 
@@ -1124,7 +1124,7 @@ Package pdftex.def Info: img/synthetic_penguins.png  used on input line 235.
 <img/Gen_lossvsdisc_loss.png, id=413, 462.528pt x 346.896pt>
 File: img/Gen_lossvsdisc_loss.png Graphic file (type png)
 <use img/Gen_lossvsdisc_loss.png>
-Package pdftex.def Info: img/Gen_lossvsdisc_loss.png  used on input line 255.
+Package pdftex.def Info: img/Gen_lossvsdisc_loss.png  used on input line 256.
 (pdftex.def)             Requested size: 115.00969pt x 86.25269pt.
  [11
 
@@ -1132,25 +1132,25 @@ Package pdftex.def Info: img/Gen_lossvsdisc_loss.png  used on input line 255.
 <img/corr_map_real.png, id=445, 794.97pt x 650.43pt>
 File: img/corr_map_real.png Graphic file (type png)
 <use img/corr_map_real.png>
-Package pdftex.def Info: img/corr_map_real.png  used on input line 292.
+Package pdftex.def Info: img/corr_map_real.png  used on input line 293.
 (pdftex.def)             Requested size: 82.15013pt x 67.2104pt.
 <img/corr_map_fake.png, id=446, 794.97pt x 650.43pt>
 File: img/corr_map_fake.png Graphic file (type png)
 <use img/corr_map_fake.png>
-Package pdftex.def Info: img/corr_map_fake.png  used on input line 292.
+Package pdftex.def Info: img/corr_map_fake.png  used on input line 293.
 (pdftex.def)             Requested size: 82.15013pt x 67.2104pt.
 <img/screeplot.png, id=447, 462.528pt x 346.896pt>
 File: img/screeplot.png Graphic file (type png)
 <use img/screeplot.png>
-Package pdftex.def Info: img/screeplot.png  used on input line 292.
+Package pdftex.def Info: img/screeplot.png  used on input line 293.
 (pdftex.def)             Requested size: 82.15013pt x 61.61284pt.
 <img/loadings.png, id=448, 867.24pt x 578.16pt>
 File: img/loadings.png Graphic file (type png)
 <use img/loadings.png>
-Package pdftex.def Info: img/loadings.png  used on input line 292.
+Package pdftex.def Info: img/loadings.png  used on input line 293.
 (pdftex.def)             Requested size: 106.79417pt x 71.19353pt.
 
-Overfull \vbox (2.88391pt too high) detected at line 292
+Overfull \vbox (2.88391pt too high) detected at line 293
  []
 
 [12
@@ -1159,12 +1159,12 @@ Overfull \vbox (2.88391pt too high) detected at line 292
 <img/fake_penguin_data.png, id=482, 413.3844pt x 312.9291pt>
 File: img/fake_penguin_data.png Graphic file (type png)
 <use img/fake_penguin_data.png>
-Package pdftex.def Info: img/fake_penguin_data.png  used on input line 311.
+Package pdftex.def Info: img/fake_penguin_data.png  used on input line 312.
 (pdftex.def)             Requested size: 117.40808pt x 88.87534pt.
 <img/tSNE.png, id=483, 867.24pt x 578.16pt>
 File: img/tSNE.png Graphic file (type png)
 <use img/tSNE.png>
-Package pdftex.def Info: img/tSNE.png  used on input line 311.
+Package pdftex.def Info: img/tSNE.png  used on input line 312.
 (pdftex.def)             Requested size: 147.86923pt x 98.57703pt.
  [13
 
@@ -1172,9 +1172,9 @@ Package pdftex.def Info: img/tSNE.png  used on input line 311.
 
 ]
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/b/n' will be
-(Font)              scaled to size 6.0pt on input line 364.
+(Font)              scaled to size 6.0pt on input line 365.
 
-Overfull \hbox (24.40848pt too wide) in paragraph at lines 364--364
+Overfull \hbox (24.40848pt too wide) in paragraph at lines 365--365
 []  
  []
 
@@ -1189,21 +1189,16 @@ Overfull \hbox (24.40848pt too wide) in paragraph at lines 364--364
 ] [19
 
 ]
-LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 428.
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 428.
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 428.
+(Font)              scaled to size 6.0pt on input line 429.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 429.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 428.
- [20
+) [20
 
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc} </usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}]
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 438.
+(Font)              scaled to size 24.88pt on input line 439.
  [21
 
 ]
@@ -1224,18 +1219,18 @@ Package logreq Info: Writing requests to 'vortrag.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32542 strings out of 476025
- 647915 string characters out of 5790017
+ 32528 strings out of 476025
+ 647756 string characters out of 5790017
  1875388 words of memory out of 5000000
- 52309 multiletter control sequences out of 15000+600000
- 537232 words of font info for 105 fonts, out of 8000000 for 9000
+ 52300 multiletter control sequences out of 15000+600000
+ 533812 words of font info for 95 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  128i,19n,122p,1445b,2457s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Bold.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Italic.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Regular.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on vortrag.pdf (21 pages, 6888040 bytes).
+Output written on vortrag.pdf (21 pages, 6886124 bytes).
 PDF statistics:
- 810 PDF objects out of 1000 (max. 8388607)
- 703 compressed objects within 8 object streams
+ 802 PDF objects out of 1000 (max. 8388607)
+ 699 compressed objects within 7 object streams
  51 named destinations out of 1000 (max. 500000)
  187 words of extra memory for PDF output out of 10000 (max. 10000000)
 

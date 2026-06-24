@@ -95,12 +95,19 @@
 
 \begin{frame}
     \frametitle{Was sind synthetische Daten}
-    \begin{beamercolorbox}{beamer color}
-    \small \textit{Ein synthetischer Datensatz besitzt die gleichen mathematischen Eigenschaften wie die realen Daten, die er ersetzt, enthält jedoch keine der ursprünglichen Informationen. Er wird erzeugt, indem man echte Daten nimmt, ein generatives Machine-Learning-Modell darauf trainiert und daraus einen neuen Datensatz generiert. Das Ergebnis spiegelt die allgemeinen Muster des Originals wider, liefert aber genug ‚Rauschen‘, um die echten Daten genügend zu maskieren.} frei \parencite{mit_sloan_what_2023}    
-    \end{beamercolorbox}
+    %\small \textit{Ein synthetischer Datensatz besitzt die gleichen mathematischen Eigenschaften wie die realen Daten, die er ersetzt, enthält jedoch keine der ursprünglichen Informationen. Er wird erzeugt, indem man echte Daten nimmt, ein generatives Machine-Learning-Modell darauf trainiert und daraus einen neuen Datensatz generiert. Das Ergebnis spiegelt die allgemeinen Muster des Originals wider, liefert aber genug ‚Rauschen‘, um die echten Daten genügend zu maskieren.} frei \parencite{mit_sloan_what_2023}
+    \begin{itemize}
+        \item Ein synthetischer Datensatz hat: \parencite{mit_sloan_what_2023}
+        \begin{itemize}
+            \item die gleichen math. Eigenschaften wie realer Datensatz
+            \item enthält keine ursprünglichen Informationen
+            \item wird mittels generativer Lernmethoden erzeugt (Training)
+            \item genug Rauschen um echte Daten genügend zu maskieren
+        \end{itemize}
+    \end{itemize}
     \medskip
     \begin{itemize}        
-        \item 4 Grundpfeiler % Ressource 
+        \item Synthetische Daten basieren auf 4 Grundpfeilern % Ressource 
         \begin{itemize}
             \item Fidelity
             \item Utility
@@ -129,7 +136,7 @@
         \item Trade-Off Qualität vs Privacy
         \item Bewertung
         \begin{itemize}
-            \item Wie Ergebnisse bewerten ? - keine einheitlicher Standard für Metrik (Vergleichbarkeit)
+            \item Wie Ergebnisse bewerten ? - keine einheitlicher Standard für Metrik (Vergleichbarkeit) \parencite{escudie_evaluating_2026}
             \item Wie verschiedene Daten vergleichen % Modell immer zugeschnitten, Teilen von Daten schwierig
             \item Wie verschiedene Methodiken vergleichen ? % Hyperparametertuning, computational Time
             \item Wie Anonymität einschätzen ? %epsilon Delta 
@@ -144,7 +151,7 @@
     \begin{itemize}
         \item Bewertung Datenqualität
         \begin{itemize}
-            \item MAE2 (numerisch)
+            \item MAE2 (numerisch) \parencite{escudie_evaluating_2026}
             \item Wasserstein-Distanz (numerisch, earth movers distance)
             \item Kolmogorov-Smirnov statistic
             \item Kullback Leibler Divergenz (kategorisch)
@@ -198,6 +205,7 @@
         \column{0.48\textwidth}
            \begin{center}
                 \tiny
+                Bilddaten
                 \begin{tabular}{lccccc}
                     \toprule
                     Pixel (1 Farbkanal) & x0 & x1 & x2 & ..  \\
@@ -212,13 +220,14 @@
         \column{0.48\textwidth}
             \begin{center}
                 \tiny
+                Electronic Health Record
                 \begin{tabular}{lccccc}
                     \toprule
-                    Alter & Geschlecht & Blutdruck & Gewicht & Raucher  \\
+                    Alter & Sportart & MaxPuls & Gewicht & Raucher  \\
                     \midrule
-                    12 & F & 7.5 & 80 & Nein  \\
-                    48 & M & 7500 & 0.08 & Ja  \\
-                    27 & D & 7.4 & 78 & Nein \\
+                    12 & Sprint & 190 & 55 & Nein  \\
+                    48 & Fahrrad & 160 & 65 & Ja  \\
+                    27 & Klettern & 130 & 78 & Nein \\
                     \bottomrule
                 \end{tabular}
             \end{center}
@@ -244,14 +253,24 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Training}
+    \frametitle{Preprocessing und Training}
         \begin{columns}[T] % T = top aligned
         \column{0.48\textwidth}
            \begin{center}
-                \tiny
                 \begin{itemize}
                     \item Preprocessng
+                    \begin{itemize}
+                        \item Outlier entfernen
+                        \item NaNs betrachten
+                        \item Normalisierung von kontinuierlichen Daten
+                        \item One-Hot Encoding für kategorische Variablen
+                    \end{itemize}
                     \item Training
+                    \begin{itemize}
+                        \item Kombinationen bilden (kategorisch)
+                        \item probablistische Ziehung (condition)
+                        \item Noise +condition als Input für Discriminator
+                    \end{itemize}
                 \end{itemize}
             \end{center}
 
@@ -323,13 +342,6 @@
     \end{columns}
 \end{frame}
 
-
-
-\begin{frame}
-    \frametitle{}
-        \
-\end{frame}
-
 \section{Table Diffusion}
 
 %----------------------------------------------------------------------------------------
@@ -374,39 +386,53 @@
 
 \begin{frame}
     \frametitle{Ergebnisse}
+        \
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Vergleich}
         \begin{columns}[b]
         \column{0.48\textwidth}
             \begin{figure}
                 \centering
-                \includegraphics[width=0.5\linewidth]{img/corr_map_real.png}
-                \caption{Abdeckung CTGAN}
+                \includegraphics[width=0.45\linewidth]{img/abdeckung_num_ctgan.png}
+                \caption{Abdeckung CTGAN \footnotemark}
             \end{figure}
             
         \column{0.48\textwidth}
             \begin{figure}
                 \centering
-                \includegraphics[width=0.5\linewidth]{img/corr_map_fake.png}
+                \includegraphics[width=0.45\linewidth]{img/abdeckung_num_ctgan.png}
                 \caption{Abdeckung TableDiffusion}
             \end{figure}
     \end{columns}
 
-    \vspace{0.2cm}
+    %\vspace{0.2cm}
 
-    \begin{columns}[b]
+    \begin{columns}[T]
         \column{0.48\textwidth}
             \begin{figure}
                 \centering
-                \includegraphics[width=0.5\linewidth]{img/screeplot.png}
+                \includegraphics[width=0.4\linewidth]{img/loadings.png}
                 \caption{Abdeckung kat. Features TableDiffusion}
             \end{figure}
             
         \column{0.48\textwidth}
-            \begin{figure}
-                \centering
-                \includegraphics[width=0.65\linewidth]{img/loadings.png}
-                \caption{Loadings}
-            \end{figure}
+           \begin{center}
+                \tiny
+                TODO 
+                \begin{tabular}{lccccc}
+                    \toprule
+                    Methode & WDdist & S & computation time [s]\\
+                    \midrule
+                    CTGAN & 0 & 244 & 123   \\
+                    TableDiff & 10 & 246 & 100 \\
+                    \bottomrule
+                \end{tabular}
+            \end{center}
     \end{columns}
+    \footnotetext{ \tiny berechnet $s=e^{-w_d}$ mit $w_d$ = Wasserstein distanz}
 \end{frame}
 
 %----------------------------------------------------------------------------------------
@@ -419,16 +445,17 @@
         \item Rückblick
         \begin{itemize}
             \item spannendes Paper gefunden
-            \item Recherche (Papers, Vortrag von Julian,..)
-            \item erste Gehversuche mit CTGAN und TableDiffusion
-            \item 27.05 internes RKI Seminar synthetische Daten Jean-Baptiste
-            \item 15.06 initiales Treffen MFI $\leftarrow \rightarrow$ ZKI, Interesse an Zusammenarbeit vorhanden
+            \item Recherche (Papers, Vortrag von Julian Z.,..)
+            \item eigene Gehversuche mit CTGAN und TableDiffusion
+            \item internes RKI Seminar synthetische Daten Jean-Baptiste
+            \item initiales Treffen MFI + ZKI
         \end{itemize}
-        \item weitere Methodiken
+        \item weitere Methodiken \parencite{shi_comprehensive_2025}, \parencite{du_towards_2024}
         \begin{itemize}
             \item TVAE
-            \item LLM (z.b. via langchain)
-            \item TabDDM
+            \item GReat (LLM based)
+            \item TabDDPM
+            \item PGM
             \item SimbaML - simulation based machine Learning
         \end{itemize}   
         \item offene Themen
@@ -459,7 +486,7 @@
 
 \begin{frame}
     \frametitle{Quellen}   
-    \renewcommand{\bibfont}{\tiny} % Literaturverzeichnis etwas kleiner machen
+    \renewcommand{\bibfont}{\scriptsize} % Literaturverzeichnis etwas kleiner machen
     \printbibliography
 \end{frame}
 

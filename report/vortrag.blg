@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'vortrag.blg'
-[29] biber-darwin:340> INFO - === Tue Jun 23, 2026, 16:35:01
-[36] Biber.pm:419> INFO - Reading 'vortrag.bcf'
-[71] Biber.pm:979> INFO - Found 3 citekeys in bib section 0
-[78] Biber.pm:4419> INFO - Processing section 0
-[82] Biber.pm:4610> INFO - Looking for bibtex file 'SynthetischeDaten.bib' for section 0
-[84] bibtex.pm:1713> INFO - LaTeX decoding ...
-[101] bibtex.pm:1519> INFO - Found BibTeX data source 'SynthetischeDaten.bib'
-[124] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[124] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[124] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
-[124] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
-[128] bbl.pm:660> INFO - Writing 'vortrag.bbl' with encoding 'UTF-8'
-[129] bbl.pm:763> INFO - Output to vortrag.bbl
+[33] biber-darwin:340> INFO - === Wed Jun 24, 2026, 12:12:33
+[40] Biber.pm:419> INFO - Reading 'vortrag.bcf'
+[78] Biber.pm:979> INFO - Found 6 citekeys in bib section 0
+[85] Biber.pm:4419> INFO - Processing section 0
+[90] Biber.pm:4610> INFO - Looking for bibtex file 'SynthetischeDaten.bib' for section 0
+[92] bibtex.pm:1713> INFO - LaTeX decoding ...
+[111] bibtex.pm:1519> INFO - Found BibTeX data source 'SynthetischeDaten.bib'
+[152] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[152] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[152] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
+[152] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
+[159] bbl.pm:660> INFO - Writing 'vortrag.bbl' with encoding 'UTF-8'
+[162] bbl.pm:763> INFO - Output to vortrag.bbl

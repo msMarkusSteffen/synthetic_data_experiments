@@ -202,7 +202,7 @@ class CTGan():
                     f'Discriminator Loss: {real_loss.item() + fake_loss.item():.3f}, '
                     f'Generator Loss: {gen_loss.item():.3f}')
 
-    def show_learning_competition(self):
+    def show_learning_competition(self, save_data=False):
         t =  t = np.arange(len(self.train_gen_score))
         plt.plot(t, self.train_gen_score, label='Generator Loss')
         plt.plot(t, self.train_disc_score, label='Discriminator Loss')
@@ -211,6 +211,13 @@ class CTGan():
         plt.title('Generator vs Discriminator Loss over Epochs')
         plt.legend()
         plt.show()
+        if save_data ==True:
+            df = pd.DataFrame({
+                'Epoch': t,
+                'Generator_Loss': self.train_gen_score,
+                'Discriminator_Loss': self.train_disc_score
+            })
+            df.to_csv('learning_competition_data.csv', index=False)
 
 
     def run_training(self):     
@@ -334,7 +341,7 @@ if __name__ == "__main__":
     ctgan.run_dataprep()
     ctgan.init_models()
     #ctgan.run_training()
-    #ctgan.show_learning_competition()    
+    #ctgan.show_learning_competition(save_data=True)    
     #ctgan.export_generatormodel(filepath="generator.pth")
     ctgan.load_generatormodel("generator.pth")
     ctgan.generate(n_samples=256,export=True,real_fake_combined=True, filename="penguins_fake_real.csv")

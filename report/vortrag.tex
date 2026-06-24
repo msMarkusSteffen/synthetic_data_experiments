@@ -273,16 +273,17 @@
                     \end{itemize}
                 \end{itemize}
             \end{center}
-
         \column{0.48\textwidth}
-               \begin{center}
-                 \includegraphics[width=0.5\linewidth]{img/Gen_lossvsdisc_loss.png}\\
-                {\scriptsize Abb. 2 Generator vs Discriminator Loss}
-            \end{center}
-            \begin{center}
-                 \includegraphics[width=0.5\linewidth]{img/Gen_lossvsdisc_loss.png}\\
-                {\scriptsize Abb. 2 Generator vs Discriminator Loss}
-            \end{center}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.8\linewidth]{img/loss_zoom.png}\\
+                \caption{Generator vs Discriminator Loss}
+            \end{figure}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.5\linewidth]{img/Gen_lossvsdisc_loss.png}\\
+                \caption{G vs D total-loss}
+            \end{figure}
     \end{columns}
 \end{frame}
 
@@ -381,12 +382,32 @@
 
 \begin{frame}
     \frametitle{Verrauschung und Embedding}
-        \
+        \begin{itemize}
+            \item Verrauschung mittels noise Sheduler \parencite{truda_generating_2023}
+            \begin{itemize}
+                \item jedes Element im aktuellen Batch bekommt noise aufaddiert
+                \item $x_{t+1} = x_t + z_t$ mit $z_t \sim \mathcal{N} \left(0,1\right)\sqrt{\beta_t}$, wobei $\beta_t = \frac{t}{T}$
+            \end{itemize}
+            \item Sinusoidales Embedding des Noiser Steps \parencite{vaswani_attention_2023}
+            \begin{itemize}
+                \item Ziel Netz soll Verrauschungsstufe mitbekommen (embedd vs concat)
+                \item Vector mit Sinus und Kosinus Einträgen, wobei jede Dimension für ein festes t einzigartig ist
+            \end{itemize}
+        \end{itemize}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.7\linewidth]{img/sinusoidal_embedding.png}
+            %\caption{Diffusion Prozess \parencite{truda_generating_2023}}
+        \end{figure}
 \end{frame}
 
 \begin{frame}
     \frametitle{Ergebnisse}
-        \
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.7\linewidth]{img/sinusoidla_concat.png}
+            %\caption{Diffusion Prozess \parencite{truda_generating_2023}}
+        \end{figure}
 \end{frame}
 
 
@@ -421,7 +442,7 @@
         \column{0.48\textwidth}
            \begin{center}
                 \tiny
-                TODO 
+                Ergebnisse \footnotemark
                 \begin{tabular}{lccccc}
                     \toprule
                     Methode & WDdist & S & computation time [s]\\
@@ -432,7 +453,8 @@
                 \end{tabular}
             \end{center}
     \end{columns}
-    \footnotetext{ \tiny berechnet $s=e^{-w_d}$ mit $w_d$ = Wasserstein distanz}
+    \footnotetext{\tiny berechnet $s=e^{-w_d}$ mit $w_d$ = Wasserstein distanz}
+    \footnotetext{\tiny Mit Vorsicht zu genießen, kein ground Truth}
 \end{frame}
 
 %----------------------------------------------------------------------------------------
@@ -486,7 +508,7 @@
 
 \begin{frame}
     \frametitle{Quellen}   
-    \renewcommand{\bibfont}{\scriptsize} % Literaturverzeichnis etwas kleiner machen
+    \renewcommand{\bibfont}{\tiny} % Literaturverzeichnis etwas kleiner machen
     \printbibliography
 \end{frame}
 

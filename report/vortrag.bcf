@@ -2369,8 +2369,10 @@
     <bcf:citekey order="5" intorder="1">yan_generating_2024</bcf:citekey>
     <bcf:citekey order="6" intorder="1">truda_generating_2023</bcf:citekey>
     <bcf:citekey order="7" intorder="1">truda_generating_2023</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">shi_comprehensive_2025</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">du_towards_2024</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">truda_generating_2023</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">vaswani_attention_2023</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">shi_comprehensive_2025</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">du_towards_2024</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

@@ -142,12 +142,19 @@
 \begin{frame}
     \frametitle{Ansätze}
     \begin{itemize}
-        \item Bewertung
+        \item Bewertung Datenqualität
         \begin{itemize}
             \item MAE2 (numerisch)
             \item Wasserstein-Distanz (numerisch, earth movers distance)
+            \item Kolmogorov-Smirnov statistic
             \item Kullback Leibler Divergenz (kategorisch)
+            \item Jensen-Shannon Divergenz (kategorisch)
+            \item TVD - total variation distance (kategorisch)
             \item Graphisch (Korrelationen, t-SNE, ...)
+        \end{itemize}
+        \item Bewertung Performance  
+        \begin{itemize}
+            \item computation time Limit setzen
         \end{itemize}
         \item Privacy
         \begin{itemize}
@@ -249,8 +256,12 @@
             \end{center}
 
         \column{0.48\textwidth}
+               \begin{center}
+                 \includegraphics[width=0.5\linewidth]{img/Gen_lossvsdisc_loss.png}\\
+                {\scriptsize Abb. 2 Generator vs Discriminator Loss}
+            \end{center}
             \begin{center}
-                 \includegraphics[width=0.7\linewidth]{img/Gen_lossvsdisc_loss.png}\\
+                 \includegraphics[width=0.5\linewidth]{img/Gen_lossvsdisc_loss.png}\\
                 {\scriptsize Abb. 2 Generator vs Discriminator Loss}
             \end{center}
     \end{columns}
@@ -363,7 +374,39 @@
 
 \begin{frame}
     \frametitle{Ergebnisse}
-        \
+        \begin{columns}[b]
+        \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.5\linewidth]{img/corr_map_real.png}
+                \caption{Abdeckung CTGAN}
+            \end{figure}
+            
+        \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.5\linewidth]{img/corr_map_fake.png}
+                \caption{Abdeckung TableDiffusion}
+            \end{figure}
+    \end{columns}
+
+    \vspace{0.2cm}
+
+    \begin{columns}[b]
+        \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.5\linewidth]{img/screeplot.png}
+                \caption{Abdeckung kat. Features TableDiffusion}
+            \end{figure}
+            
+        \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.65\linewidth]{img/loadings.png}
+                \caption{Loadings}
+            \end{figure}
+    \end{columns}
 \end{frame}
 
 %----------------------------------------------------------------------------------------
@@ -378,8 +421,8 @@
             \item spannendes Paper gefunden
             \item Recherche (Papers, Vortrag von Julian,..)
             \item erste Gehversuche mit CTGAN und TableDiffusion
-            \item internes RKI Seminar synthetische Daten Jean-Baptiste
-            \item 15.06.2026 initiales Treffen MFI $\leftarrow \rightarrow$ ZKI, Interesse an Zusammenarbeit vorhanden
+            \item 27.05 internes RKI Seminar synthetische Daten Jean-Baptiste
+            \item 15.06 initiales Treffen MFI $\leftarrow \rightarrow$ ZKI, Interesse an Zusammenarbeit vorhanden
         \end{itemize}
         \item weitere Methodiken
         \begin{itemize}
@@ -402,7 +445,7 @@
     \begin{itemize}
         \item Synthetische Daten Mimiken reale Daten
         \item Es gibt keine einheitlich akzeptierte Metrik (Bewertungskriterien)
-        \item Use Case sollte klar definiert werden
+        \item Use Case sollte klar und auch umfassend definiert werden (Endanwendung, ETL, ..)
         \item Viele Wege (Methodiken) führen nach Rom (zum Ergebnis)
         \item CTGAN: funktioniert wie zwei Gegenspieler, wobei Generator aus Rauschen Fake Daten erzeugt und versucht Diskriminator auszutricksen
         \item Table Diffusion: neuronales Netz lernt wie Daten verrauscht werden und kann aus Rauschen synthetische Daten rekreiern.

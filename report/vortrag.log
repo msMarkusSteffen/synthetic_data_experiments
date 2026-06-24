@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.31)  23 JUN 2026 16:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.31)  24 JUN 2026 10:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1082,12 +1082,12 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <5> not available
 <img/this_person_doesntexist.png, id=290, 1373.13pt x 1370.11874pt>
 File: img/this_person_doesntexist.png Graphic file (type png)
 <use img/this_person_doesntexist.png>
-Package pdftex.def Info: img/this_person_doesntexist.png  used on input line 181.
+Package pdftex.def Info: img/this_person_doesntexist.png  used on input line 188.
 (pdftex.def)             Requested size: 102.68962pt x 102.46178pt.
 <img/qr_personnotexist.png, id=292, 297.11pt x 297.11pt>
 File: img/qr_personnotexist.png Graphic file (type png)
 <use img/qr_personnotexist.png>
-Package pdftex.def Info: img/qr_personnotexist.png  used on input line 181.
+Package pdftex.def Info: img/qr_personnotexist.png  used on input line 188.
 (pdftex.def)             Requested size: 68.45801pt x 68.45625pt.
  [7
 
@@ -1095,10 +1095,10 @@ Package pdftex.def Info: img/qr_personnotexist.png  used on input line 181.
 <img/gan_architecture.png, id=326, 1306.8825pt x 552.0625pt>
 File: img/gan_architecture.png Graphic file (type png)
 <use img/gan_architecture.png>
-Package pdftex.def Info: img/gan_architecture.png  used on input line 219.
+Package pdftex.def Info: img/gan_architecture.png  used on input line 226.
 (pdftex.def)             Requested size: 239.60567pt x 101.21176pt.
 
-Overfull \hbox (12.30365pt too wide) in paragraph at lines 219--219
+Overfull \hbox (12.30365pt too wide) in paragraph at lines 226--226
  [] 
  []
 
@@ -1108,7 +1108,7 @@ Overfull \hbox (12.30365pt too wide) in paragraph at lines 219--219
 <img/ctgan_layout.drawio.png, id=361, 2321.67375pt x 780.9175pt>
 File: img/ctgan_layout.drawio.png Graphic file (type png)
 <use img/ctgan_layout.drawio.png>
-Package pdftex.def Info: img/ctgan_layout.drawio.png  used on input line 228.
+Package pdftex.def Info: img/ctgan_layout.drawio.png  used on input line 235.
 (pdftex.def)             Requested size: 325.17949pt x 109.37537pt.
  [9
 
@@ -1116,7 +1116,7 @@ Package pdftex.def Info: img/ctgan_layout.drawio.png  used on input line 228.
 <img/synthetic_penguins.png, id=393, 1413.28pt x 770.88pt>
 File: img/synthetic_penguins.png Graphic file (type png)
 <use img/synthetic_penguins.png>
-Package pdftex.def Info: img/synthetic_penguins.png  used on input line 237.
+Package pdftex.def Info: img/synthetic_penguins.png  used on input line 244.
 (pdftex.def)             Requested size: 273.83728pt x 149.36234pt.
  [10
 
@@ -1124,33 +1124,37 @@ Package pdftex.def Info: img/synthetic_penguins.png  used on input line 237.
 <img/Gen_lossvsdisc_loss.png, id=425, 462.528pt x 346.896pt>
 File: img/Gen_lossvsdisc_loss.png Graphic file (type png)
 <use img/Gen_lossvsdisc_loss.png>
-Package pdftex.def Info: img/Gen_lossvsdisc_loss.png  used on input line 257.
-(pdftex.def)             Requested size: 115.00969pt x 86.25269pt.
+Package pdftex.def Info: img/Gen_lossvsdisc_loss.png  used on input line 268.
+(pdftex.def)             Requested size: 82.15013pt x 61.61284pt.
+File: img/Gen_lossvsdisc_loss.png Graphic file (type png)
+<use img/Gen_lossvsdisc_loss.png>
+Package pdftex.def Info: img/Gen_lossvsdisc_loss.png  used on input line 268.
+(pdftex.def)             Requested size: 82.15013pt x 61.61284pt.
  [11
 
  <./img/Gen_lossvsdisc_loss.png>]
 <img/corr_map_real.png, id=458, 794.97pt x 650.43pt>
 File: img/corr_map_real.png Graphic file (type png)
 <use img/corr_map_real.png>
-Package pdftex.def Info: img/corr_map_real.png  used on input line 294.
+Package pdftex.def Info: img/corr_map_real.png  used on input line 305.
 (pdftex.def)             Requested size: 82.15013pt x 67.2104pt.
 <img/corr_map_fake.png, id=459, 794.97pt x 650.43pt>
 File: img/corr_map_fake.png Graphic file (type png)
 <use img/corr_map_fake.png>
-Package pdftex.def Info: img/corr_map_fake.png  used on input line 294.
+Package pdftex.def Info: img/corr_map_fake.png  used on input line 305.
 (pdftex.def)             Requested size: 82.15013pt x 67.2104pt.
 <img/screeplot.png, id=460, 462.528pt x 346.896pt>
 File: img/screeplot.png Graphic file (type png)
 <use img/screeplot.png>
-Package pdftex.def Info: img/screeplot.png  used on input line 294.
+Package pdftex.def Info: img/screeplot.png  used on input line 305.
 (pdftex.def)             Requested size: 82.15013pt x 61.61284pt.
 <img/loadings.png, id=461, 867.24pt x 578.16pt>
 File: img/loadings.png Graphic file (type png)
 <use img/loadings.png>
-Package pdftex.def Info: img/loadings.png  used on input line 294.
+Package pdftex.def Info: img/loadings.png  used on input line 305.
 (pdftex.def)             Requested size: 106.79417pt x 71.19353pt.
 
-Overfull \vbox (2.88391pt too high) detected at line 294
+Overfull \vbox (2.88391pt too high) detected at line 305
  []
 
 [12
@@ -1159,12 +1163,12 @@ Overfull \vbox (2.88391pt too high) detected at line 294
 <img/fake_penguin_data.png, id=496, 413.3844pt x 312.9291pt>
 File: img/fake_penguin_data.png Graphic file (type png)
 <use img/fake_penguin_data.png>
-Package pdftex.def Info: img/fake_penguin_data.png  used on input line 313.
+Package pdftex.def Info: img/fake_penguin_data.png  used on input line 324.
 (pdftex.def)             Requested size: 117.40808pt x 88.87534pt.
 <img/tSNE.png, id=497, 867.24pt x 578.16pt>
 File: img/tSNE.png Graphic file (type png)
 <use img/tSNE.png>
-Package pdftex.def Info: img/tSNE.png  used on input line 313.
+Package pdftex.def Info: img/tSNE.png  used on input line 324.
 (pdftex.def)             Requested size: 147.86923pt x 98.57703pt.
  [13
 
@@ -1174,7 +1178,7 @@ Package pdftex.def Info: img/tSNE.png  used on input line 313.
 <img/diffusion.png, id=562, 1927.2pt x 864.22874pt>
 File: img/diffusion.png Graphic file (type png)
 <use img/diffusion.png>
-Package pdftex.def Info: img/diffusion.png  used on input line 336.
+Package pdftex.def Info: img/diffusion.png  used on input line 347.
 (pdftex.def)             Requested size: 308.06367pt x 138.14755pt.
  [15
 
@@ -1182,7 +1186,28 @@ Package pdftex.def Info: img/diffusion.png  used on input line 336.
 
 ] [17
 
-] [18
+]
+File: img/corr_map_real.png Graphic file (type png)
+<use img/corr_map_real.png>
+Package pdftex.def Info: img/corr_map_real.png  used on input line 410.
+(pdftex.def)             Requested size: 82.15013pt x 67.2104pt.
+File: img/corr_map_fake.png Graphic file (type png)
+<use img/corr_map_fake.png>
+Package pdftex.def Info: img/corr_map_fake.png  used on input line 410.
+(pdftex.def)             Requested size: 82.15013pt x 67.2104pt.
+File: img/screeplot.png Graphic file (type png)
+<use img/screeplot.png>
+Package pdftex.def Info: img/screeplot.png  used on input line 410.
+(pdftex.def)             Requested size: 82.15013pt x 61.61284pt.
+File: img/loadings.png Graphic file (type png)
+<use img/loadings.png>
+Package pdftex.def Info: img/loadings.png  used on input line 410.
+(pdftex.def)             Requested size: 106.79417pt x 71.19353pt.
+
+Overfull \vbox (2.88391pt too high) detected at line 410
+ []
+
+[18
 
 ] [19
 
@@ -1190,15 +1215,15 @@ Package pdftex.def Info: img/diffusion.png  used on input line 336.
 
 ]
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/it' will be
-(Font)              scaled to size 6.0pt on input line 421.
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 421.
+(Font)              scaled to size 6.0pt on input line 464.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 464.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [21
 
 {/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}]
 LaTeX Font Info:    Font shape `OT1/opensans-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 431.
+(Font)              scaled to size 24.88pt on input line 474.
  [22
 
 ]
@@ -1227,7 +1252,7 @@ Here is how much of TeX's memory you used:
  1143 hyphenation exceptions out of 8191
  128i,19n,122p,2088b,2457s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Italic.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/ascender/opensans/OpenSans-Regular.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on vortrag.pdf (22 pages, 9770492 bytes).
+Output written on vortrag.pdf (22 pages, 9771180 bytes).
 PDF statistics:
  859 PDF objects out of 1000 (max. 8388607)
  752 compressed objects within 8 object streams

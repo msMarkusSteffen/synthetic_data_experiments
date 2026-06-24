@@ -1,0 +1,18 @@
+https://simbaml.readthedocs.io/ <--- Augementierung epidemiologischer Verläufe via Simulation (simulation based machine learning)
+https://arxiv.org/abs/2402.01711 <---- Paper LLM on FHIR -- Demystifying Health Records
+https://github.com/StanfordBDHG/LLMonFHIR
+https://synthea.org/  <--- Kann direkt synthetische FHIR Daten erzeugen (nur Patient?) 
+https://www.phgfoundation.org/insight-and-analysis/synthetic-data-in-health-related-research/
+https://pmc.ncbi.nlm.nih.gov/articles/PMC11074891/ ←Generating Synthetic Electronic Health Record Data Using Generative Adversarial Networks: Tutorial
+https://github.com/yanchao0222/tutorial_data_synthesis_and_evaluation
+https://www.codegenes.net/blog/pytorch-wasserstein-loss/  ← Wasserstein Metrics for GAN Network in PyTorch 
+https://arxiv.org/pdf/1801.04406 ← Welche Trainingsmethoden für GANs konvergieren  (bei mir konvergiert aktuell noch gar nix disappointed face  xD)
+https://medium.com/@kdk199604/ctgan-how-gans-finally-learned-to-handle-tabular-data-ebbfb169c5d8
+https://towardsdatascience.com/how-to-generate-real-world-synthetic-data-with-ctgan-af41b4d60fde/
+https://github.com/sdv-dev/CTGAN  ← CTGAN Beispieprojekt
+https://github.com/Data-Centric-AI-Community/awesome-data-centric-ai#-synthetic-data  <---- OpenSource Modelle für die Erzeugung synthethischer Daten
+https://arxiv.org/abs/2407.02549  ← Diffusion Models for Tabular Data Imputation and Synthetic Data Generation
+https://gianluca.ai/table-diffusion/   ← Table Diffusion (private synthetic Data)
+https://arxiv.org/abs/2504.16506  <--- Comprehensive Survey über die Erzeugung tabellarischer synthetischer Daten
+https://github.com/gianlucatruda/TableDiffusion <--- Table Diffusion GitHub Repo 
+https://arxiv.org/abs/2308.14784  ← Masterarbeit (Generating tabular datasets under differential privacy) sehr guter Überblick über die verschiedenen 

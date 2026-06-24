@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber vortrag"] 1782300774 "vortrag.bcf" "vortrag.bbl" "vortrag" 1782301631 0
+["biber vortrag"] 1782300774 "vortrag.bcf" "vortrag.bbl" "vortrag" 1782301835 0
   "./SynthetischeDaten.bib" 1782299786 27152 2400f6f1fdca620719749aab81fabe90 ""
-  "vortrag.bcf" 1782301631 108594 55a90ab2de1a842f5b25b3fb2cf71257 "pdflatex"
+  "vortrag.bcf" 1782301835 108594 55a90ab2de1a842f5b25b3fb2cf71257 "pdflatex"
   (generated)
   "vortrag.bbl"
   "vortrag.blg"
   (rewritten before read)
-["pdflatex"] 1782301627 "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" "vortrag.pdf" "vortrag" 1782301631 0
-  "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" 1782301626 20062 f660be1fa2aead4d22ce42e7efb91f5f ""
+["pdflatex"] 1782301830 "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" "vortrag.pdf" "vortrag" 1782301835 0
+  "/Users/msteffen/Documents/Coding/SyntheticData/report/vortrag.tex" 1782301830 20069 6a267b4bd89ba844afc410f502a27313 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_iz27ck.enc" 1561498186 2880 c07f4a1ce14a88d4ebe18f1c7b4592c1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/opensans/a_n3lhbv.enc" 1561498186 2876 59df564f2929ccd7d2b24aa7d14cad04 ""
@@ -283,13 +283,13 @@
   "img/synthetic_penguins.png" 1782298396 1928441 407c6291a061d38f6dbd4dd9717ae366 ""
   "img/tSNE.png" 1782298396 97413 8f8e97fc2035b11abe2e29aa756d1a32 ""
   "img/this_person_doesntexist.png" 1782298396 2084883 6c7520e06c202a632483c9e1c4c177fa ""
-  "vortrag.aux" 1782301631 7276 81bdee906fda58fc0fc38dfde6818c99 "pdflatex"
+  "vortrag.aux" 1782301835 7276 81bdee906fda58fc0fc38dfde6818c99 "pdflatex"
   "vortrag.bbl" 1782300776 27694 c6b649eacd5a0b72fcd565814deac2b2 "biber vortrag"
-  "vortrag.nav" 1782301631 3172 a3d2319121510108d246a313c273fd63 "pdflatex"
-  "vortrag.out" 1782301631 635 7d702d84feb3dc3bbd5833c889671a54 "pdflatex"
-  "vortrag.run.xml" 1782301631 2369 b8832056db155fd7d0fbf719ddab743c "pdflatex"
-  "vortrag.tex" 1782301626 20062 f660be1fa2aead4d22ce42e7efb91f5f ""
-  "vortrag.toc" 1782301631 278 9fd4d08b2b21222a8f5edd2c2a72dec3 "pdflatex"
+  "vortrag.nav" 1782301835 3172 a3d2319121510108d246a313c273fd63 "pdflatex"
+  "vortrag.out" 1782301835 635 7d702d84feb3dc3bbd5833c889671a54 "pdflatex"
+  "vortrag.run.xml" 1782301835 2369 b8832056db155fd7d0fbf719ddab743c "pdflatex"
+  "vortrag.tex" 1782301830 20069 6a267b4bd89ba844afc410f502a27313 ""
+  "vortrag.toc" 1782301835 278 9fd4d08b2b21222a8f5edd2c2a72dec3 "pdflatex"
   (generated)
   "vortrag.aux"
   "vortrag.bcf"

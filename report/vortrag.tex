@@ -1,0 +1,527 @@
+\documentclass[
+	11pt, % Tamanho padrão da fonte
+	% t, % Alinhar verticalmente ao topo
+	% aspectratio=169, % Definir proporção 16:9    
+]{beamer}
+
+\usepackage[style=authoryear, backend=biber]{biblatex} % URL zu lang für Präsi
+\addbibresource{SynthetischeDaten.bib}
+
+% Caminho para imagens
+\graphicspath{{img/}}
+
+% Pacotes adicionais
+%\usepackage[alf]{abntex2cite} % Citações ABNT
+\usepackage{booktabs} % Linhas de tabela aprimoradas
+\usepackage{palatino} % Fonte Palatino
+\usepackage[default]{opensans} % Fonte Open Sans
+\usepackage{hyperref}
+\usepackage{xurl} % url in Quelle sonst zu groß
+\usepackage{caption}
+\usepackage[ngerman]{babel}
+
+
+%----------------------------------------------------------------------------------------
+%	SELEÇÃO DE LAYOUT E CORES
+%----------------------------------------------------------------------------------------
+
+\usetheme{Boadilla} % Tema de layout
+
+% Definição de cores personalizadas
+\definecolor{primaryColor}{RGB}{20,45,105} % Cor primária
+\definecolor{secondaryColor}{RGB}{0,100,160} % Cor secundária
+
+% Aplicação das cores no tema
+\setbeamercolor{structure}{fg=primaryColor}
+\setbeamercolor{palette primary}{bg=primaryColor, fg=white}
+\setbeamercolor{palette secondary}{bg=secondaryColor, fg=white}
+\setbeamercolor{title}{bg=primaryColor, fg=white} % Cor do título principal
+
+% Cores no cabeçalho
+\setbeamercolor{headline}{bg=secondaryColor, fg=white}
+\setbeamercolor{section in head/foot}{bg=primaryColor, fg=white}
+\setbeamercolor{subsection in head/foot}{bg=secondaryColor, fg=white}
+
+% Configurações de cores para o rodapé
+\setbeamercolor{author in head/foot}{bg=primaryColor, fg=white} % Nome
+\setbeamercolor{title in head/foot}{bg=secondaryColor, fg=white} % Título
+\setbeamercolor{date in head/foot}{bg=primaryColor, fg=white} % Ano
+\setbeamercolor{page number in head/foot}{bg=primaryColor, fg=white} % Página
+
+% Temas internos e externos
+\useinnertheme{circles} % Tema interno
+\useoutertheme{miniframes} % Tema externo
+\setbeamertemplate{navigation symbols}{} % Remove símbolos de navegação
+\setbeamertemplate{caption}[numbered] % Nummerierungen bei figure Abbildungen
+\setbeamerfont{caption}{size=\scriptsize}
+\setbeamertemplate{bibliography item}{} % keine Icons in Literaturverzeichnis (Icons kommen von Boadilla)
+
+%----------------------------------------------------------------------------------------
+%	INFORMAÇÕES DA APRESENTAÇÃO
+%----------------------------------------------------------------------------------------
+
+\title[Synthetische Daten]{Vom Datensatz zur Simulation: Wie synthetische Daten entstehen}
+\author[Markus Steffen]{Markus Steffen} 
+%\institute[IME-USP]{Instituto de Matemática e Estatística \\ (IME-USP)} 
+\date[30.06.2026]{30.06.2026} 
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	Titelseite
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+    %\begin{figure}
+    %    \includegraphics[width=0.45\linewidth]{img/logo_IME.png}
+    %\end{figure}
+    \titlepage
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	Agenda
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+    \frametitle{Agenda}
+    \tableofcontents
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+\section{Einführung}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+    \frametitle{Was sind synthetische Daten}
+    %\small \textit{Ein synthetischer Datensatz besitzt die gleichen mathematischen Eigenschaften wie die realen Daten, die er ersetzt, enthält jedoch keine der ursprünglichen Informationen. Er wird erzeugt, indem man echte Daten nimmt, ein generatives Machine-Learning-Modell darauf trainiert und daraus einen neuen Datensatz generiert. Das Ergebnis spiegelt die allgemeinen Muster des Originals wider, liefert aber genug ‚Rauschen‘, um die echten Daten genügend zu maskieren.} frei \parencite{mit_sloan_what_2023}
+    \begin{itemize}
+        \item Ein synthetischer Datensatz hat: \parencite{mit_sloan_what_2023}
+        \begin{itemize}
+            \item die gleichen math. Eigenschaften wie realer Datensatz
+            \item enthält keine ursprünglichen Informationen
+            \item wird mittels generativer Lernmethoden erzeugt (Training)
+            \item genug Rauschen um echte Daten genügend zu maskieren
+        \end{itemize}
+    \end{itemize}
+    \medskip
+    \begin{itemize}        
+        \item Synthetische Daten basieren auf 4 Grundpfeilern % Ressource 
+        \begin{itemize}
+            \item Fidelity
+            \item Utility
+            \item Privacy
+            \item Reproducebility
+        \end{itemize}
+    \end{itemize}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Einsatzzwecke für synthetische Daten, oder : wozu braucht man das?}
+    \begin{itemize}
+        \item Datenschutz und Anonymsierung
+        \item Datenverfügbarkeit
+        \item Rapid Prototyping 
+        \item Kostenreduktion %Vermeidung teurer Datenerhebung (aufwändige Sensoraufnahmen, manuelle Annotation)    
+        \item Data Augementation    
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Herausforderungen}
+    \begin{itemize}
+        \item Datenqualität
+        \item Trade-Off Qualität vs Privacy
+        \item Bewertung
+        \begin{itemize}
+            \item Wie Ergebnisse bewerten ? - keine einheitlicher Standard für Metrik (Vergleichbarkeit) \parencite{escudie_evaluating_2026}
+            \item Wie verschiedene Daten vergleichen % Modell immer zugeschnitten, Teilen von Daten schwierig
+            \item Wie verschiedene Methodiken vergleichen ? % Hyperparametertuning, computational Time
+            \item Wie Anonymität einschätzen ? %epsilon Delta 
+        \end{itemize}
+        \item sauberes Anforderungsmanagement % Welchen Anforderungen muss der synth Datensatz standhalten, z.B. Pipeline -> Dashboard, Fachliche Anforderungen auf Dashboard ?
+        \item Technische Umsetzung 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Ansätze}
+    \begin{itemize}
+        \item Bewertung Datenqualität
+        \begin{itemize}
+            \item MAE2 (numerisch) \parencite{escudie_evaluating_2026}
+            \item Wasserstein-Distanz (numerisch, earth movers distance)
+            \item Kolmogorov-Smirnov statistic
+            \item Kullback Leibler Divergenz (kategorisch)
+            \item Jensen-Shannon Divergenz (kategorisch)
+            \item TVD - total variation distance (kategorisch)
+            \item Graphisch (Korrelationen, t-SNE, ...)
+        \end{itemize}
+        \item Bewertung Performance  
+        \begin{itemize}
+            \item computation time Limit setzen
+        \end{itemize}
+        \item Privacy
+        \begin{itemize}
+            \item epsilon-delta Privacy
+            \item attack szenarios
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+\section{GAN/CTGAN}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+    \frametitle{Was meint ihr?}
+    \begin{columns}[b] % T = top aligned, b = bottom
+        \column{0.6\textwidth}
+            \begin{figure}
+                \centering           
+                \includegraphics[width=0.5\linewidth]{img/this_person_doesntexist.png}\\
+                \caption{ist diese Person real?}
+            \end{figure}
+
+        \column{0.4\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.5\linewidth]{img/qr_personnotexist.png}\\
+                \caption{Gerne ausprobieren :)}
+            \end{figure}
+    \end{columns}
+        \
+\end{frame}
+
+\begin{frame}
+    \frametitle{GAN - generative adversarial network}
+         \begin{figure}
+                \centering
+                \includegraphics[width=0.7\linewidth]{img/gan_architecture.png}\\
+                \caption{Aufbau GAN \parencite{yan_generating_2024}}
+            \end{figure}
+        \begin{columns}[T] % T = top aligned
+        \column{0.48\textwidth}
+           \begin{center}
+                \tiny
+                Bilddaten
+                \begin{tabular}{lccccc}
+                    \toprule
+                    Pixel (1 Farbkanal) & x0 & x1 & x2 & ..  \\
+                    \midrule
+                    y0 & 0 & 244 & 123 & ...  \\
+                    y1 & 10 & 246 & 100 & ...  \\
+                    ...  & 119 & 7.4 & 78 & ... \\
+                    \bottomrule
+                \end{tabular}
+            \end{center}
+
+        \column{0.48\textwidth}
+            \begin{center}
+                \tiny
+                Electronic Health Record
+                \begin{tabular}{lccccc}
+                    \toprule
+                    Alter & Sportart & MaxPuls & Gewicht & Raucher  \\
+                    \midrule
+                    12 & Sprint & 190 & 55 & Nein  \\
+                    48 & Fahrrad & 160 & 65 & Ja  \\
+                    27 & Klettern & 130 & 78 & Nein \\
+                    \bottomrule
+                \end{tabular}
+            \end{center}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{CTGAN - conditional tabular GAN}
+        \begin{figure}
+                \centering
+                \includegraphics[width=0.95\linewidth]{img/ctgan_layout.drawio.png}\\
+                \caption{Aufbau CTGAN}
+            \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Come with me if you want to live}
+        \begin{figure}
+                \centering
+                \includegraphics[width=0.8\linewidth]{img/synthetic_penguins.png}\\
+                \caption{Synthetische Pinguine ?}
+            \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Preprocessing und Training}
+        \begin{columns}[T] % T = top aligned
+        \column{0.48\textwidth}
+           \begin{center}
+                \begin{itemize}
+                    \item Preprocessng
+                    \begin{itemize}
+                        \item Outlier entfernen
+                        \item NaNs betrachten
+                        \item Normalisierung von kontinuierlichen Daten
+                        \item One-Hot Encoding für kategorische Variablen
+                    \end{itemize}
+                    \item Training
+                    \begin{itemize}
+                        \item Kombinationen bilden (kategorisch)
+                        \item probablistische Ziehung (condition)
+                        \item Noise +condition als Input für Discriminator
+                    \end{itemize}
+                \end{itemize}
+            \end{center}
+        \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.8\linewidth]{img/loss_zoom.png}\\
+                \caption{Generator vs Discriminator Loss (zoom)}
+            \end{figure}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.5\linewidth]{img/Gen_lossvsdisc_loss.png}\\
+                \caption{G vs D total-loss}
+            \end{figure}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Ergebnisse}
+       \begin{columns}[b]
+        \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.5\linewidth]{img/corr_map_real.png}
+                \caption{Korrelation Real}
+            \end{figure}
+            
+        \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.5\linewidth]{img/corr_map_fake.png}
+                \caption{Korrelation Fake}
+            \end{figure}
+    \end{columns}
+
+    \vspace{0.2cm}
+
+    \begin{columns}[b]
+        \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.5\linewidth]{img/screeplot.png}
+                \caption{Screeplot}
+            \end{figure}
+            
+        \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.65\linewidth]{img/loadings.png}
+                \caption{Loadings}
+            \end{figure}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Ergebnisse}
+    \begin{columns}[b] % T = top aligned
+        \column{0.49\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.7\linewidth]{img/fake_penguin_data.png}
+                \caption{Generator vs Discriminator Loss}
+            \end{figure}
+
+        \column{0.48\textwidth}
+            \begin{figure}
+            \centering
+            \includegraphics[width=0.9\linewidth]{img/tSNE.png}
+            \caption{t-SNE Visualisierung}
+        \end{figure}
+    \end{columns}
+\end{frame}
+
+\section{Table Diffusion}
+
+%----------------------------------------------------------------------------------------
+%\section{Probleme \& Herausforderungen}
+%----------------------------------------------------------------------------------------
+
+
+\begin{frame}
+    \frametitle{Funktionsprinzip Table Diffusion}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\linewidth]{img/diffusion.png}
+        \caption{Diffusion Prozess \parencite{truda_generating_2023}}
+    \end{figure}   
+\end{frame}
+
+\begin{frame}
+    \frametitle{Training und Erzeugung}
+        \begin{itemize}
+            \item Training
+            \begin{itemize}
+                \item Startpunkt vorprozessierte reale Daten (analog CTGAN)
+                \item Verrauschung durch Noise Sheduler 
+                \item Sinosuidales Embedding (quasi t dem Netz mitgeben)
+                \item Netz lernt Realdaten für Schritt t aus Rauschen zu denoisen
+                \item Metrik : Kullback-Leibler Divergenz + 
+                \item Essenz der Informationen im Rauschen enthalten
+            \end{itemize}
+            \item Generierung
+            \begin{itemize}
+                \item Erzeugung latenter Tensor (selbe Größe wie vorprozessiertes Datenset)
+                \item Revers Prozess durch Abschalen der Rauschschichten
+                \item Umkehrung der Preprocessng Schritte (scaling, one-hot encoding)
+            \end{itemize}
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Verrauschung und Embedding}
+        \begin{itemize}
+            \item Verrauschung mittels noise Sheduler \parencite{truda_generating_2023}
+            \begin{itemize}
+                \item jedes Element im aktuellen Batch bekommt noise aufaddiert
+                \item $x_{t+1} = x_t + z_t$ mit $z_t \sim \mathcal{N} \left(0,1\right)\sqrt{\beta_t}$, wobei $\beta_t = \frac{t}{T}$
+            \end{itemize}
+            \item Sinusoidales Embedding des Noiser Steps \parencite{vaswani_attention_2023}
+            \begin{itemize}
+                \item Ziel Netz soll Verrauschungsstufe mitbekommen (embedd vs concat)
+                \item Vector mit Sinus und Kosinus Einträgen, wobei jede Dimension für ein festes t einzigartig ist
+            \end{itemize}
+        \end{itemize}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.7\linewidth]{img/sinusoidal_embedding.png}
+            %\caption{Diffusion Prozess \parencite{truda_generating_2023}}
+        \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Ergebnisse}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.7\linewidth]{img/sinusoidla_concat.png}
+            %\caption{Diffusion Prozess \parencite{truda_generating_2023}}
+        \end{figure}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Vergleich}
+        \begin{columns}[b]
+        \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.45\linewidth]{img/abdeckung_num_ctgan.png}
+                \caption{Abdeckung CTGAN \footnotemark}
+            \end{figure}
+            
+        \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.45\linewidth]{img/abdeckung_num_ctgan.png}
+                \caption{Abdeckung TableDiffusion}
+            \end{figure}
+    \end{columns}
+
+    %\vspace{0.2cm}
+
+    \begin{columns}[T]
+        \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.4\linewidth]{img/loadings.png}
+                \caption{Abdeckung kat. Features TableDiffusion}
+            \end{figure}
+            
+        \column{0.48\textwidth}
+           \begin{center}
+                \tiny
+                Ergebnisse \footnotemark
+                \begin{tabular}{lccccc}
+                    \toprule
+                    Methode & WDdist & S & computation time [s]\\
+                    \midrule
+                    CTGAN & 0 & 244 & 123   \\
+                    TableDiff & 10 & 246 & 100 \\
+                    \bottomrule
+                \end{tabular}
+            \end{center}
+    \end{columns}
+    \footnotetext{\tiny berechnet $s=e^{-w_d}$ mit $w_d$ = Wasserstein distanz}
+    \footnotetext{\tiny Mit Vorsicht zu genießen, kein ground Truth}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+\section{Ausblick und Diskussion}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+    \frametitle{Rück und Ausblick}
+    \begin{itemize}
+        \item Rückblick
+        \begin{itemize}
+            \item spannendes Paper gefunden
+            \item Recherche (Papers, Vortrag von Julian Z.,..)
+            \item eigene Gehversuche mit CTGAN und TableDiffusion
+            \item internes RKI Seminar synthetische Daten Jean-Baptiste
+            \item initiales Treffen MFI + ZKI
+        \end{itemize}
+        \item weitere Methodiken \parencite{shi_comprehensive_2025}, \parencite{du_towards_2024}
+        \begin{itemize}
+            \item TVAE
+            \item GReat (LLM based)
+            \item TabDDPM
+            \item PGM
+            \item SimbaML - simulation based machine Learning
+        \end{itemize}   
+        \item offene Themen
+        \begin{itemize}
+            \item Real Welt UseCase ?
+            \item Privacy Thematiken (epsilon-delta)
+            \item Vergleich der Methodiken
+        \end{itemize}        
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Zusammenfassung}
+    \begin{itemize}
+        \item Synthetische Daten Mimiken reale Daten
+        \item Es gibt keine einheitlich akzeptierte Metrik (Bewertungskriterien)
+        \item Use Case sollte klar und auch umfassend definiert werden (Endanwendung, ETL, ..)
+        \item Viele Wege (Methodiken) führen nach Rom (zum Ergebnis)
+        \item CTGAN: funktioniert wie zwei Gegenspieler, wobei Generator aus Rauschen Fake Daten erzeugt und versucht Diskriminator auszutricksen
+        \item Table Diffusion: neuronales Netz lernt wie Daten verrauscht werden und kann aus Rauschen synthetische Daten rekreiern.
+    \end{itemize}
+\end{frame}
+
+
+%----------------------------------------------------------------------------------------
+\section{Quellen}
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+    \frametitle{Quellen}   
+    \renewcommand{\bibfont}{\tiny} % Literaturverzeichnis etwas kleiner machen
+    \printbibliography
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	SLIDE DE ENCERRAMENTO
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+    \begin{center}
+        {\Huge Vielen Dank für Eure Aufmerksamkeit!}
+    \end{center}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

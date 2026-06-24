@@ -1,0 +1,6 @@
+\babel@toc {ngerman}{}\relax 
+\beamer@sectionintoc {1}{Einführung}{3}{0}{1}
+\beamer@sectionintoc {2}{GAN/CTGAN}{7}{0}{2}
+\beamer@sectionintoc {3}{Table Diffusion}{14}{0}{3}
+\beamer@sectionintoc {4}{Ausblick und Diskussion}{19}{0}{4}
+\beamer@sectionintoc {5}{Quellen}{21}{0}{5}

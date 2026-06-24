@@ -291,7 +291,7 @@ The results showed that the synthetic data blend relative seamlessly with the re
 2. **Phase 2** ✓ : Implement conditional GANs (Penguin dataset)
 3. **Phase 3** (in progress) : make a YAML configurable CTGAN setup to work with any kind of datasets
 4. **Phase 4** (planned) Try a generating synthetic data for a "real" and complex dataset 
-5. **Phase 5** (planned) implement basic functionality for table diffusion data generation
+5. **Phase 5** (in progress) implement basic functionality for table diffusion data generation
 6. **Phase 6** (planned) comparison between the two methods
 7. **Phase 7** (planned) research and basic implementation of the most promising data generation method
 8. **Phase 8** (optional) Generate synthetic medical health records in FHIR format

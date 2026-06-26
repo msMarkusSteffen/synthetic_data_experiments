@@ -52,9 +52,9 @@ class DataPrep():
         X_train, X_test = train_test_split(X, test_size=test_size, random_state=random_state)
         return X_train, X_test
 
-class Diffusor(nn.Module):
+class SimpleDiffusor(nn.Module):
     def __init__(self, input_dim, hidden_dim, output_size):
-        super(Diffusor, self).__init__()
+        super(SimpleDiffusor, self).__init__()
         self.l1 = nn.Linear(in_features=input_dim, out_features=hidden_dim) 
         self.ln1 = nn.LayerNorm(hidden_dim)  # LayerNorm statt BatchNorm
         self.l2 = nn.Linear(in_features=hidden_dim, out_features=2 * hidden_dim) 
@@ -69,9 +69,9 @@ class Diffusor(nn.Module):
         return x
     
 
-class WideAndDeepDiffusor(nn.Module):
+class ComplexDiffusor(nn.Module):
     def __init__(self, input_dim, hidden_dim, output_size):
-        super(WideAndDeepDiffusor, self).__init__()
+        super(ComplexDiffusor, self).__init__()
         
         # Schicht 1: Eingang zu erster großer Schicht
         self.l1 = nn.Linear(in_features=input_dim, out_features=hidden_dim) 
@@ -146,10 +146,11 @@ n_epochs = 2000
 batch_size = 64
 learning_rate = 0.001
 embedding_size = 64 
+mixed_type = False # Schaltet auf conditional um wenn false (bei conditional muss diffusion Prozess nur numerische features vorhersagen)
 
 train_dataloader = DataLoader(X_train, batch_size=batch_size, shuffle=True, drop_last=False)
 
-diffmodel = WideAndDeepDiffusor(input_dim=data.total_features + embedding_size, hidden_dim=128, output_size=data.total_features)
+diffmodel = ComplexDiffusor(input_dim=data.total_features + embedding_size, hidden_dim=128, output_size=data.total_features)
 diffmodel.to(device=device)
 
 optimizer = optim.Adam(diffmodel.parameters(), lr=learning_rate, betas=(0.9, 0.999))

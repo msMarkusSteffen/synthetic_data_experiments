@@ -7,6 +7,7 @@ import numpy as np
 import os
 import random
 import matplotlib.pyplot as plt 
+import time
 
 from sklearn.preprocessing import OneHotEncoder, MinMaxScaler
 from sklearn.compose import ColumnTransformer
@@ -339,12 +340,20 @@ if __name__ == "__main__":
     csvfile = os.path.join(os.getcwd(), "datasets/penguins_size.csv")
     ctgan = CTGan(dataset=csvfile,categorical_collumns=["species","island","sex"],epochs=5000)
     ctgan.run_dataprep()
+    
     ctgan.init_models()
-    #ctgan.run_training()
+    start_time = time.perf_counter()
+    ctgan.run_training()
+    end_time = time.perf_counter()
+    total_seconds = end_time - start_time
+    minutes = int(total_seconds // 60)
+    seconds = int(total_seconds % 60)
+    print(f"Das Training dauerte: {minutes:02d}:{seconds:02d} (MM:SS)")
+    
     #ctgan.show_learning_competition(save_data=True)    
     #ctgan.export_generatormodel(filepath="generator.pth")
-    ctgan.load_generatormodel("generator.pth")
-    ctgan.generate(n_samples=256,export=True,real_fake_combined=True, filename="penguins_fake_real.csv")
+    #ctgan.load_generatormodel("generator.pth")
+    #ctgan.generate(n_samples=256,export=True,real_fake_combined=True, filename="penguins_fake_real.csv")
         
     # TODO Paper empfiehlt dringend Outlier vorher zu entfernen .... 
     # TODO Wasserstein Metrik zur Bewertung des Modells implementieren <-- Empfohlen aber wie ??

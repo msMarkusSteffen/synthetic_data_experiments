@@ -53,7 +53,7 @@
 \useoutertheme{miniframes} % Tema externo
 \setbeamertemplate{navigation symbols}{} % Remove símbolos de navegação
 \setbeamertemplate{caption}[numbered] % Nummerierungen bei figure Abbildungen
-\setbeamerfont{caption}{size=\scriptsize}
+\setbeamerfont{caption}{size=\tiny}
 \setbeamertemplate{bibliography item}{} % keine Icons in Literaturverzeichnis (Icons kommen von Boadilla)
 
 %----------------------------------------------------------------------------------------
@@ -397,7 +397,7 @@
         \begin{figure}
             \centering
             \includegraphics[width=0.7\linewidth]{img/sinusoidal_embedding.png}
-            %\caption{Diffusion Prozess \parencite{truda_generating_2023}}
+            \caption{Verrauschung und Sinusoidal-Embedding}
         \end{figure}
 \end{frame}
 
@@ -405,9 +405,24 @@
     \frametitle{Ergebnisse}
         \begin{figure}
             \centering
-            \includegraphics[width=0.7\linewidth]{img/sinusoidla_concat.png}
-            %\caption{Diffusion Prozess \parencite{truda_generating_2023}}
+            \includegraphics[width=0.5\linewidth]{img/sinusoidla_concat.png}
+            \caption{Verrauschung und Sinsoidal concatenation}
         \end{figure}
+        \begin{columns}[b]
+            \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.5\linewidth]{img/tablediff_mixedtype.png}
+                \caption{Table Diffusion - mixed Type}
+            \end{figure}
+            
+        \column{0.48\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.45\linewidth]{img/tablediff_conditional.png}
+                \caption{Table Diffusion - conditional}
+            \end{figure}
+        \end{columns}
 \end{frame}
 
 
@@ -424,7 +439,7 @@
         \column{0.48\textwidth}
             \begin{figure}
                 \centering
-                \includegraphics[width=0.45\linewidth]{img/abdeckung_num_ctgan.png}
+                \includegraphics[width=0.45\linewidth]{img/abdeckung_num_tablediff.png}
                 \caption{Abdeckung TableDiffusion}
             \end{figure}
     \end{columns}
@@ -435,26 +450,26 @@
         \column{0.48\textwidth}
             \begin{figure}
                 \centering
-                \includegraphics[width=0.4\linewidth]{img/loadings.png}
-                \caption{Abdeckung kat. Features TableDiffusion}
+                \includegraphics[width=0.5\linewidth]{img/tablediff_noisepred_conditional.png}
+                \caption{TableFiff. noisepred. contitional}
             \end{figure}
             
         \column{0.48\textwidth}
            \begin{center}
                 \tiny
-                Ergebnisse \footnotemark
+                Ergebnisse (nicht zu ernst nehmen)
                 \begin{tabular}{lccccc}
                     \toprule
-                    Methode & WDdist & S & computation time [s]\\
+                    Methode & $\bar{w}_d$ & $\bar{s}$ & computation time [mm:ss]\\
                     \midrule
-                    CTGAN & 0 & 244 & 123   \\
-                    TableDiff & 10 & 246 & 100 \\
+                    CTGAN & 0.16 & 0.86 & 06:17   \\
+                    TableDiff & 0.21 & 0.81 & 13:40 \\
                     \bottomrule
                 \end{tabular}
             \end{center}
     \end{columns}
     \footnotetext{\tiny berechnet $s=e^{-w_d}$ mit $w_d$ = Wasserstein distanz}
-    \footnotetext{\tiny Mit Vorsicht zu genießen, kein ground Truth}
+    %\footnotetext{\tiny Mit Vorsicht zu genießen, kein ground Truth}
 \end{frame}
 
 %----------------------------------------------------------------------------------------

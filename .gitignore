@@ -2,3 +2,5 @@
 Aktuell_Deutschland_SarsCov2_Infektionen.csv
 *.pyc
 *.bib
+tablediff_noise_prediction.py
+tabledifftest_rdnoise_conditional.py

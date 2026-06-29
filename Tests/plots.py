@@ -8,34 +8,59 @@ from sklearn.manifold import TSNE
 import os
 
 
-df = pd.read_csv("../datasets/generated/penguins_fake_real.CSV")
+script_dir = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(script_dir, "..", "datasets", "generated", "penguins_fake_real.CSV")
+
+df = pd.read_csv(csv_path)
 df.drop(["Unnamed: 0"], inplace=True, axis=1)
 print(df.head())
 
 #  Plot correlation matrices
 # Compute the correlation matrix
-def plot_corr_mat(dataframes, outputfile):
-    d = dataframes
+#def plot_corr_mat(dataframes, outputfile):
+#    d = dataframes
+#
+#    # Set up the matplotlib figure
+#    f, ax = plt.subplots(figsize=(11, 9))
+#    for i in range(0,len(d)):
+#        corr = d[i].corr()  
+#    
+#        # Generate a custom diverging colormap
+#        cmap = sns.diverging_palette(230, 20, as_cmap=True)
+#
+#        # Draw the heatmap with the mask and correct aspect ratio
+#        corr_plot = sns.heatmap(corr,cmap=cmap, vmax=1.0, vmin=-1.0, center=0,
+#                    square=True, linewidths=.5, cbar_kws={"shrink": .5})
+#    f = corr_plot.get_figure()
+#    f.savefig(outputfile)
 
-    # Set up the matplotlib figure
+def plot_corr_mat(dataframe, outputfile):
+    # Set up the matplotlib figure (wichtig: Jedes Mal eine neue Figure!)
     f, ax = plt.subplots(figsize=(11, 9))
-    for i in range(0,len(d)):
-        corr = d[i].corr()  
     
-        # Generate a custom diverging colormap
-        cmap = sns.diverging_palette(230, 20, as_cmap=True)
+    # Korrelation direkt vom übergebenen DataFrame berechnen
+    corr = dataframe.corr()  
+    
+    # Custom diverging colormap
+    cmap = sns.diverging_palette(230, 20, as_cmap=True)
 
-        # Draw the heatmap with the mask and correct aspect ratio
-        corr_plot = sns.heatmap(corr,cmap=cmap, vmax=.3, center=0,
-                    square=True, linewidths=.5, cbar_kws={"shrink": .5})
-    f = corr_plot.get_figure()
-    f.savefig(outputfile)
+    # Heatmap zeichnen mit fixen Grenzen von -1 bis 1 und echten Zahlen (annot=True)
+    sns.heatmap(corr, cmap=cmap, vmin=-1, vmax=1, center=0,
+                square=True, linewidths=.5, annot=True, fmt=".2f",
+                cbar_kws={"shrink": .5}, ax=ax)
+    
+    # Titel hinzufügen, damit man sieht, welcher Plot es ist
+    #plt.title(os.path.basename(outputfile).replace(".png", "").upper(), fontsize=14)
+    
+    plt.tight_layout()
+    plt.savefig(outputfile)
+    plt.close() #
 
 df_fake = df[df['source'] == "fake"].select_dtypes(exclude=['object'])
 df_real = df[df['source'] == "real"].select_dtypes(exclude=['object'])
 
-#plot_corr_mat(df_fake, "corr_map_fake.png")
-#plot_corr_mat(df_real, "corr_map_real.png")
+plot_corr_mat(df_fake, "corr_map_fake.png")
+plot_corr_mat(df_real, "corr_map_real.png")
 
 # Plot Scree Plots
 components = 4

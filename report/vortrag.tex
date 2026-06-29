@@ -99,10 +99,10 @@
     \begin{itemize}
         \item Ein synthetischer Datensatz hat: \parencite{mit_sloan_what_2023}
         \begin{itemize}
-            \item die gleichen math. Eigenschaften wie realer Datensatz
-            \item enthält keine ursprünglichen Informationen
+            \item die \textit{gleichen} math. Eigenschaften wie realer Datensatz
+            \item enthält \textit{keine} ursprünglichen Informationen
             \item wird mittels generativer Lernmethoden erzeugt (Training)
-            \item genug Rauschen um echte Daten genügend zu maskieren
+            \item Rauschen um echte Daten \textit{genügend} zu maskieren
         \end{itemize}
     \end{itemize}
     \medskip
@@ -125,7 +125,7 @@
         \item Datenverfügbarkeit
         \item Rapid Prototyping 
         \item Kostenreduktion %Vermeidung teurer Datenerhebung (aufwändige Sensoraufnahmen, manuelle Annotation)    
-        \item Data Augementation    
+        \item Datenaufwertung (augmentation)    
     \end{itemize}
 \end{frame}
 
@@ -137,7 +137,7 @@
         \item Bewertung
         \begin{itemize}
             \item Wie Ergebnisse bewerten ? - keine einheitlicher Standard für Metrik (Vergleichbarkeit) \parencite{escudie_evaluating_2026}
-            \item Wie verschiedene Daten vergleichen % Modell immer zugeschnitten, Teilen von Daten schwierig
+            \item Daten Vergleichen (Data Drift, unterschiedliche Aufgaben) % Modell immer zugeschnitten, Teilen von Daten schwierig
             \item Wie verschiedene Methodiken vergleichen ? % Hyperparametertuning, computational Time
             \item Wie Anonymität einschätzen ? %epsilon Delta 
         \end{itemize}
@@ -150,15 +150,23 @@
     \frametitle{Ansätze}
     \begin{itemize}
         \item Bewertung Datenqualität
+        \small{
         \begin{itemize}
-            \item MAE2 (numerisch) \parencite{escudie_evaluating_2026}
-            \item Wasserstein-Distanz (numerisch, earth movers distance)
-            \item Kolmogorov-Smirnov statistic
-            \item Kullback Leibler Divergenz (kategorisch)
+            \item univariat (feature wise)
+            \begin{itemize}
+                \item Wasserstein-Distanz (numerisch, earth movers distance)
+                \item Kolmogorov-Smirnov statistic (num)
+                \item TVD - total variation distance (kategorisch)
+                \item Kullback Leibler Divergenz (kategorisch)
             \item Jensen-Shannon Divergenz (kategorisch)
-            \item TVD - total variation distance (kategorisch)
-            \item Graphisch (Korrelationen, t-SNE, ...)
-        \end{itemize}
+            \end{itemize}
+            \item multivariat (feature übergreifend)
+            \begin{itemize}
+                \item MAE2 (numerisch) \parencite{escudie_evaluating_2026}
+                \item Graphisch (Korrelationen, t-SNE, ...)
+                \item fachliche Prüfungen
+            \end{itemize}            
+        \end{itemize}}
         \item Bewertung Performance  
         \begin{itemize}
             \item computation time Limit setzen
@@ -250,6 +258,15 @@
                 \includegraphics[width=0.8\linewidth]{img/synthetic_penguins.png}\\
                 \caption{Synthetische Pinguine ?}
             \end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Pinguin Datensatz}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\linewidth]{img/penguin.png}\\
+        %\caption{G vs D total-loss}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -366,9 +383,9 @@
             \begin{itemize}
                 \item Startpunkt vorprozessierte reale Daten (analog CTGAN)
                 \item Verrauschung durch Noise Sheduler 
-                \item Sinosuidales Embedding (quasi t dem Netz mitgeben)
+                \item Sinosoidales Embedding (quasi t dem Netz mitgeben)
                 \item Netz lernt Realdaten für Schritt t aus Rauschen zu denoisen
-                \item Metrik : Kullback-Leibler Divergenz + 
+                \item Metrik : MSE + Kullback-Leibler Divergenz 
                 \item Essenz der Informationen im Rauschen enthalten
             \end{itemize}
             \item Generierung
@@ -383,46 +400,72 @@
 \begin{frame}
     \frametitle{Verrauschung und Embedding}
         \begin{itemize}
-            \item Verrauschung mittels noise Sheduler \parencite{truda_generating_2023}
+            \item \small Verrauschung mittels noise Sheduler \parencite{truda_generating_2023}
+            \tiny
             \begin{itemize}
-                \item jedes Element im aktuellen Batch bekommt noise aufaddiert
-                \item $x_{t+1} = x_t + z_t$ mit $z_t \sim \mathcal{N} \left(0,1\right)\sqrt{\beta_t}$, wobei $\beta_t = \frac{t}{T}$
+                \item \small jedes Element im aktuellen Batch bekommt noise aufaddiert
+                \item \small $x_{t+1} = x_t + z_t$ mit $z_t \sim \mathcal{N} \left(0,1\right)\sqrt{\beta_t}$, wobei $\beta_t = \frac{t}{T}$
             \end{itemize}
-            \item Sinusoidales Embedding des Noiser Steps \parencite{vaswani_attention_2023}
+            \item \small Sinusoidales Embedding des Noiser Steps \parencite{vaswani_attention_2023}
             \begin{itemize}
-                \item Ziel Netz soll Verrauschungsstufe mitbekommen (embedd vs concat)
-                \item Vector mit Sinus und Kosinus Einträgen, wobei jede Dimension für ein festes t einzigartig ist
+                \item \small Ziel Netz soll Verrauschungsstufe mitbekommen (embedd vs concat, ...)
+                \item \small Vector mit Sinus und Kosinus Einträgen, wobei jede Dimension für ein festes t einzigartig ist
             \end{itemize}
         \end{itemize}
-        \begin{figure}
+       \begin{columns}
+            \begin{column}{0.48\textwidth}
+                \begin{figure}
+                    \centering
+                    \includegraphics[width=0.9\linewidth]{img/sinusoidal_embedding.png}
+                    \caption{Verrauschung und Sinusoidal-Embedding}
+                \end{figure}
+            \end{column}
+            \begin{column}{0.48\textwidth}
+                \begin{figure}
             \centering
-            \includegraphics[width=0.7\linewidth]{img/sinusoidal_embedding.png}
-            \caption{Verrauschung und Sinusoidal-Embedding}
+            \includegraphics[width=0.9\linewidth]{img/sinusoidla_concat.png}
+            \caption{Verrauschung und Sinsoidal concatenation}
         \end{figure}
+            \end{column}
+       \end{columns}
+  
+                
 \end{frame}
 
 \begin{frame}
-    \frametitle{Ergebnisse}
-        \begin{figure}
-            \centering
-            \includegraphics[width=0.5\linewidth]{img/sinusoidla_concat.png}
-            \caption{Verrauschung und Sinsoidal concatenation}
-        \end{figure}
+    \frametitle{Ergebnisse}     
         \begin{columns}[b]
             \column{0.48\textwidth}
             \begin{figure}
                 \centering
                 \includegraphics[width=0.5\linewidth]{img/tablediff_mixedtype.png}
-                \caption{Table Diffusion - mixed Type}
+                \caption{Start: denoising TablDiff - mixed Type}
             \end{figure}
             
         \column{0.48\textwidth}
             \begin{figure}
                 \centering
-                \includegraphics[width=0.45\linewidth]{img/tablediff_conditional.png}
-                \caption{Table Diffusion - conditional}
+                \includegraphics[width=0.5\linewidth]{img/tablediff_conditional.png}
+                \caption{Inter denoising TableDiff - conditional}
             \end{figure}
         \end{columns}
+        \begin{columns}
+            \begin{column}{0.48\textwidth}
+                \begin{figure}
+                \centering
+                \includegraphics[width=0.5\linewidth]{img/tablediff_noisepred_conditional.png}
+                \caption{Final: TableFiff. noisepred. contitional}
+            \end{figure}
+            \end{column}
+            \begin{column}{0.48\textwidth}
+                \begin{itemize}
+                    \item \small conditional stabiler als mixed type Erzeugung
+                    \item \small Noiseprediction bessere Ergebnisse als denoising
+                    \item \small noch nicht perfekt ! (weird artefacts)
+                \end{itemize}
+            \end{column}
+        \end{columns}
+         
 \end{frame}
 
 
@@ -448,16 +491,9 @@
 
     \begin{columns}[T]
         \column{0.48\textwidth}
-            \begin{figure}
-                \centering
-                \includegraphics[width=0.5\linewidth]{img/tablediff_noisepred_conditional.png}
-                \caption{TableFiff. noisepred. contitional}
-            \end{figure}
-            
-        \column{0.48\textwidth}
-           \begin{center}
+        \begin{center}
                 \tiny
-                Ergebnisse (nicht zu ernst nehmen)
+                Ergebnisse
                 \begin{tabular}{lccccc}
                     \toprule
                     Methode & $\bar{w}_d$ & $\bar{s}$ & computation time [mm:ss]\\
@@ -467,6 +503,14 @@
                     \bottomrule
                 \end{tabular}
             \end{center}
+            
+        \column{0.48\textwidth}
+           \begin{itemize}
+            \item \small Ergebnisse nicht belastbar
+            \item \small CTGAN simpler und stabiler als TableDiff
+            \item \small TableDiff laut Literatur besser
+            \item \small Implementierung noch nicht gut genug
+           \end{itemize}
     \end{columns}
     \footnotetext{\tiny berechnet $s=e^{-w_d}$ mit $w_d$ = Wasserstein distanz}
     %\footnotetext{\tiny Mit Vorsicht zu genießen, kein ground Truth}
@@ -507,7 +551,7 @@
 \begin{frame}
     \frametitle{Zusammenfassung}
     \begin{itemize}
-        \item Synthetische Daten Mimiken reale Daten
+        \item Synthetische Daten mimiken reale Daten
         \item Es gibt keine einheitlich akzeptierte Metrik (Bewertungskriterien)
         \item Use Case sollte klar und auch umfassend definiert werden (Endanwendung, ETL, ..)
         \item Viele Wege (Methodiken) führen nach Rom (zum Ergebnis)

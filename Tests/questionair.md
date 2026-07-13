@@ -1,0 +1,103 @@
+# Implementation Guide: Humanes Immundefizienz-Virus (HIV): spezifische klinische und epidemiologische Angaben
+
+- **ID:** `DiseaseQuestionsHIVD`
+- **URL:** https://demis.rki.de/fhir/Questionnaire/DiseaseQuestionsHIVD
+- **Version:** 1.1.2
+- **Status:** active
+
+## Beschreibung
+HIV spezifische Informationsbedarfe werden in diesem meldetatbestandsspezifischen Fragebogen zusammengestellt. Dieser manifestiert sich als entsprechende QuestionnaireResponse innerhalb der Meldung.
+
+## Fragebogen-Struktur
+
+- **firstDiagnosisGER** (`choice`) (Pflichtfeld)
+  - **Text:** Ist dies der erste erfolgte Nachweis der HIV-Infektion in Deutschland?
+  - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/yesOrNoOrUnknown`
+  - **lastNegTest** (`date`)
+    - **Text:** Wann wurde der letzte negative HIV-Test durchgeführt?
+    - **Validierung (Regex):** `^19[0-9]{2}-[0-9]{2}$|^20[0-9]{2}-[0-9]{2}$|^19[0-9]{2}$|^20[0-9]{2}$`
+    - **Sichtbar wenn:** `firstDiagnosisGER` = `373066001`
+  - **firstPosTest** (`date`)
+    - **Text:** Wann wurde der erste bestätigte positive HIV-Test durchgeführt?
+    - **Validierung (Regex):** `^19[0-9]{2}-[0-9]{2}$|^20[0-9]{2}-[0-9]{2}$|^19[0-9]{2}$|^20[0-9]{2}$`
+    - **Sichtbar wenn:** `firstDiagnosisGER` = `373067005`
+- **firstDiagnosisAbroad** (`choice`) (Pflichtfeld)
+  - **Text:** Wurde zuvor ein positiver Test im Ausland durchgeführt?
+  - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/yesOrNoOrUnknown`
+  - **firstDiagnosisCountry** (`choice`)
+    - **Text:** In welchem Land wurde dieser positive Test durchgeführt?
+    - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/answerSetCountry-ISO-SNOMED`
+    - **Sichtbar wenn:** `firstDiagnosisAbroad` = `373066001`
+- **countryOrigin** (`choice`) (Pflichtfeld)
+  - **Text:** Welches ist das Herkunftsland der betroffenen Person?
+  - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/answerSetCountry-ISO-SNOMED`
+  - **regionOrigin** (`choice`) (Pflichtfeld)
+    - **Text:** Welche ist die Herkunftsregion der betroffenen Person?
+    - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/answerSetGeographicSubcontinent`
+    - **Sichtbar wenn:** `countryOrigin` = `261665006`
+- **countryOfInfection** (`choice`) (Pflichtfeld)
+  - **Text:** Welches ist das wahrscheinliche Infektionsland?
+  - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/answerSetCountry-ISO-SNOMED`
+  - **regionOfInfection** (`choice`) (Pflichtfeld)
+    - **Text:** Welche ist die wahrscheinliche Infektionsregion?
+    - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/answerSetGeographicSubcontinent`
+    - **Sichtbar wenn:** `countryOfInfection` = `261665006`
+- **stadiumHIVD** (`choice`) (Pflichtfeld)
+  - **Text:** Welches Stadium der HIV-Erkrankung liegt vor?
+  - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/answerSetStadiumHIVD`
+  - **cdcA** (`choice`) (Pflichtfeld) [Mehrfachauswahl]
+    - **Text:** Welche Ausprägung der asymptomatischen HIV-Infektion liegt vor?
+    - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/answerSetCDCAHIVD`
+    - **Sichtbar wenn:** `stadiumHIVD` = `91947003`
+  - **cdcB** (`choice`) (Pflichtfeld) [Mehrfachauswahl]
+    - **Text:** Welche Symptome einer HIV-Infektion liegen vor?
+    - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/answerSetCDCBHIVD`
+    - **Sichtbar wenn:** `stadiumHIVD` = `81000119104`
+  - **cdcC** (`choice`) (Pflichtfeld) [Mehrfachauswahl]
+    - **Text:** Welche der AIDS definierenden Erkrankungen liegen vor?
+    - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/answerSetCDCCHIVD`
+    - **Sichtbar wenn:** `stadiumHIVD` = `62479008`
+- **cd4** (`quantity`)
+  - **Text:** Höhe der CD4-T-Zellzahl zum Zeitpunkt der HIV-Diagnose (Zellzahl pro Mikroliter).
+  - **Min-Wert:** 0 Anzahl pro Mikroliter
+  - **Max-Wert:** 10000 Anzahl pro Mikroliter
+- **viralLoad** (`quantity`)
+  - **Text:** Höhe der Viruslast zum Zeitpunkt der HIV-Diagnose (Kopien pro Milliliter).
+  - **Min-Wert:** 1 Kopien pro Milliliter
+  - **Max-Wert:** 100000000 Kopien pro Milliliter
+- **coinfections** (`choice`) (Pflichtfeld) [Mehrfachauswahl]
+  - **Text:** Liegen Koinfektionen vor?
+  - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/answerSetCoinfectionHIVD`
+- **hivPrEPStatusHIVD** (`choice`) (Pflichtfeld)
+  - **Text:** Wurde innerhalb der letzten 12 Monate vor der HIV-Erstdiagnose eine HIV-PrEP eingenommen?
+  - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/yesOrNoOrUnknown`
+- **sexWork** (`choice`) (Pflichtfeld) [Mehrfachauswahl]
+  - **Text:** Hat die betroffene Person Sexarbeit ausgeübt oder in Anspruch genommen?
+  - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/answerSetSexWork`
+- **infectionPathRisk** (`choice`) (Pflichtfeld) [Mehrfachauswahl]
+  - **Text:** Auf welchem Weg hat sich die betroffene Person wahrscheinlich infiziert?
+  - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/answerSetInfectionPathHIVD`
+  - **bloodTransfusionDate** (`date`)
+    - **Text:** Wann wurden die Blutprodukte verabreicht?
+    - **Validierung (Regex):** `^19[0-9]{2}-[0-9]{2}$|^20[0-9]{2}-[0-9]{2}$|^19[0-9]{2}$|^20[0-9]{2}$`
+    - **Sichtbar wenn:** `infectionPathRisk` = `409496000:704326004=5447007`
+  - **bloodTransfusionNote** (`text`)
+    - **Text:** Können Sie die Verabreichung der Blutprodukte näher erläutern?
+    - **Sichtbar wenn:** `infectionPathRisk` = `409496000:704326004=5447007`
+  - **medicinalWorkerNote** (`text`)
+    - **Text:** Können Sie die berufliche Exposition näher erläutern?
+    - **Sichtbar wenn:** `infectionPathRisk` = `16090731000119102`
+  - **infectionSource** (`choice`) (Pflichtfeld) [Mehrfachauswahl]
+    - **Text:** Auf welchem Wege hat sich die Person infiziert, die als Infektionsquelle vermutet wird?
+    - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/answerSetInfectionPathHIVD`
+    - **Sichtbar wenn:** `infectionPathRisk` = `472986005` AND `infectionPathRisk` = `472987001` AND `infectionPathRisk` = `472988006` AND `infectionPathRisk` = `1290740005` (Modus: any)
+  - **infectionSourceSecure** (`choice`) (Pflichtfeld)
+    - **Text:** Ist die HIV-Infektion der Person, die als Infektionsquelle vermutet wird, gesichert?
+    - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/yesOrNoOrUnknown`
+    - **Sichtbar wenn:** `infectionPathRisk` = `472986005` AND `infectionPathRisk` = `472987001` AND `infectionPathRisk` = `472988006` AND `infectionPathRisk` = `1290740005` (Modus: any)
+  - **otherNote** (`text`)
+    - **Text:** Wenn Sie "Andere" ausgewählt haben, können Sie das näher erläutern?
+    - **Sichtbar wenn:** `infectionPathRisk` = `74964007`
+- **genderDefintion** (`choice`)
+  - **Text:** Zusatzangabe zur geschlechtlichen Selbstdefinition der betroffenen Person, falls bekannt.
+  - **ValueSet:** `https://demis.rki.de/fhir/ValueSet/answerSetGenderDefinition`
